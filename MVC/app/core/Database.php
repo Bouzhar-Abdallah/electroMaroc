@@ -9,7 +9,7 @@ class Database
         $con ->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
         return $con;
     }
-    public function query($query , $data = [])
+    protected function query($query , $data = [])
     {
         $con = $this->connect();
         $stmt = $con->prepare($query);
