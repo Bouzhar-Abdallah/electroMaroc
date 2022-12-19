@@ -51,7 +51,8 @@ create table commande (
     date_envoi datetime,
     date_livraison datetime,
     id_client int,
-    foreign key (id_client) references client(id)
+    foreign key (id_client) references client(id),
+    etat ENUM('pret', 'en transit', 'livré', 'annulé')
 );
 
 create table ligne_commande (
