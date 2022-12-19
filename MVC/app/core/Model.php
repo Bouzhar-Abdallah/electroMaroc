@@ -6,7 +6,7 @@ class Model extends Database
     {
         $query = "select * from users";
         $result = $this->query($query);
-        show($result);
+        //show($result);
     }
 
     public function first()
