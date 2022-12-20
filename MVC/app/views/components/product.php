@@ -6,20 +6,23 @@
         <img class="p-3 border border-gray-200 " src="<?= ROOT ?>assets/images/a.jpg" alt="" srcset="">
     </div>
     <div class="p-10 ">
-        <img src="<?= ROOT ?>assets/images/b.jpg" alt="" srcset="">
+    <img class="aspect-square" src="<?= ROOT ?>assets/images/b.jpg" alt="" srcset="">
     </div>
     <div class="flex gap-3 flex-col w-120 h-fit border border-P_navy p-5">
         <div class=" flex items-center gap-5 my-1 text-xl font-bold">
             <p class="text-xl">$ 19.99</p>
             <p class="text-gray-400 line-through text-base">$ 25.99</p>
         </div>
-        <p class="font-bold text-xl capitalize">nom produit</p>
+        <div class="flex gap-5 items-end">
+        <p class="font-bold text-xl capitalize text-end">nom produit</p>
+        <p class="font-thing text-xs text-gray-600">Ref: xsscj3344j2</p>
+        </div>
         <p class=" text-black font-thin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias mollitia praesentium laborum natus</p>
         <p>Delivery <span class="font-bold">octobre 22 - 30</span></p>
-        <div class="flex justify-between">
-            <label for="quantite">quantité</label>
+        <div class="flex items-center justify-between">
+            <label class="capitalize text-end" for="quantite">quantité</label>
             <!-- border border-P_navy pl-2 w-20 -->
-            <input class="" type="number" name="quantite" value="1" id="">
+            <input class="border-gray-200   focus:ring-cadet focus:ring-1 w-24" type="number" name="quantite" value="1" id="">
         </div>
         <div class="flex text-yellow-400">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">

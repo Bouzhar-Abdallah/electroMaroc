@@ -1,6 +1,6 @@
 <div class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-5">
         <!-- product item -->
-        <div class="bg-white rounded-md overflow-hidden hover:shadow border transition-colors hover:border-P_blue">
+        <div class="bg-white overflow-hidden hover:shadow border transition-colors hover:border-P_blue">
             <a href="#">
                 <img class=" scale-100 hover:scale-105 transition-all" src="<?= ROOT ?>assets/images/f1.jpg" alt="" srcset="">
             </a>
