@@ -18,7 +18,8 @@
         <p>Delivery <span class="font-bold">octobre 22 - 30</span></p>
         <div class="flex justify-between">
             <label for="quantite">quantité</label>
-            <input class="border border-P_navy pl-2 w-20" type="number" name="quantite" value="1" id="">
+            <!-- border border-P_navy pl-2 w-20 -->
+            <input class="" type="number" name="quantite" value="1" id="">
         </div>
         <div class="flex text-yellow-400">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
