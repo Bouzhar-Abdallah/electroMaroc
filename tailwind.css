@@ -10,3 +10,7 @@
         @apply px-4
     }
 }
+
+.btn-primary{
+    @apply  bg-P_blue text-white py-2 px-3 rounded shadow-md transition-colors hover:bg-P_navy
+}
