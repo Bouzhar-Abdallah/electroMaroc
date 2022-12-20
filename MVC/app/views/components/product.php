@@ -1,9 +1,9 @@
 <div class="flex m-5">
     <div class="  h-full w-32">
-        <img class="p-3 border border-gray-200 " src="<?= ROOT ?>assets/images/a.jpg" alt="" srcset="">
-        <img class="p-3 border border-gray-200 " src="<?= ROOT ?>assets/images/a.jpg" alt="" srcset="">
-        <img class="p-3 border border-gray-200 " src="<?= ROOT ?>assets/images/a.jpg" alt="" srcset="">
-        <img class="p-3 border border-gray-200 " src="<?= ROOT ?>assets/images/a.jpg" alt="" srcset="">
+        <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="<?= ROOT ?>assets/images/a.jpg" alt="" srcset="">
+        <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="<?= ROOT ?>assets/images/b.jpg" alt="" srcset="">
+        <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="<?= ROOT ?>assets/images/f1.jpg" alt="" srcset="">
+        <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="<?= ROOT ?>assets/images/a.jpg" alt="" srcset="">
     </div>
     <div class="p-10 ">
     <img class="aspect-square" src="<?= ROOT ?>assets/images/b.jpg" alt="" srcset="">
