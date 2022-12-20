@@ -9,6 +9,10 @@ module.exports = {
         current: 'currentColor',
         'cadet': '#2B2D42',
         'cadeth': '#404363',
+        'P_navy': '#424874',
+        'P_blue': '#94A1DB',
+
+        'powder': '#FDFFFC',
         'mauve': '#361B2B',
         'saffron': '#FEEA00',
         'wsaffron': '#FFF15C',
@@ -18,6 +22,9 @@ module.exports = {
         'goldenrod': '#F3F9D2',
         'middlegreen': '#558564',
         },
+      fontFamily:{
+        sans : ["Open Sans",'Helvetica','Arial','sans-serif'],
+      }
     },
   },
   plugins: [],

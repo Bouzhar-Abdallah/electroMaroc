@@ -121,7 +121,7 @@
                         </svg>
 
                     </a>
-                    <ul class="absolute hidden right-0 w-full bg-cadet py-2">
+                    <ul class="absolute z-50 hidden right-0 w-full bg-cadet py-2">
                         <li>
                             <a href="" class="flex items-center py-2 px-4 transition-all hover:bg-cadeth">
                                 <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
