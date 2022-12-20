@@ -1,1 +1,3 @@
-<h1>products page view</h1>
+<?php
+include_once 'components/navbar.php';
+include_once 'components/products-container.php';

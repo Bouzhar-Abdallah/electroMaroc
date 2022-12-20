@@ -1,5 +1,6 @@
 <?php
-include_once 'navbar.php';
-include_once 'products-container.php';
+include_once 'components/navbar.php';
+include_once 'components/product.php';
+
 
 
