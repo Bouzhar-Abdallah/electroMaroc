@@ -964,6 +964,11 @@ select {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
+.border-cadethh {
+  --tw-border-opacity: 1;
+  border-color: rgb(218 219 231 / var(--tw-border-opacity));
+}
+
 .bg-cadethh {
   --tw-bg-opacity: 1;
   background-color: rgb(218 219 231 / var(--tw-bg-opacity));
@@ -1221,6 +1226,11 @@ select {
 .hover\:border-cadeth:hover {
   --tw-border-opacity: 1;
   border-color: rgb(64 67 99 / var(--tw-border-opacity));
+}
+
+.hover\:border-cadet:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(43 45 66 / var(--tw-border-opacity));
 }
 
 .hover\:bg-cadeth:hover {
