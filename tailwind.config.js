@@ -24,6 +24,9 @@ module.exports = {
         },
       fontFamily:{
         sans : ["Open Sans",'Helvetica','Arial','sans-serif'],
+      },
+      scale: {
+        '101': '1.01',
       }
     },
   },

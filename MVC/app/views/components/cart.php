@@ -11,7 +11,7 @@
             <h1 class="text-lg">prix</h1>
         </div>
         <!-- cart product widget -->
-        <div class="flex gap-3 bg-cadethh p-3 my-5 hover:shadow-lg transition-all border border-cadethh hover:border-cadet">
+        <div class="flex gap-3 bg-cadethh p-3 my-5 hover:shadow-lg transition-all border border-cadethh hover:border-cadet scale-100 hover:scale-101 ">
 
             <img class="h-auto w-32" src="<?= ROOT ?>assets/images/b.jpg" alt="" srcset="">
             <div class="flex flex-col justify-between w-full">
