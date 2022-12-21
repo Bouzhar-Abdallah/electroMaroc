@@ -9,8 +9,8 @@ module.exports = {
         current: 'currentColor',
         'cadet': '#2B2D42',
         'cadeth': '#404363',
+        'cadethh': '#DADBE7',
         'P_navy': '#424874',
-        'P_blue': '#59619B',
 
         'powder': '#FDFFFC',
         'mauve': '#361B2B',
