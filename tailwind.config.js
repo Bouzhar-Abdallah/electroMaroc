@@ -26,7 +26,7 @@ module.exports = {
         sans : ["Open Sans",'Helvetica','Arial','sans-serif'],
       },
       scale: {
-        '101': '1.01',
+        '101': '1.005',
       }
     },
   },
