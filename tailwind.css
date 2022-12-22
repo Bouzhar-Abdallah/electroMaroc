@@ -28,7 +28,7 @@
     file:bg-cadethh file:cursor-pointer 
     hover:file:shadow-md 
 }
-.label-text{
+.label-style{
     @apply  capitalize text-cadeth font-thin mb-1
 }
 .input-style{
