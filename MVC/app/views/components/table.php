@@ -1,4 +1,4 @@
-<div class="overflow-x-auto relative ">
+<div class="overflow-x-auto h-full relative ">
     <table class="w-full text-sm text-left text-gray-500 border border-cadethh ">
         <thead class="text-xs text-black uppercase bg-cadethh dark:bg-gray-700 ">
             <tr>
@@ -83,4 +83,7 @@
 
         </tbody>
     </table>
+    <div class="absolute right-0 bottom-0">
+        <button class="btn-primary ">ajouter nouveau produit</button>
+    </div>
 </div>
