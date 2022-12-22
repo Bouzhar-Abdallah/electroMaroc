@@ -1,7 +1,7 @@
-<div class="p-3 bg-gray-200 h-full">
-    <form class=" p-5 container mx-auto lg:w-2/3 border bg-white border-cadethh" action="" method="post">
+<div class="p-3 bg-gray-200 h-full ">
+    <form class=" p-5 container mx-auto lg:w-2/3 border bg-white border-cadeth" action="" method="post">
         <h1 class="capitalize font-bold text-2xl border-b pb-1">creer un nouveau produit</h1>
-        <div class="grid md:grid-cols-2 my-8 md:gap-4 border-b pb-8">
+        <div class="grid md:grid-cols-2 mt-8 md:gap-4 border-b pb-8">
             <div class=" flex flex-col">
                 <label class="label-style" for="x">libile :
                 </label>
@@ -61,7 +61,7 @@
             </div>
 
         </div>
-        <button class="btn-primary block capitalize font-bold  mt-5 ml-auto ">suivant</button>
+        <button class="btn-primary block capitalize font-bold  mt-3 ml-auto ">suivant</button>
     </form>
 
 
