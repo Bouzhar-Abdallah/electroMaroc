@@ -10,6 +10,7 @@ module.exports = {
         'cadet': '#2B2D42',
         'cadeth': '#404363',
         'cadethh': '#DADBE7',
+        'cadethhh': '#F3F3F7',
         'P_navy': '#424874',
 
         'powder': '#FDFFFC',

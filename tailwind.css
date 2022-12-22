@@ -31,3 +31,6 @@
 .label-text{
     @apply  capitalize text-cadeth font-thin mb-1
 }
+.input-style{
+    @apply  border-cadethh focus:border-cadeth focus:bg-cadethhh focus:shadow focus:ring-cadethh
+}

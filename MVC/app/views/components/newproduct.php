@@ -5,22 +5,22 @@
             <div class="mt-2 flex flex-col">
                 <label class="label-text" for="x">libile :
                 </label>
-                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="x" id="">
+                <input class="input-style" type="text" name="libille" id="">
             </div>
             <div class="mt-2 flex flex-col">
                 <label class="label-text" for="x">rèfèrence :
                 </label>
-                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="x" id="">
+                <input class="input-style" type="text" name="ref" id="">
             </div>
             <div class="mt-2 flex flex-col">
                 <label class="label-text" for="x">code bare :
                 </label>
-                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="x" id="">
+                <input class="input-style" type="text" name="code_barre" id="">
             </div>
             <div class="mt-2 flex flex-col">
 
                 <label for="categorie" class="label-text">categorie</label>
-                <select id="categorie" class=" block w-full focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh ">
+                <select id="categorie" name="id_categorie" class=" block w-full input-style ">
                     <option selected>celect une categorie</option>
                     <option value="1">categorie</option>
 
@@ -31,7 +31,7 @@
 
             <div class="mt-2 flex flex-col">
                 <label for="message" class="label-text">Description produit</label>
-                <textarea id="message" rows="4" class=" p-2.5 w-full focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh  "></textarea>
+                <textarea id="message" name="description" rows="4" class="  w-full input-style  "></textarea>
             </div>
             <div class="md:row-span-1 flex flex-col">
 
@@ -39,25 +39,25 @@
                 <div class="mt-2 flex flex-col">
                     <label class="label-text" for="x">prix achat :
                     </label>
-                    <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="x" id="">
+                    <input class="input-style" type="text" name="prix_achat" id="">
                 </div>
                 <div class="mt-2 flex flex-col">
                     <label class="label-text" for="x">prix offre :
                     </label>
-                    <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="x" id="">
+                    <input class="input-style" type="text" name="prix_offre" id="">
                 </div>
             </div>
             <div class="mt-2 flex flex-col">
 
 
                 <label class="label-text" for="file_input">choisissez les photos du produit</label>
-                <input class="btn-file  focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" id="file_input" type="file" multiple>
+                <input class="btn-file  input-style " id="file_input" type="file" multiple name="prod_img_id">
 
             </div>
             <div class="mt-2 flex flex-col">
                 <label class="label-text" for="x">prix finale :
                 </label>
-                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="x" id="">
+                <input class="input-style" type="text" name="prix_final" id="">
             </div>
 
         </div>
