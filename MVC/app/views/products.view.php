@@ -1,6 +1,21 @@
-<?php
-include_once 'components/navbar.php';
-//include_once 'components/slider.php';
-include_once 'components/product.php';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?= ROOT ?>assets/css/style.css">
+    <title>Document</title>
+</head>
+<body >
+    
+    
 
-//include_once 'components/products-container.php';
+        
+        
+            <?php  require_once 'components/test.php';?>
+        
+   
+</body>
+</html>
+
