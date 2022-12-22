@@ -30,10 +30,10 @@
 
 
             <div class=" flex flex-col">
-                <label for="message" class="label-style">Description produit</label>
-                <textarea id="message" name="description" rows="4" class="  w-full input-style  "></textarea>
+                <label for="message" class="label-style">Description produit :</label>
+                <textarea id="message" name="description" rows="4" class="h-full  w-full input-style  "></textarea>
             </div>
-            <div class="md:row-span-1 flex flex-col">
+            <div class="md:row-span-1 flex gap-4 flex-col">
 
 
                 <div class=" flex flex-col">
