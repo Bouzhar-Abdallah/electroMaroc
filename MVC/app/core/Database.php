@@ -9,6 +9,7 @@ class Database
         $con ->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
         return $con;
     }
+
     protected function query($query , $data = [])
     {
         $con = $this->connect();
@@ -21,6 +22,23 @@ class Database
             if (is_array($result) && count($result)) 
             {
                 return $result;
+            }
+        }
+
+        return false;
+    }
+    protected function get_row($query , $data = [])
+    {
+        $con = $this->connect();
+        $stmt = $con->prepare($query);
+
+        $check = $stmt->execute($data);
+        if ($check) 
+        {
+            $result = $stmt->fetchAll();
+            if (is_array($result) && count($result)) 
+            {
+                return $result[0];
             }
         }
 
