@@ -9,13 +9,14 @@
 </head>
 <body >
     
-    
+    <div class="flex gap-3 h-screen w-screen p-3">
 
-        
-        
-            <?php  require_once 'components/newproduct.php';?>
-        
-   
+        <?php  require_once 'components/dashboard_bar.php';?>
+        <div class="flex flex-col gap-3 w-full">
+            <div class="h-32 w-full bg-cadethh">
+            </div>
+            <?php  require_once 'components/table-products.php';?>
+        </div>
+    </div>
 </body>
 </html>
-
