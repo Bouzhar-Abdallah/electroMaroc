@@ -20,12 +20,34 @@
             <div class=" flex flex-col">
 
                 <label for="categorie" class="label-style">categorie</label>
-                <select id="categorie" name="id_categorie" class=" block w-full input-style ">
-                    <option selected>celect une categorie</option>
-                    <option value="1">categorie</option>
 
-                </select>
+                <button id="dropdownDefault" data-dropdown-toggle="dropdown" class="relative w-full h-full border input-style text-cadeth font-medium flex justify-between items-center px-3" type="button">
+                    select categorie
+                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                    <!-- Dropdown menu -->
+                    <div id="dropdown" class="hidden z-10 w-full  border border-black">
+                        <ul class=" text-sm text-gray-700 " aria-labelledby="dropdownDefault">
+                            <li>
+                                <a href="#" class="block py-2 px-4 hover:bg-cadethhh bg-white border-b ">test</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-4 hover:bg-cadethhh bg-white border-b ">test</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-4 hover:bg-cadethhh bg-white border-b ">test</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-4 hover:bg-cadethhh bg-white border-b ">test</a>
+                            </li>
+                        </ul>
+                    </div>
+                </button>
             </div>
+
+
+
 
 
 

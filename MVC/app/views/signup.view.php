@@ -11,12 +11,12 @@
     
     <div class="flex gap-3 h-screen w-screen p-3">
 
-        <?php  require_once 'components/dashboard_bar.php';?>
+        
         <div class="flex flex-col gap-3 w-full">
-            <div class="h-32 w-full bg-cadethh">
-            </div>
-            <?php  require_once 'components/table-users.php';?>
+          
+            <?php  require_once 'components/newproduct.php';?>
         </div>
     </div>
 </body>
+<script src="<?= ROOT ?>assets/js/flowbite.js"></script>
 </html>
