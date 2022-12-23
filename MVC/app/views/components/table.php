@@ -19,7 +19,7 @@
                     Prix offre
                 </th>
                 <th scope="col" class="py-3 px-3">
-                    Prix
+                    Prix finale
                 </th>
                 <th scope="col" class="">
                     
@@ -28,12 +28,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="bg-white border-b h-12 relative">
-                <th scope="row" class="py-4 px-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white hover:bg-cadethhh border-b h-12 relative ">
+                <th scope="row" class="py-4 px-3  font-medium text-gray-900 whitespace-nowrap ">
                     Apple MacBook Pro 17"
                 </th>
-                <td class="py-4 px-3">
-                    Sliver
+                <td class="py-4 px-3 ">
+                    tt
                 </td>
                 <td class="py-4 px-3">
                     Laptop

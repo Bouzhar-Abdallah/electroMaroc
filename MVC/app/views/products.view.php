@@ -13,7 +13,8 @@
 
         
         
-            <?php  require_once 'components/test.php';?>
+            <?php  require_once 'components/navbar.php';?>
+            <?php  require_once 'components/cart.php';?>
         
    
 </body>
