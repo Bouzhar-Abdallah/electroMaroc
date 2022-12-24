@@ -7,4 +7,4 @@ define('DBUSER','root');
 define('DBPASS','root');
 define('DBDRIVER','');
 
-define('DEBUG', false);
+define('DEBUG', true);

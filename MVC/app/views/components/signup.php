@@ -8,25 +8,28 @@
     </div>
     <form  class="flex flex-col p-5 container mx-auto lg:w-1/3 border border-cadethh" action="" method="post">
         <h1 class="capitalize font-bold text-2xl">creer un compte</h1>
-        <?php if (!empty($data['errors'])){?>
+        <?php if (!empty($errors)){?>
             <div class="bg-red-200 py-3 px-2 ">
-                <?= implode("<br>",$data['errors']) ?>
+                <?= implode("<br>",$errors) ?>
             </div>
          <?php }?>
         <div class="mt-2 flex flex-col">
             <label class="capitalize" for="x">nom complet :
             </label>
-            <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="nom" id="">
+            <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="nom" id=""
+            value="<?php if (!empty($data['nom'])) echo $data['nom'];?>">
         </div>
         <div class="mt-2 flex flex-col">
             <label class="capitalize" for="x">e-mail :
             </label>
-            <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="email" id="">
+            <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="email" id=""
+            value="<?php if (!empty($data['email'])) echo $data['email'];?>"
+            >
         </div>
         <div class="mt-2 flex flex-col">
             <label class="capitalize" for="x">mot de passe :
             </label>
-            <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="password" id="">
+            <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="password" name="password" id="">
         </div>
         <!-- <div class="mt-2 flex flex-col">
             <label class="capitalize" for="x">repetez mot de passe :
