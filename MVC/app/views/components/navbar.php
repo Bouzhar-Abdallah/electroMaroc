@@ -1,20 +1,20 @@
-
-    <link rel="stylesheet" href="<?= ROOT ?>assets/css/style.css">
-
+<link rel="stylesheet" href="<?= ROOT ?>assets/css/style.css">
 
 
-    <header class="flex justify-between capitalize bg-cadet text-white">
-        <!-- <img src="" alt="" srcset=""> -->
-        <a href="#" class="block px-navbar-item py-navbar-item">logo</a>
-        
-        <!-- mobile menu -->
-        <div class="block md:hidden z-50 fixed top-0 left-0 h-full w-[220px] bg-cadet shadow-xl">
-            <ul class="font-semibold">
-                <li><a href="<?= ROOT ?>" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">acceuil</a></li>
-                <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">produits</a></li>
-                <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">contact</a></li>
-            </ul>
-            <ul class=" items-center font-normal">
+
+<header class="flex justify-between capitalize bg-cadet text-white">
+    <!-- <img src="" alt="" srcset=""> -->
+    <a href="#" class="block px-navbar-item py-navbar-item">logo</a>
+
+    <!-- mobile menu -->
+    <div class="block md:hidden z-50 fixed top-0 left-0 h-full w-[220px] bg-cadet shadow-xl">
+        <ul class="font-semibold">
+            <li><a href="<?= ROOT ?>" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">acceuil</a></li>
+            <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">produits</a></li>
+            <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">contact</a></li>
+        </ul>
+        <ul class=" items-center font-normal">
+            <?php if (!empty($_SESSION['client'])) { ?>
                 <li class="">
                     <a href="" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
                         <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -23,7 +23,6 @@
                         cart
                     </a>
                 </li>
-                <?php if (!empty($_SESSION['client'])){?>
                 <li class="relative ">
                     <a href="" class="flex items-center justify-between px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
 
@@ -36,8 +35,8 @@
                     <ul class="w-full bg-cadet py-2">
                         <li>
                             <a href="" class="flex items-center py-2 px-4 transition-all hover:bg-cadeth">
-                                
-                                bonjour <?php if (!empty($_SESSION['client'])) echo $_SESSION['client'];?>
+
+                                bonjour <?php if (!empty($_SESSION['client'])) echo $_SESSION['client']; ?>
                             </a>
                         </li>
                         <li>
@@ -77,9 +76,9 @@
                         </li>
                     </ul>
                 </li>
-                <?php }?>
-                <?php if (empty($_SESSION['client'])){?>
-                    <li class="">
+            <?php } ?>
+            <?php if (empty($_SESSION['client'])) { ?>
+                <li class="">
                     <a href="login" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
 
                         <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -90,33 +89,34 @@
                         login
                     </a>
                 </li>
-                <?php }?>
-                <?php if (empty($_SESSION['client'])){?>
-                    
-                    <li class="">
-                        <a href="signup" class=" flex items-center px-navbar-item py-navbar-item bg-saffron text-cadet hover:bg-wsaffron transition-colors">
-    
-                            <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
-                            </svg>
-    
-                            inscrivez vous
-                        </a>
-                    </li>
-                <?php }?>
-            </ul>
-        </div>
-        <!-- mobile menu -->
+            <?php } ?>
+            <?php if (empty($_SESSION['client'])) { ?>
 
-        <nav class="hidden md:block">
-            <ul class="grid grid-flow-col font-semibold">
-                <li><a href="<?= ROOT ?>" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">acceuil</a></li>
-                <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">produits</a></li>
-                <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">contact</a></li>
-            </ul>
-        </nav>
-        <nav class="hidden md:block">
-            <ul class="grid grid-flow-col items-center font-normal">
+                <li class="">
+                    <a href="signup" class=" flex items-center px-navbar-item py-navbar-item bg-saffron text-cadet hover:bg-wsaffron transition-colors">
+
+                        <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
+                        </svg>
+
+                        inscrivez vous
+                    </a>
+                </li>
+            <?php } ?>
+        </ul>
+    </div>
+    <!-- mobile menu -->
+
+    <nav class="hidden md:block">
+        <ul class="grid grid-flow-col font-semibold">
+            <li><a href="<?= ROOT ?>" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">acceuil</a></li>
+            <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">produits</a></li>
+            <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">contact</a></li>
+        </ul>
+    </nav>
+    <nav class="hidden md:block">
+        <ul class="grid grid-flow-col items-center font-normal">
+            <?php if (!empty($_SESSION['client'])) { ?>
                 <li class="">
                     <a href="" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
                         <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -125,12 +125,11 @@
                         cart
                     </a>
                 </li>
-                <?php if (!empty($_SESSION['client'])){?>
                 <li class="relative mr-4">
-                
+
                     <a href="" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
 
-                    mon compte
+                        mon compte
                         <svg class="h-5 w-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
                         </svg>
@@ -139,8 +138,8 @@
                     <ul class="absolute z-50  right-0 w-full bg-cadet py-2">
                         <li>
                             <a href="" class="flex items-center text-sm py-2 px-4 transition-all hover:bg-cadeth">
-                                
-                                bonjour <?php if (!empty($_SESSION['client'])) echo $_SESSION['client'];?>
+
+                                bonjour <?php if (!empty($_SESSION['client'])) echo $_SESSION['client']; ?>
                             </a>
                         </li>
                         <li>
@@ -180,9 +179,9 @@
                         </li>
                     </ul>
                 </li>
-                <?php }?>
-                <?php if (empty($_SESSION['client'])){?>
-                    <li class="">
+            <?php } ?>
+            <?php if (empty($_SESSION['client'])) { ?>
+                <li class="">
                     <a href="login" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
 
                         <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -193,8 +192,8 @@
                         login
                     </a>
                 </li>
-                <?php }?>
-                <?php if (empty($_SESSION['client'])){?>
+            <?php } ?>
+            <?php if (empty($_SESSION['client'])) { ?>
                 <li class="">
                     <a href="signup" class=" flex items-center px-navbar-item py-navbar-item bg-saffron text-cadet hover:bg-wsaffron transition-colors">
 
@@ -205,14 +204,13 @@
                         inscrivez vous
                     </a>
                 </li>
-                <?php }?>
-            </ul>
-        </nav>
-        <button class="block md:hidden px-navbar-item py-navbar-item">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
+            <?php } ?>
+        </ul>
+    </nav>
+    <button class="block md:hidden px-navbar-item py-navbar-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
 
-        </button>
-    </header>
-
+    </button>
+</header>
