@@ -8,9 +8,9 @@
         <a href="#" class="block px-navbar-item py-navbar-item">logo</a>
         
         <!-- mobile menu -->
-        <div class="block md:hidden fixed top-0 left-0 h-full w-[220px] bg-cadet shadow-xl">
+        <div class="block md:hidden z-50 fixed top-0 left-0 h-full w-[220px] bg-cadet shadow-xl">
             <ul class="font-semibold">
-                <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">acceuil</a></li>
+                <li><a href="<?= ROOT ?>" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">acceuil</a></li>
                 <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">produits</a></li>
                 <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">contact</a></li>
             </ul>
@@ -23,16 +23,23 @@
                         cart
                     </a>
                 </li>
+                <?php if (!empty($_SESSION['client'])){?>
                 <li class="relative ">
                     <a href="" class="flex items-center justify-between px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
 
-                        my account
+                        mon compte
                         <svg class="h-5 w-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
                         </svg>
 
                     </a>
                     <ul class="w-full bg-cadet py-2">
+                        <li>
+                            <a href="" class="flex items-center py-2 px-4 transition-all hover:bg-cadeth">
+                                
+                                bonjour <?php if (!empty($_SESSION['client'])) echo $_SESSION['client'];?>
+                            </a>
+                        </li>
                         <li>
                             <a href="" class="flex items-center py-2 px-4 transition-all hover:bg-cadeth">
                                 <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -61,7 +68,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="" class="flex items-center py-2 px-4 transition-all hover:bg-cadeth">
+                            <a href="<?= ROOT ?>login/logout" class="flex items-center py-2 px-4 transition-all hover:bg-cadeth">
                                 <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                                 </svg>
@@ -70,8 +77,10 @@
                         </li>
                     </ul>
                 </li>
-                <li class="">
-                    <a href="" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
+                <?php }?>
+                <?php if (empty($_SESSION['client'])){?>
+                    <li class="">
+                    <a href="login" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
 
                         <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path fill-rule="evenodd" d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z" clip-rule="evenodd" />
@@ -81,23 +90,27 @@
                         login
                     </a>
                 </li>
-                <li class="">
-                    <a href="<?= ROOT ?>/signup" class=" flex items-center px-navbar-item py-navbar-item bg-saffron text-cadet hover:bg-wsaffron transition-colors">
-
-                        <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
-                        </svg>
-
-                        inscrivez vous
-                    </a>
-                </li>
+                <?php }?>
+                <?php if (empty($_SESSION['client'])){?>
+                    
+                    <li class="">
+                        <a href="signup" class=" flex items-center px-navbar-item py-navbar-item bg-saffron text-cadet hover:bg-wsaffron transition-colors">
+    
+                            <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
+                            </svg>
+    
+                            inscrivez vous
+                        </a>
+                    </li>
+                <?php }?>
             </ul>
         </div>
         <!-- mobile menu -->
 
         <nav class="hidden md:block">
             <ul class="grid grid-flow-col font-semibold">
-                <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">acceuil</a></li>
+                <li><a href="<?= ROOT ?>" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">acceuil</a></li>
                 <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">produits</a></li>
                 <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">contact</a></li>
             </ul>
@@ -112,16 +125,24 @@
                         cart
                     </a>
                 </li>
+                <?php if (!empty($_SESSION['client'])){?>
                 <li class="relative mr-4">
+                
                     <a href="" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
 
-                        my account
+                    mon compte
                         <svg class="h-5 w-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
                         </svg>
 
                     </a>
-                    <ul class="absolute z-50 hidden right-0 w-full bg-cadet py-2">
+                    <ul class="absolute z-50  right-0 w-full bg-cadet py-2">
+                        <li>
+                            <a href="" class="flex items-center text-sm py-2 px-4 transition-all hover:bg-cadeth">
+                                
+                                bonjour <?php if (!empty($_SESSION['client'])) echo $_SESSION['client'];?>
+                            </a>
+                        </li>
                         <li>
                             <a href="" class="flex items-center py-2 px-4 transition-all hover:bg-cadeth">
                                 <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -150,7 +171,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="" class="flex items-center py-2 px-4 transition-all hover:bg-cadeth">
+                            <a href="<?= ROOT ?>login/logout" class="flex items-center py-2 px-4 transition-all hover:bg-cadeth">
                                 <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                                 </svg>
@@ -159,8 +180,10 @@
                         </li>
                     </ul>
                 </li>
-                <li class="">
-                    <a href="" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
+                <?php }?>
+                <?php if (empty($_SESSION['client'])){?>
+                    <li class="">
+                    <a href="login" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
 
                         <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path fill-rule="evenodd" d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z" clip-rule="evenodd" />
@@ -170,6 +193,8 @@
                         login
                     </a>
                 </li>
+                <?php }?>
+                <?php if (empty($_SESSION['client'])){?>
                 <li class="">
                     <a href="signup" class=" flex items-center px-navbar-item py-navbar-item bg-saffron text-cadet hover:bg-wsaffron transition-colors">
 
@@ -180,6 +205,7 @@
                         inscrivez vous
                     </a>
                 </li>
+                <?php }?>
             </ul>
         </nav>
         <button class="block md:hidden px-navbar-item py-navbar-item">

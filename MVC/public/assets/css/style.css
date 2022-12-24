@@ -1256,6 +1256,10 @@ input:checked + .toggle-bg {
   z-index: 30;
 }
 
+.z-auto {
+  z-index: auto;
+}
+
 .m-5 {
   margin: 1.25rem;
 }
