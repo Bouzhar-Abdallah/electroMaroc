@@ -6,9 +6,9 @@ class Login extends Controller
     public function index()
     {
         
+        $data = [];
         if ($_SERVER['REQUEST_METHOD'] == "POST") 
         {
-            $data = [];
             $user = new User;
             $arr['email'] = $_POST['email'];
 
@@ -17,7 +17,7 @@ class Login extends Controller
             if ($row) 
             {
                 if ($row['password'] === $_POST['password']){
-                    $_SESSION['client'] = $row['nom'];
+                    $_SESSION['client'] = $row;
                     redirect('home');
                 }
                 
@@ -29,12 +29,16 @@ class Login extends Controller
         $this->view('login',$data);
 
     }
-    public function logout()
-    {
-        
-        unset($_SESSION['client']);
-        
-        redirect('home');
-    }
+
 }
+/* if (empty($_SESSION['USER'])) {
+    $username = 'guest';
+    $userrole = 'guest';
+}else{
+    //show($_SESSION['USER']);
+    $username = $_SESSION['USER']['nom'];
+    $userrole = $_SESSION['USER']['role'];
+}
+$data['username'] = $username;
+$data['userrole'] = $userrole; */
 

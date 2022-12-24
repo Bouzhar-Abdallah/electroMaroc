@@ -15,7 +15,18 @@ class Home extends Controller
         show($a);
         show($b);
         show($c); */
-        $this->view('home');
+        $data = [];
+        /* if (empty($_SESSION['USER'])) {
+            $username = 'guest';
+            $userrole = 'guest';
+        }else{
+            //show($_SESSION['USER']);
+            $username = $_SESSION['USER']['nom'];
+            $userrole = $_SESSION['USER']['role'];
+        }
+        $data['username'] = $username;
+        $data['userrole'] = $userrole; */
+        $this->view('home',$data);
     }
     public function edit($a = '', $b = '', $c = '')
     {
