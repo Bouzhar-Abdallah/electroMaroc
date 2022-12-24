@@ -31,6 +31,7 @@
             </label>
             <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="password" name="password" id="">
         </div>
+        <input type="text" name="role" value="user" hidden id="">
         <!-- <div class="mt-2 flex flex-col">
             <label class="capitalize" for="x">repetez mot de passe :
             </label>

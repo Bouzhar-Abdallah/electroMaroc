@@ -2,7 +2,7 @@
 
 class User extends Model
 {
-    protected $table = 'client';
+    protected $table = 'user';
 
     protected $allowedColumns = [
         'password',
