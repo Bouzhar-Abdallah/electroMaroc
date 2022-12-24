@@ -33,6 +33,7 @@ class Login extends Controller
     {
         
         unset($_SESSION['client']);
+        
         redirect('home');
     }
 }

@@ -8,7 +8,7 @@ function show($stuff)
 }
 
 function redirect($path){
-    header("location: ".ROOT."/".$path);
+    header("location: ".ROOT.$path);
     die;
 }
 
