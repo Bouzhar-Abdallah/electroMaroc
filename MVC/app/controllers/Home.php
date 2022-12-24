@@ -11,10 +11,10 @@ class Home extends Controller
 
         //$result = $model->findAll();
         
-        echo "this is the home controller";
+        /* echo "this is the home controller";
         show($a);
         show($b);
-        show($c);
+        show($c); */
         $this->view('home');
     }
     public function edit($a = '', $b = '', $c = '')
