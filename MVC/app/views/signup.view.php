@@ -8,15 +8,8 @@
     <title>Document</title>
 </head>
 <body >
-    
-    <div class="flex gap-3 h-screen w-screen p-3">
+        <?php  require_once 'components/navbar.php';?>
+        <?php  require_once 'components/signup.php';?>
 
-        
-        <div class="flex flex-col gap-3 w-full">
-          
-            <?php  require_once 'components/newproduct.php';?>
-        </div>
-    </div>
 </body>
-<script src="<?= ROOT ?>assets/js/flowbite.js"></script>
 </html>

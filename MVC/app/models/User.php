@@ -2,7 +2,7 @@
 
 class User extends Model
 {
-    protected $table = 'users';
+    protected $table = 'client';
 
     protected $allowedColumns = [
         'password',
@@ -28,7 +28,7 @@ class User extends Model
 
         if (empty($this->errors))
         {
-            
+            return true;
         }
     }
 }

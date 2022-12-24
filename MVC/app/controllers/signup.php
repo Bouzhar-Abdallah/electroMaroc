@@ -5,15 +5,19 @@ class Signup extends Controller
 {
     public function index()
     {
-
-        $user = new User;
-        if ($user->validate($_POST)) {
-            $user->insert($_POST);
-            redirect('home');
+        if ($_SERVER['REQUEST_METHOD'] == "POST") 
+        {
+            
+            $user = new User;
+            if ($user->validate($_POST)) {
+                $user->insert($_POST);
+                redirect('home');
+            }
+            
+            $data['errors'] = $user->errors;
         }
-        $errors = $user->errors;
-        $this->view('signup',$errors);
-    }
-    
+        $this->view('signup',$data);
+
+}
 }
 
