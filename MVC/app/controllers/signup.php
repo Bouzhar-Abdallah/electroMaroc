@@ -5,8 +5,15 @@ class Signup extends Controller
 {
     public function index()
     {
-        //echo "this is the products controller";
-        $this->view('signup');
+
+        $user = new User;
+        if ($user->validate($_POST)) {
+            $user->insert($_POST);
+            redirect('home');
+        }
+        $errors = $user->errors;
+        $this->view('signup',$errors);
     }
+    
 }
 
