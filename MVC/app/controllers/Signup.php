@@ -12,7 +12,7 @@ class Signup extends Controller
             redirect('home');
         }
         $errors = $user->errors;
-        $this->view('signup',$data);
+        $this->view('signup',$errors);
     }
     
 }
