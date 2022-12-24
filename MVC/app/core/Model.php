@@ -4,10 +4,11 @@ class Model extends Database
 {
     
     //protected $table;
-    protected $limit = 10;
-    protected $offset = 0;
-    protected $order_type = "desc";
+    protected $limit        = 10;
+    protected $offset       = 0;
+    protected $order_type   = "desc";
     protected $order_column = "id";
+    protected $errors       = [];
 
     /* public function __construct($table)
     {
@@ -80,7 +81,7 @@ class Model extends Database
                 }
             }
         }
-        
+
         $keys = array_keys($data);
         $query = "insert into $this->table (".implode(",",$keys).") values (:".implode(",:",$keys).")";
         $this->query($query, $data);
