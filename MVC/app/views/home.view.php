@@ -8,6 +8,6 @@
     <title>home</title>
 </head>
 <body>
-    <h1 class="">home view</h1>
+    
 </body>
 </html>
