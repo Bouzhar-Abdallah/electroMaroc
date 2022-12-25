@@ -11,25 +11,21 @@ class Photo extends Model
 
     public function validate($data)
     {
-        $this->errors = [];
-
-       /*  if (empty($data["email"])) 
-        {
-            $this->errors["email"] = "Email is required";
-        }else 
-        if(!filter_var($data['email'],FILTER_VALIDATE_EMAIL))
-        {
-            $this->errors["email"] = "Email is not valid";
+        
+        $photos_uploaded = 0;
+        foreach ($data['photos']['error'] as $value) {
+            
+            if ($value === 0) {
+                $photos_uploaded++;
+            }
         }
-        if (empty($data["password"])) 
-        {
-            $this->errors["password"] = "password is required";
+        if ($photos_uploaded === 0) {
+            $this->errors["photo"] = "veuillez telecharger au moin une image";
         }
-
+        
         if (empty($this->errors))
         {
             return true;
-        } */
-        return true;
+        }
     }
 }

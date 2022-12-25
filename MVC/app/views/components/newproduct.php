@@ -3,7 +3,11 @@
     <form class=" p-5 container mx-auto xl:w-2/3 border bg-white border-cadeth" action="" method="post" enctype="multipart/form-data">
 
         <h1 class="capitalize font-bold text-2xl border-b pb-1">creer un nouveau produit</h1>
-
+        <?php if (!empty($errors)){?>
+            <div class="bg-red-200 py-3 px-2 ">
+                <?= implode("<br>",$errors) ?>
+            </div>
+         <?php }?>
         <div class="grid md:grid-cols-2 mt-8 md:gap-4 border-b pb-8">
             <div class=" flex flex-col">
                 <label class="label-style" for="x">libile :
