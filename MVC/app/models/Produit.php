@@ -1,6 +1,6 @@
 <?php
 
-class Admin extends Model
+class Produit extends Model
 {
     //protected $table = 'produit';
 

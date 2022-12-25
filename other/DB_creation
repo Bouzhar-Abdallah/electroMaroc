@@ -1,7 +1,7 @@
-create database electromaroc2;
-use electromaroc2;
+create database electromaroc3;
+use electromaroc3;
 
-create table user(
+create table user (
 id int not null auto_increment primary key,
 nom varchar(255),
 numero_tel int,
@@ -33,8 +33,17 @@ create table produit(
     prix_achat float,
     prix_final float,
     prix_offre float,
-    photo blob,
+    id_photo_principale int,
+    -- foreign key (id_photo_principale) references photo(id) ON DELETE CASCADE,
     visibilite boolean
+);
+
+
+create table photo(
+    id int not null auto_increment primary key,
+    photo blob,
+    id_produit int,
+    foreign key (id_produit) references produit(id) ON DELETE CASCADE
 );
 
 

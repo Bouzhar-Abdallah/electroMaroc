@@ -86,6 +86,8 @@
         </tbody>
     </table>
     <div class="absolute right-0 bottom-0">
-        <button class="btn-primary ">ajouter nouveau produit</button>
+        <a href="<?=ROOT;?>admin/newproduct">
+            <button class="btn-primary ">ajouter nouveau produit</button>
+        </a>
     </div>
 </div>
