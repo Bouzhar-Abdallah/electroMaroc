@@ -9,6 +9,7 @@ class Model extends Database
     protected   $order_type   = "desc";
     protected   $order_column = "id";
     public      $errors       = [];
+    public      $feddbacks    = [];
 
     function __construct()
     {
@@ -45,6 +46,28 @@ class Model extends Database
         $data = array_merge($data,$data_not);
         return $this->query($query, $data);
     }
+    public function last($data, $data_not = [])
+    {
+        $keys = array_keys($data);
+        $keys_not = array_keys($data_not);
+        $query = "select * from $this->table where ";
+
+        foreach ($keys as $key ) {
+            $query .= $key ." = :" .$key." && ";
+        }
+        foreach ($keys_not as $key ) {
+            $query .= $key ." != :" .$key." && ";
+        }
+
+        $query = trim($query," && ");
+
+        $query .= " order by $this->order_column desc limit $this->limit offset $this->offset";
+
+        $data = array_merge($data,$data_not);
+        $result = $this->query($query, $data);
+        if ($result)return $result[0];
+        return false;
+    }
 
 
     public function first($data, $data_not =[])
@@ -72,7 +95,6 @@ class Model extends Database
         return false;
     }
 
-
     public function insert($data)
     {
         /* removing unwanted data */
@@ -86,8 +108,8 @@ class Model extends Database
 
         $keys = array_keys($data);
         $query = "insert into $this->table (".implode(",",$keys).") values (:".implode(",:",$keys).")";
-        $this->query($query, $data);
-        return false;
+        if ($this->query($query, $data))return false;
+        return true;
     }
 
     public function update($id, $data, $id_column = 'id')

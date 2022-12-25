@@ -1,6 +1,6 @@
 <?php
 
-class Produit extends Model
+class Photo extends Model
 {
     //protected $table = 'produit';
 

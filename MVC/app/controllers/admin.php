@@ -35,26 +35,7 @@ class Admin extends Controller
         $data = [];
         $this->view('admin',$data,'table-products');
     }
-    public function newproduct($a = '', $b = '', $c = '')
-    {
-        $data = [];
-        if ($_SERVER['REQUEST_METHOD'] == "POST") 
-        {
-            $data = [];
-            $data = $_POST;
-            $produit = new Produit;
-            //$produit->insert($data);
-            /* if ($user->validate($data)) {
-                redirect('home');
-            }
-            
-            $data['errors'] = $user->errors; */
-            show($data);
-            show($_FILES);
-        }else
-        
-        $this->view('admin',$data,'newproduct');
-    }
+    
 
     public function commands($a = '', $b = '', $c = '')
     {

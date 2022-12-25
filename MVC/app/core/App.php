@@ -18,18 +18,20 @@ class App
 
         /* select controller */
         $filename = '../app/controllers/'.ucfirst($URL[0]).'.php';
+
         if(file_exists($filename))
         {
+
             require_once $filename;
             $this->controller = ucfirst($URL[0]);
             unset($URL[0]);
         }else 
         {
+
             $filename = '../app/controllers/_404.php';
             require_once $filename;
             $this->controller = "_404";
         }
-
         $controller = new $this->controller;
 
         /* select method */
