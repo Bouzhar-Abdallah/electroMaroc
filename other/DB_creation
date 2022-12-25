@@ -39,9 +39,11 @@ create table produit(
 );
 
 
+
 create table photo(
     id int not null auto_increment primary key,
     photo blob,
+    display_order int,
     id_produit int,
     foreign key (id_produit) references produit(id) ON DELETE CASCADE
 );
