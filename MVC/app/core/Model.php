@@ -4,11 +4,11 @@ class Model extends Database
 {
     
     //protected $table;
-    protected $limit        = 10;
-    protected $offset       = 0;
-    protected $order_type   = "desc";
-    protected $order_column = "id";
-    public $errors       = [];
+    protected   $limit        = 10;
+    protected   $offset       = 0;
+    protected   $order_type   = "desc";
+    protected   $order_column = "id";
+    public      $errors       = [];
 
     /* public function __construct($table)
     {
