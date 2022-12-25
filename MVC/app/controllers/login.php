@@ -17,7 +17,7 @@ class Login extends Controller
             if ($row) 
             {
                 if ($row['password'] === $_POST['password']){
-                    $_SESSION['client'] = $row;
+                    $_SESSION['USER'] = $row;
                     redirect('home');
                 }
                 
