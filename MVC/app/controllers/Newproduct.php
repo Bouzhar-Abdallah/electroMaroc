@@ -36,7 +36,7 @@ class Newproduct extends Controller
                             $photo->insert($photos);
                             $key++;
                         }
-                    
+                        /* to set principale image */
                         $photo_principale =$photo->first(array("id_produit"=>$product['id'],"display_order"=>1));
                         $produit->update($product['id'],array('id_photo_principale'=>$photo_principale['id']));
                     }
