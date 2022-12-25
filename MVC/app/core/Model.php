@@ -3,18 +3,20 @@
 class Model extends Database
 {
     
-    //protected $table;
+    
     protected   $limit        = 10;
     protected   $offset       = 0;
     protected   $order_type   = "desc";
     protected   $order_column = "id";
     public      $errors       = [];
 
-    /* public function __construct($table)
+    function __construct()
     {
-        $table;
-        $this->table = $table;
-    } */
+        if (!property_exists($this,'table')) 
+        {
+            $this->table = strtolower($this::class);
+        }
+    }
 
     public function findAll()
     {

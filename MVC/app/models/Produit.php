@@ -2,7 +2,7 @@
 
 class Admin extends Model
 {
-    protected $table = 'produit';
+    //protected $table = 'produit';
 
     protected $allowedColumns = [
         'password',

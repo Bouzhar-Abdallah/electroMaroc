@@ -26,9 +26,9 @@ class Admin extends Controller
         }
         $data['username'] = $username;
         $data['userrole'] = $userrole; */
-        $this->view('admin',$data);
+        $this->view('admin',$data,'table-products');
     }
-    public function edit($a = '', $b = '', $c = '')
+    public function new($a = '', $b = '', $c = '')
     {
         /* $model = new User;
         $arr["password"] = "hatikmi";
@@ -37,7 +37,7 @@ class Admin extends Controller
         //$result = $model->findAll();
         show("from admin function");
         //echo "this is the home controller";
-        $this->view('admin');
+        
     }
 }
 

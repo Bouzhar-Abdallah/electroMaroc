@@ -1,5 +1,5 @@
 <div class="p-3 bg-gray-200 h-full ">
-    <form action="signup" class=" p-5 container mx-auto lg:w-2/3 border bg-white border-cadeth" action="" method="post" enctype="multipart/form-data">
+    <form action="signup" class=" p-5 container mx-auto xl:w-2/3 border bg-white border-cadeth" action="" method="post" enctype="multipart/form-data">
         <h1 class="capitalize font-bold text-2xl border-b pb-1">creer un nouveau produit</h1>
         <div class="grid md:grid-cols-2 mt-8 md:gap-4 border-b pb-8">
             <div class=" flex flex-col">

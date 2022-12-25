@@ -2,11 +2,21 @@
 
 class Controller 
 {
-    public function view($name, $data = [])
+    public function view($name, $data = [], $component = '')
     {
         if (!empty($data)) extract($data);
 
+        $componentfile = '../app/views/components/'.$component.'.php';
         $filename = '../app/views/'.$name.'.view.php';
+        
+        if(file_exists($componentfile))
+        {
+            $componentfile = 'components/'.$component.'.php';
+        }else 
+        {
+            $componentfile = $componentfile = 'components/404.php';
+        }
+        
         if(file_exists($filename))
         {
             require_once $filename;
@@ -15,5 +25,6 @@ class Controller
             $filename = '../app/views/404.view.php';
             require_once $filename;
         }
+        
     }
 }
