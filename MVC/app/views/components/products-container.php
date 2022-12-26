@@ -1,6 +1,6 @@
 <div class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-5">
         <!-- product item -->
-        <?php foreach($data as $value){ ?>
+        <?php if(!empty($data)) foreach($data as $value){?>
         
         <div class="bg-white overflow-hidden hover:shadow border transition-colors hover:border-P_blue">
             <a href="#">
@@ -8,7 +8,7 @@
             </a>
             <div class="p-3">
                 <a href="#" class="hover:text-gray-600 text-black font-thin">
-                    <h3><?=$value['description'];?></h3>
+                    <h3><?=$value['libelle'];?></h3>
                     <div class=" flex items-center gap-5 my-1 text-xl font-bold">
                         <p class="text-xl">$ <?=$value['prix_final'];?>.99</p>
                         <p class="text-gray-400 line-through text-base">$ 25.99</p>

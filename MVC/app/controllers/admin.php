@@ -17,7 +17,7 @@ class Admin extends Controller
         $categorie = new Categorie;
 
         $data = $produit->findAll();
-      
+        if(!empty($data))
         foreach ($data as $key => $value) {
             $data[$key]['categoriename'] = $categorie->categoriename($value['id_categorie']);
         }
@@ -28,6 +28,18 @@ class Admin extends Controller
     {
         $model = new $a();
         $model->delete($b,'id');
+        redirect('admin');
+    }
+    public function switchV($a = '', $b = '', $c = '', $d = '')
+    {
+        
+        $model = new $a();
+        $row = $model->where(array('id'=>$b));
+        if ($row[0]['visibilite'] === '1') {
+            $model->update($b,array('visibilite'=>0));
+        }else {
+            $model->update($b,array('visibilite'=>1));
+        }
         redirect('admin');
     }
 

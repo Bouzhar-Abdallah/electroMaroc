@@ -28,7 +28,8 @@ class Home extends Controller
         $data['userrole'] = $userrole; */
         $produit = new Produit;
         $photo = new Photo;
-        $data = $produit->findAll();
+        $data = $produit->where(array("visibilite" => 1));
+        if(!empty($data))
         foreach ($data as $key => $value) {
             $data[$key]['id_photo_principale'] =($photo->first(array('id'=>$value['id_photo_principale']))['photo']) ;
         }
