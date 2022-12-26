@@ -70,3 +70,11 @@ create table ligne_commande (
     prix_vente float
 )
 
+create table carte (
+    id int not null auto_increment primary key,
+    id_produit int,
+    foreign key (id_produit) references produit(id),
+    id_client int,
+    foreign key (id_client) references user(id)
+)
+

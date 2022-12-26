@@ -1385,6 +1385,18 @@ input:checked + .toggle-bg {
   margin-bottom: 1rem;
 }
 
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
 .block {
   display: block;
 }

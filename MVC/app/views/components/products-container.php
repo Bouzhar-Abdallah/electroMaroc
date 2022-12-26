@@ -2,8 +2,8 @@
         <!-- product item -->
         <?php if(!empty($data)) foreach($data as $value){?>
         
-        <div class="bg-white overflow-hidden hover:shadow border transition-colors hover:border-P_blue">
-            <a href="#">
+        <div class="flex flex-col justify-between bg-white overflow-hidden hover:shadow border transition-colors hover:border-P_blue">
+            <a class="" href="#">
                 <img class=" scale-100 hover:scale-105 transition-all" src="data:image/jpeg;base64,<?= base64_encode($value["id_photo_principale"])?>" alt="" srcset="">
             </a>
             <div class="p-3">
