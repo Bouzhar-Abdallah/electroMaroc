@@ -1,1 +1,1 @@
-<h1>not found</h1>
+<h1>404 view not found</h1>

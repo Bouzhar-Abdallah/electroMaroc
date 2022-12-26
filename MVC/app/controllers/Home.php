@@ -5,16 +5,7 @@ class Home extends Controller
 {
     public function index($a = '', $b = '', $c = '')
     {
-        /* $model = new User;
-        $arr["password"] = "hatikmi";
-        $arr["email"] = "bouzhar.lahcen@gmail.com"; */
-
-        //$result = $model->findAll();
         
-        /* echo "this is the home controller";
-        show($a);
-        show($b);
-        show($c); */
         $data = [];
         /* if (empty($_SESSION['USER'])) {
             $username = 'guest';
@@ -33,7 +24,7 @@ class Home extends Controller
         foreach ($data as $key => $value) {
             $data[$key]['id_photo_principale'] =($photo->first(array('id'=>$value['id_photo_principale']))['photo']) ;
         }
-        $this->view('home',$data);
+        $this->view('home',$data,'products-container');
     }
     public function edit($a = '', $b = '', $c = '')
     {

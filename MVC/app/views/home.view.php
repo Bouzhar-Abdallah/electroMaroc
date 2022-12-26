@@ -9,7 +9,7 @@
 </head>
 <body >
         <?php  require_once 'components/navbar.php';?>
-        <?php  require_once 'components/products-container.php';?>
+        <?php require_once $componentfile; ?>
 
 </body>
 </html>
