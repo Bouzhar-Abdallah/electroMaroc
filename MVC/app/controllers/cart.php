@@ -14,10 +14,33 @@ class Cart extends Controller
 
     public function index($a = '', $b = '', $c = '')
     {
-        if(empty($a))
+        
+        //if(empty($a))
         $data = [];
+        $arr = [];
+        $produit = new Produit;
+        $carte = new Carte;
+        $photo = new Photo;
+        $produits_id = $carte->idwhere(
+            array('id_client' => $_SESSION['USER']['id']),
+            'id_produit'
+        );
+      
+        foreach ($produits_id as  $value) {
+                 array_push($data,($produit->where(array('id'=> $value['id_produit']))[0]));
+        }
+        foreach ($data as $key => $value) {
+            $data[$key]['id_photo_principale'] =($photo->first(array('id'=>$value['id_photo_principale']))['photo']) ;
+        }
+        
+         
+        
+        
+
+     
         $this->view('home',$data,'cart');
     }
+
     public function add($a = '', $b = '', $c = '')
     {
         $carte = new Carte;
@@ -26,8 +49,6 @@ class Cart extends Controller
             'id_client'=> $_SESSION['USER']['id']
         );
 
-        
-        
         $carte->insert($data);
         redirect('home');
     }

@@ -47,6 +47,26 @@ class Model extends Database
 
         return $this->query($query, $data);
     }
+    
+    public function idwhere($data, $s = '*')
+    {
+        $keys = array_keys($data);
+        
+        $query = "select $s from $this->table where ";
+
+        foreach ($keys as $key ) {
+            $query .= $key ." = :" .$key." && ";
+        }
+        
+
+        $query = trim($query," && ");
+
+        $query .= " order by $this->order_column $this->order_type limit $this->limit offset $this->offset";
+
+        
+
+        return $this->query($query, $data);
+    }
     public function last($data, $data_not = [])
     {
         $keys = array_keys($data);

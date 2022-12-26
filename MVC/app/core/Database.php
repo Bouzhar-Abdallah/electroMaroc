@@ -15,7 +15,7 @@ class Database
         $con = $this->connect();
         $stmt = $con->prepare($query);
         $check = $stmt->execute($data);
-        
+        //show($query);
         if ($check) 
         {
             $result = $stmt->fetchAll();
