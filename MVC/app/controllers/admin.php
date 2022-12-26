@@ -24,13 +24,20 @@ class Admin extends Controller
         $this->view('admin',$data,'table-products');
     }
     
+    public function delete($a = '', $b = '', $c = '')
+    {
+        $model = new $a();
+        $model->delete($b,'id');
+        redirect('admin');
+    }
 
+    /* 
     public function commands($a = '', $b = '', $c = '')
     {
         $data = [];
         $this->view('admin',$data,'table-commands');
     }
-    /* $model = new User;
+    $model = new User;
         $arr["password"] = "hatikmi";
         $arr["email"] = "bouzhar.lahcen@gmail.com"; */
 
