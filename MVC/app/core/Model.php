@@ -44,6 +44,7 @@ class Model extends Database
         $query .= " order by $this->order_column $this->order_type limit $this->limit offset $this->offset";
 
         $data = array_merge($data,$data_not);
+
         return $this->query($query, $data);
     }
     public function last($data, $data_not = [])
@@ -136,7 +137,7 @@ class Model extends Database
         $query .= " where $id_column = :$id_column";
         
         $data[$id_column] = $id;
-        show($query);
+
         $this->query($query, $data);
         return false;
     }

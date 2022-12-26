@@ -26,6 +26,12 @@ class Home extends Controller
         }
         $data['username'] = $username;
         $data['userrole'] = $userrole; */
+        $produit = new Produit;
+        $photo = new Photo;
+        $data = $produit->findAll();
+        foreach ($data as $key => $value) {
+            $data[$key]['id_photo_principale'] =($photo->first(array('id'=>$value['id_photo_principale']))['photo']) ;
+        }
         $this->view('home',$data);
     }
     public function edit($a = '', $b = '', $c = '')

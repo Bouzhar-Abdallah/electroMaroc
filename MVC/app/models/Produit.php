@@ -12,11 +12,12 @@ class Produit extends Model
     public function validate($data)
     {
         $this->errors = [];
-
-        /*  if (empty($data["email"])) 
+/*
+         if (empty($data["id_categorie"])) 
         {
-            $this->errors["email"] = "Email is required";
-        }else 
+            $this->errors["categorie"] = "categoriy is required";
+        }
+        else 
         if(!filter_var($data['email'],FILTER_VALIDATE_EMAIL))
         {
             

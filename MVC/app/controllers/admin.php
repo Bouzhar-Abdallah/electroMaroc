@@ -12,7 +12,25 @@ class Admin extends Controller
     }
     public function index($a = '', $b = '', $c = '')
     {
-        /* $model = new User;
+        $data = [];
+        $produit = new Produit;
+        $categorie = new Categorie;
+
+        $data = $produit->findAll();
+      
+        foreach ($data as $key => $value) {
+            $data[$key]['categoriename'] = $categorie->categoriename($value['id_categorie']);
+        }
+        $this->view('admin',$data,'table-products');
+    }
+    
+
+    public function commands($a = '', $b = '', $c = '')
+    {
+        $data = [];
+        $this->view('admin',$data,'table-commands');
+    }
+    /* $model = new User;
         $arr["password"] = "hatikmi";
         $arr["email"] = "bouzhar.lahcen@gmail.com"; */
 
@@ -32,15 +50,5 @@ class Admin extends Controller
         }
         $data['username'] = $username;
         $data['userrole'] = $userrole; */
-        $data = [];
-        $this->view('admin',$data,'table-products');
-    }
-    
-
-    public function commands($a = '', $b = '', $c = '')
-    {
-        $data = [];
-        $this->view('admin',$data,'table-commands');
-    }
 }
 
