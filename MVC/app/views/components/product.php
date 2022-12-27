@@ -1,12 +1,20 @@
+        
+        
+
+
+
+
 <div class="flex m-5">
     <div class="  h-full w-32">
-        <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="<?= ROOT ?>assets/images/a.jpg" alt="" srcset="">
-        <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="<?= ROOT ?>assets/images/b.jpg" alt="" srcset="">
-        <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="<?= ROOT ?>assets/images/f1.jpg" alt="" srcset="">
-        <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="<?= ROOT ?>assets/images/a.jpg" alt="" srcset="">
+        
+        <?php foreach ($data['photo'] as $value) {?>
+            <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="data:image/jpeg;base64,<?= base64_encode($value)?>" alt="" srcset="">
+        <?php } ?>
+
+
     </div>
     <div class="p-10 ">
-    <img class="aspect-square" src="<?= ROOT ?>assets/images/b.jpg" alt="" srcset="">
+        <img class="aspect-square" src="data:image/jpeg;base64,<?= base64_encode($data['photo']['0'])?>" alt="" srcset="">
     </div>
     <div class="flex gap-3 flex-col w-120 h-fit border border-P_navy p-5 hover:shadow-lg transition-shadow">
         <div class=" flex items-center gap-5 my-1 text-xl font-bold">
@@ -14,11 +22,11 @@
             <p class="text-gray-400 line-through text-base">$ 25.99</p>
         </div>
         <div class="flex gap-5 items-end">
-        <p class="font-bold text-xl capitalize text-end">nom produit</p>
-        <p class="font-thing text-xs text-gray-600">Ref: xsscj3344j2</p>
+            <p class="font-bold text-xl capitalize text-end">nom produit</p>
+            <p class="font-thing text-xs text-gray-600">Ref: xsscj3344j2</p>
         </div>
         <p class=" text-black font-thin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias mollitia praesentium laborum natus</p>
-        
+
         <div class="flex items-center justify-between">
             <label class="capitalize text-end" for="quantite">quantité</label>
             <!-- border border-P_navy pl-2 w-20 -->
@@ -47,13 +55,13 @@
 
         <div class="flex gap-2 h-10 justify-between items-center mt-4">
             <button class="btn-icon">
-                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                 </svg>
 
             </button>
             <button class="btn-icon">
-                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                 </svg>
 
