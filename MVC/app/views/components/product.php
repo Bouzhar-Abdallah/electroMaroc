@@ -7,25 +7,28 @@
 <div class="flex m-5">
     <div class="  h-full w-32">
         
-        <?php foreach ($data['photo'] as $value) {?>
-            <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="data:image/jpeg;base64,<?= base64_encode($value)?>" alt="" srcset="">
+        <?php foreach ($data['photos'] as $key => $value){?>
+            <a href="<?=ROOT.'product/'. $data['data_produit']['id'].'/'.$key; ?>">
+                <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="data:image/jpeg;base64,<?= base64_encode($value['photo'])?>" alt="" srcset="">
+            </a>
+        
         <?php } ?>
 
 
     </div>
     <div class="p-10 ">
-        <img class="aspect-square" src="data:image/jpeg;base64,<?= base64_encode($data['photo']['0'])?>" alt="" srcset="">
+        <img class="aspect-square" src="data:image/jpeg;base64,<?= base64_encode($data['photos'][$picture]['photo'])?>" alt="" srcset="">
     </div>
     <div class="flex gap-3 w-[500px] flex-col w-120 h-fit border border-P_navy p-5 hover:shadow-lg transition-shadow">
         <div class=" flex items-center gap-5 my-1 text-xl font-bold">
-            <p class="text-xl">$ <?= $data['prix_final']?></p>
+            <p class="text-xl">$ <?= $data['data_produit']['prix_final']?></p>
             <p class="text-gray-400 line-through text-base">$ 300</p>
         </div>
         <div class="flex gap-5 items-end">
-            <p class="font-bold text-xl capitalize text-end"><?= $data['libelle']?></p>
-            <p class="font-thing text-xs text-gray-600">Ref: <?= $data['ref']?></p>
+            <p class="font-bold text-xl capitalize text-end"><?= $data['data_produit']['libelle']?></p>
+            <p class="font-thing text-xs text-gray-600">Ref: <?= $data['data_produit']['ref']?></p>
         </div>
-        <p class=" text-black font-thin"><?= $data['description']?></p>
+        <p class=" text-black font-thin"><?= $data['data_produit']['description']?></p>
 
         <div class="flex items-center justify-between">
             <label class="capitalize text-end" for="quantite">quantité</label>

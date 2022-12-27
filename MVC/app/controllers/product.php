@@ -3,8 +3,9 @@
 
 class Product extends Controller
 {
-    public function index($a = '', $b = '', $c = '')
+    public function index($a = '', $b = 0, $c = '')
     {
+       
         $produit = new Produit;
         $photo = new Photo;
         $data = [];
@@ -14,22 +15,18 @@ class Product extends Controller
             'visibilite' => '1'
         );
         
-        $data = $produit->first($arr);
+        $data_produit = $produit->first($arr);
         
         $photos = ($photo->where(
-            array('id_produit' => $data['id'])
+            array('id_produit' => $data_produit['id'])
         ));
        
 
 
-        $order = 0;
-        foreach ($photos as $key => $value) {
-            $data['photo'][$order] = $value['photo'];
-            $order ++;
-        }
+        $data=['data_produit' => $data_produit,'photos' => $photos];
 
 
-        $this->view('home',$data,'product');
+        $this->view('home',$data,'product',$b);
         
     }
 }
