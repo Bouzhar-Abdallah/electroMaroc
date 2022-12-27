@@ -12,21 +12,14 @@ class Carte extends Model
     public function validate($data)
     {
         $this->errors = [];
-
-        /* if (empty($data["email"])) 
+        $this->feedbacks = [];
+        if (!empty($this->first($data))) 
         {
-            $this->errors["email"] = "Email is required";
-        }else 
-        if(!filter_var($data['email'],FILTER_VALIDATE_EMAIL))
-        {
-            $this->errors["email"] = "Email is not valid";
+            $this->feedbacks["item"] = "ce produit exist deja dans votre panier";
         }
-        if (empty($data["password"])) 
-        {
-            $this->errors["password"] = "password is required";
-        }
- */
-        if (empty($this->errors))
+        
+ 
+        if (empty($this->feedbacks))
         {
             return true;
         }

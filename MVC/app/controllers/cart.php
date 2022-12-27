@@ -5,7 +5,7 @@ class Cart extends Controller
 {
     function __construct()
     {
-        
+
         if ($_SESSION['USER']['role'] != 'user') {
             redirect('login');
             /* todo */
@@ -14,7 +14,7 @@ class Cart extends Controller
 
     public function index($a = '', $b = '', $c = '')
     {
-        
+
         //if(empty($a))
         $data = [];
         $arr = [];
@@ -25,32 +25,38 @@ class Cart extends Controller
             array('id_client' => $_SESSION['USER']['id']),
             'id_produit'
         );
-      
-        foreach ($produits_id as  $value) {
-                 array_push($data,($produit->where(array('id'=> $value['id_produit']))[0]));
-        }
-        foreach ($data as $key => $value) {
-            $data[$key]['id_photo_principale'] =($photo->first(array('id'=>$value['id_photo_principale']))['photo']) ;
-        }
-        
-         
-        
-        
+        show($produits_id);
+        if (!empty($produits_id)) {
 
-     
-        $this->view('home',$data,'cart');
+            foreach ($produits_id as  $value) {
+                array_push($data, ($produit->where(array('id' => $value['id_produit']))[0]));
+            }
+            foreach ($data as $key => $value) {
+                $data[$key]['id_photo_principale'] = ($photo->first(array('id' => $value['id_photo_principale']))['photo']);
+            }
+        }
+
+
+
+
+
+
+        $this->view('home', $data, 'cart');
     }
 
     public function add($a = '', $b = '', $c = '')
     {
         $carte = new Carte;
         $data = array(
-            'id_produit'=> $a,
-            'id_client'=> $_SESSION['USER']['id']
+            'id_produit' => $a,
+            'id_client' => $_SESSION['USER']['id']
         );
+        if ($carte->validate($data)) 
+        {
+            $carte->insert($data);
+        }
 
-        $carte->insert($data);
-        redirect('home');
+        
+        redirect('');
     }
 }
-

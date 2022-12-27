@@ -12,7 +12,7 @@
         </div>
         <!-- cart product widget -->
         
-        
+       
         <?php if(!empty($data)) foreach($data as $value){?>
         <div class="flex gap-3 bg-cadethh p-3 my-5 hover:shadow-lg transition-all border border-cadethh hover:border-cadet scale-100 hover:scale-101 ">
 
