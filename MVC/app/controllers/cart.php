@@ -32,6 +32,7 @@ class Cart extends Controller
             {
                 $arr =$produit->where(array('id' => $value['id_produit']))[0];
                 $arr['id_cart_item']=$value['id'];
+                if($arr['visibilite'])
                 array_push($data, $arr);
             }
             foreach ($data as $key => $value) if(!empty($data[$key]['id_photo_principale'])){
