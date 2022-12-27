@@ -1321,6 +1321,11 @@ input:checked + .toggle-bg {
   margin-bottom: -0.25rem;
 }
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1498,12 +1503,32 @@ input:checked + .toggle-bg {
   height: 200px;
 }
 
+.h-\[100px\] {
+  height: 100px;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[110px\] {
+  height: 110px;
+}
+
 .max-h-\[\] {
   max-height: ;
 }
 
 .max-h-\[200px\] {
   max-height: 200px;
+}
+
+.max-h-\[100px\] {
+  max-height: 100px;
+}
+
+.max-h-\[110px\] {
+  max-height: 110px;
 }
 
 .w-full {
@@ -1580,6 +1605,26 @@ input:checked + .toggle-bg {
 
 .w-auto {
   width: auto;
+}
+
+.w-\[32\] {
+  width: 32;
+}
+
+.w-\[100px\] {
+  width: 100px;
+}
+
+.w-\[1px\] {
+  width: 1px;
+}
+
+.w-\[140px\] {
+  width: 140px;
+}
+
+.w-\[160px\] {
+  width: 160px;
 }
 
 .flex-1 {
