@@ -21,17 +21,20 @@ class Cart extends Controller
         $produit = new Produit;
         $carte = new Carte;
         $photo = new Photo;
-        $produits_id = $carte->idwhere(
-            array('id_client' => $_SESSION['USER']['id']),
-            'id_produit'
+        $produits_id = $carte->where(
+            array('id_client' => $_SESSION['USER']['id'])
         );
-        show($produits_id);
-        if (!empty($produits_id)) {
 
-            foreach ($produits_id as  $value) {
-                array_push($data, ($produit->where(array('id' => $value['id_produit']))[0]));
+        
+        if (!empty($produits_id)) 
+        {
+            foreach ($produits_id as $key => $value) 
+            {
+                $arr =$produit->where(array('id' => $value['id_produit']))[0];
+                $arr['id_cart_item']=$value['id'];
+                array_push($data, $arr);
             }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value) if(!empty($data[$key]['id_photo_principale'])){
                 $data[$key]['id_photo_principale'] = ($photo->first(array('id' => $value['id_photo_principale']))['photo']);
             }
         }
@@ -56,7 +59,13 @@ class Cart extends Controller
             $carte->insert($data);
         }
 
-        
         redirect('');
+    }
+
+    public function delete($a = '', $b = '', $c = '')
+    {
+        $model = new $a();
+        $model->delete($b,'id');
+        redirect('cart');
     }
 }

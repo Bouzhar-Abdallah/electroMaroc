@@ -22,7 +22,7 @@ class Home extends Controller
         $data = $produit->where(array("visibilite" => 1));
 
         if(!empty($data))
-        foreach ($data as $key => $value) {
+        foreach ($data as $key => $value) if(!empty($data[$key]['id_photo_principale'])) {
             $data[$key]['id_photo_principale'] =($photo->first(array('id'=>$value['id_photo_principale']))['photo']) ;
         }
         $this->view('home',$data,'products-container');
