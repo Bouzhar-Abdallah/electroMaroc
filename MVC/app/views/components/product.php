@@ -16,16 +16,16 @@
     <div class="p-10 ">
         <img class="aspect-square" src="data:image/jpeg;base64,<?= base64_encode($data['photo']['0'])?>" alt="" srcset="">
     </div>
-    <div class="flex gap-3 flex-col w-120 h-fit border border-P_navy p-5 hover:shadow-lg transition-shadow">
+    <div class="flex gap-3 w-[500px] flex-col w-120 h-fit border border-P_navy p-5 hover:shadow-lg transition-shadow">
         <div class=" flex items-center gap-5 my-1 text-xl font-bold">
-            <p class="text-xl">$ 19.99</p>
-            <p class="text-gray-400 line-through text-base">$ 25.99</p>
+            <p class="text-xl">$ <?= $data['prix_final']?></p>
+            <p class="text-gray-400 line-through text-base">$ 300</p>
         </div>
         <div class="flex gap-5 items-end">
-            <p class="font-bold text-xl capitalize text-end">nom produit</p>
-            <p class="font-thing text-xs text-gray-600">Ref: xsscj3344j2</p>
+            <p class="font-bold text-xl capitalize text-end"><?= $data['libelle']?></p>
+            <p class="font-thing text-xs text-gray-600">Ref: <?= $data['ref']?></p>
         </div>
-        <p class=" text-black font-thin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias mollitia praesentium laborum natus</p>
+        <p class=" text-black font-thin"><?= $data['description']?></p>
 
         <div class="flex items-center justify-between">
             <label class="capitalize text-end" for="quantite">quantité</label>
