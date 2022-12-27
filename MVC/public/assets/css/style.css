@@ -1494,6 +1494,18 @@ input:checked + .toggle-bg {
   height: 2rem;
 }
 
+.h-\[200px\] {
+  height: 200px;
+}
+
+.max-h-\[\] {
+  max-height: ;
+}
+
+.max-h-\[200px\] {
+  max-height: 200px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1564,6 +1576,10 @@ input:checked + .toggle-bg {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .flex-1 {
