@@ -15,8 +15,8 @@
 
         <?php require_once 'components/dashboard_bar.php'; ?>
         <div class="flex flex-col gap-3 w-full">
-            <div class="h-32 w-full bg-cadethh">
-            </div>
+            <!-- <div class="h-32 w-full bg-cadethh">
+            </div> -->
             <?php require_once $componentfile; ?>
         </div>
     </div>
