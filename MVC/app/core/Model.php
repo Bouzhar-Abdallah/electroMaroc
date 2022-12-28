@@ -26,11 +26,11 @@ class Model extends Database
 
         return $this->query($query);
     }
-    public function where($data, $data_not = [])
+    public function where($data, $s= '*', $data_not = [])
     {
         $keys = array_keys($data);
         $keys_not = array_keys($data_not);
-        $query = "select * from $this->table where ";
+        $query = "select $s from $this->table where ";
 
         foreach ($keys as $key ) {
             $query .= $key ." = :" .$key." && ";
@@ -169,5 +169,12 @@ class Model extends Database
         $this->query($query, $data);
         return false;
     }
+    public function lastInsertId($s = 'id')
+    {
+        $query = "select $s from $this->table ORDER BY id DESC LIMIT 1";
+
+        return $this->query($query)[0][$s];
+    }
+   
 
 }

@@ -24,4 +24,5 @@ class Carte extends Model
             return true;
         }
     }
+    
 }
