@@ -33,33 +33,55 @@
 
             </tr>
         </thead>
+        <?php foreach ($data as $key => $value) { ?>
+            
+       
         <tbody>
             <th scope="row" class=" px-1 flex items-center h-10 justify-center font-medium  whitespace-nowrap ">
                 <input class=" text-cadeth focus:ring-transparent border-cadethh" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
             </th>
             <td class="py-3 pl-2 bg-red-300">
-                EC
+            <?=$value['etat']?>
             </td>
             <td class="py-3 pl-2 ">
                 abdallah bouzhar
             </td>
             <td class="py-3 pl-2 ">
-                22 - 01 - 2022
+                <?=$value['date_creation']?>
+            </td>
+            <?php if (empty($value['date_envoi'])) {?>
+               
+                <td class="py-3 pl-2">
+                pas encore
+                </td>
+            <?php }else{ ?>
+
+                <td class="py-3 pl-2">
+                <?=$value['date_envoi']?>
+                </td>
+           <?php } ?>
+                <?=$value['date_livraison']?>
+            </td>
+            <?php if (empty($value['date_livraison'])) {?>
+               
+                <td class="py-3 pl-2">
+                pas encore
+                </td>
+            <?php }else{ ?>
+
+                <td class="py-3 pl-2">
+                <?=$value['date_livraison']?>
+                </td>
+           <?php } ?>
+           total_items
+            <td class="py-3 pl-2">
+            <?=$value['total_items']?>
             </td>
             <td class="py-3 pl-2">
-                22 - 01 - 2022
-            </td>
-            <td class="py-3 pl-2">
-                22 - 01 - 2022
-            </td>
-            <td class="py-3 pl-2">
-                5
-            </td>
-            <td class="py-3 pl-2">
-                $2999
+            <?=$value['total_price']?>
             </td>
             <td class="relative">
-                <div class="flex gap-1 opacity-100 hover:opacity-100 transition-opacity ease-in duration-400 absolute right-2 top-1 bg-white">
+                <div class="flex gap-1 opacity-0 hover:opacity-100 transition-opacity ease-in duration-400 absolute right-2 top-1 bg-white">
                     <a href="edit" class="btn-table bg-white">
                         <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
@@ -91,12 +113,8 @@
                 </div>
             </td>
             </tr>
-
-
-
-
-
         </tbody>
+        <?php } ?>
     </table>
     <div class="absolute  flex justify-between right-0 bottom-0 w-full">
         <a href="" class="btn-table bg-white ml-auto">
