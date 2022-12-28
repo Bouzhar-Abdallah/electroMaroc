@@ -15,6 +15,7 @@ class Commandes extends Controller
         $data = [];
         $commande = new Commande;
         $ligne_commande = new Ligne_commande;
+        $user = new User;
         $data = $commande->findAll();
         $total_price = 0;
         $total_items = 0;
@@ -30,11 +31,12 @@ class Commandes extends Controller
 
             $data[$key]['total_items'] = $total_items;
             $data[$key]['total_price'] = $total_price;
+            $data[$key]['client'] = $user->where(array('id' => $comd['id_client']),'nom')['0']['nom'];
+            
             $total_price = 0;
             $total_items = 0;
         }
 
         $this->view('admin',$data,'table-commands');
-        show($data);
     }
 }

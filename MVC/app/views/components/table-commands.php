@@ -44,7 +44,7 @@
             <?=$value['etat']?>
             </td>
             <td class="py-3 pl-2 ">
-                abdallah bouzhar
+            <?=$value['client']?>
             </td>
             <td class="py-3 pl-2 ">
                 <?=$value['date_creation']?>
@@ -73,11 +73,11 @@
                 <?=$value['date_livraison']?>
                 </td>
            <?php } ?>
-           total_items
+
             <td class="py-3 pl-2">
             <?=$value['total_items']?>
             </td>
-            <td class="py-3 pl-2">
+            <td class="py-3 pl-2">$ 
             <?=$value['total_price']?>
             </td>
             <td class="relative">
