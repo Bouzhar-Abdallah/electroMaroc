@@ -39,4 +39,12 @@ class Commandes extends Controller
 
         $this->view('admin',$data,'table-commands');
     }
+
+    public function update($action = '', $id = '', $c = '')
+    {
+        $commande = new Commande;
+        
+            $commande -> update($id,array('etat'=> $action));
+            redirect('commandes');
+    }
 }
