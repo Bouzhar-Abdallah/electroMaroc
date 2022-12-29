@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?= ROOT ?>assets/css/style.css">
 
 
-
+<?php show($data); ?>
 
 <form class="p-5 m-5 h-full flex flex-col   border border-cadethh
 " action="" method="post">
@@ -40,15 +40,27 @@
             <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="x" id="">
         </div> -->
         </div>
-        <div class="flex gap-4 flex-col  container mx-auto lg:w-1/3 " action="" method="post">
-            
-            <input class=" focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="numero_tel" id="" placeholder="numero de tel">
-            <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="Adresse" id="" placeholder="Adresse ligne 1">
-            <!-- <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="ville" id="" placeholder="Adresse ligne 2">
-             --><div class="flex gap-4">
-                <input class="w-full focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="ville" id="" placeholder="ville">
-                <input class="w-1/3 focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="numero_tel" id="" placeholder="zip">
+        <div class="flex flex-col  container mx-auto lg:w-1/3 " action="" method="post">
+            <div class="mt-2 flex flex-col">
+                <label class="capitalize" for="x">adresse :
+                </label>
+                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="adresse" id="" value="<?php if (!empty($data['adresse'])) echo $data['adresse']; ?>">
             </div>
+            <div class="mt-2 flex flex-col">
+                <label class="capitalize" for="x">numero tel :
+                </label>
+                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="numero_tel" id="" value="<?php if (!empty($data['numero_tel'])) echo $data['numero_tel']; ?>">
+            </div>
+            <div class="mt-2 flex flex-col">
+                <label class="capitalize" for="x">ville :
+                </label>
+                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="ville" id="" value="<?php if (!empty($data['numero_tel'])) echo $data['numero_tel']; ?>">
+            </div>
+            
+            
+            <!-- <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="ville" id="" placeholder="Adresse ligne 2">
+             -->
+           
             <!-- <div class="mt-2 flex gap-2">
             <label for="image_profile" class="capitalize">photo :
                 </label>
@@ -58,7 +70,7 @@
         </div>
     </div>
     <div class="lg:w-1/3 mx-auto">
-        
+
         <p class="">By creating an account, you agree to our Conditions of Use and Privacy Notice.</p>
         <p class="mt-6 pt-4 border-t">vous avez deja un compte? login <a class="text-indigo-400 hover:font-bold">ici</a></p>
         <button class="capitalize w-full font-bold btn-primary mt-3 mb-6">submit</button>
