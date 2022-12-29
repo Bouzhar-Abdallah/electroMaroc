@@ -33,7 +33,7 @@
 
             </tr>
         </thead>
-        <?php foreach ($data as $key => $value) { ?>
+        <?php if(!empty($data)) foreach ($data as $key => $value) { ?>
             
        
         <tbody>

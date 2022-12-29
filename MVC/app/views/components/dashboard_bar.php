@@ -1,3 +1,8 @@
+<?php 
+$commande = new Commande;
+$cmd_EC = 0;
+$cmd_EC =$commande->idwhere(array('etat'=>'en cours'),'count(id)')['0']['count(id)'];
+?>
 <aside class="w-64" aria-label="Sidebar">
    <div class="overflow-y-auto py-4 h-full bg-cadet ">
     <ul class="pt-4 space-y-2 border-b border-cadeth pb-3 ">
@@ -26,14 +31,17 @@
             <a href="#" class="flex items-center p-2 text-base font-normal text-white   hover:bg-cadeth ">
                <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75  group-hover:text-white " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
                <span class="flex-1 ml-3 whitespace-nowrap">Inbox</span>
-               <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-cadet bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200">3</span>
+               <!-- <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-cadet bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200">3</span> -->
             </a>
          </li>
          <li>
             <a href="Commandes" class="flex items-center p-2 text-base font-normal text-white   hover:bg-cadeth ">
             <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75  group-hover:text-white " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path></svg>
                <span class="flex-1 ml-3 whitespace-nowrap">commandes</span>
-               <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-cadet bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200">1</span>
+               <?php if ($cmd_EC > 0) {?>
+                  
+                  <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-cadet bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"><?=$cmd_EC?></span>
+               <?php } ?>
             </a>
          </li>
         

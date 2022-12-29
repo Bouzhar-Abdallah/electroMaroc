@@ -175,6 +175,12 @@ class Model extends Database
 
         return $this->query($query)[0][$s];
     }
+    /* public function count($column = '*')
+    {
+        $query = "select count($column) from $this->table";
+
+        return $this->query($query)[0]['count('.$column.')'];
+    } */
    
 
 }
