@@ -1,8 +1,4 @@
-<?php 
-$commande = new Commande;
-$cmd_EC = 0;
-$cmd_EC =$commande->idwhere(array('etat'=>'en cours'),'count(id)')['0']['count(id)'];
-?>
+
 <aside class="w-64" aria-label="Sidebar">
    <div class="overflow-y-auto py-4 h-full bg-cadet ">
     <ul class="pt-4 space-y-2 border-b border-cadeth pb-3 ">

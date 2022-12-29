@@ -1,30 +1,27 @@
 <?php
 
-class Controller 
+class Controller
 {
-    public function view($name, $data = [], $component = '',$picture = 0)
+    public function view($name, $data = [], $component = '', $picture = 0)
     {
         if (!empty($data)) extract($data);
+        $commande = new Commande;
+        $cmd_EC = 0;
+        $cmd_EC = $commande->idwhere(array('etat' => 'en cours'), 'count(id)')['0']['count(id)'];
+        $componentfile = '../app/views/components/' . $component . '.php';
+        $filename = '../app/views/' . $name . '.view.php';
 
-        $componentfile = '../app/views/components/'.$component.'.php';
-        $filename = '../app/views/'.$name.'.view.php';
-        
-        if(file_exists($componentfile))
-        {
-            $componentfile = 'components/'.$component.'.php';
-        }else 
-        {
+        if (file_exists($componentfile)) {
+            $componentfile = 'components/' . $component . '.php';
+        } else {
             $componentfile = $componentfile = 'components/404.php';
         }
-        
-        if(file_exists($filename))
-        {
+
+        if (file_exists($filename)) {
             require_once $filename;
-        }else 
-        {
+        } else {
             $filename = '../app/views/404.view.php';
             require_once $filename;
         }
-        
     }
 }
