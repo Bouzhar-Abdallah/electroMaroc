@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<?= ROOT ?>assets/css/style.css">
     <title>Document</title>
 </head>
-<body >
+<body>
         <?php  require_once 'components/navbar.php';?>
         <?php require_once $componentfile; ?>
 
