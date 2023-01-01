@@ -1,8 +1,5 @@
 <link rel="stylesheet" href="<?= ROOT ?>assets/css/style.css">
 
-
-<?php show($data); ?>
-
 <form class="p-5 m-5 h-full flex flex-col   border border-cadethh
 " action="" method="post">
     <h1 class="capitalize font-bold text-2xl">creer un compte</h1>

@@ -10,6 +10,7 @@ class Commandes extends Controller
             redirect('home');
         }
     }
+    
     public function index($a = '', $b = '', $c = '')
     {
         $data = [];
@@ -21,7 +22,6 @@ class Commandes extends Controller
         $total_items = 0;
         if (!empty($data)) foreach ($data as $key => $comd) 
         {
-
             $commande_infos = $ligne_commande->where(array('id_commande' => $comd['id']), 'quantite, prix_vente');
             foreach ($commande_infos as $value) 
             {
@@ -38,7 +38,6 @@ class Commandes extends Controller
         }
 
         $this->view('admin',$data,'table-commands');
-        
     }
 
     public function update($action = '', $id = '', $c = '')

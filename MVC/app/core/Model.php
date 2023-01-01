@@ -58,7 +58,6 @@ class Model extends Database
             $query .= $key ." = :" .$key." && ";
         }
         
-
         $query = trim($query," && ");
 
         $query .= " order by $this->order_column $this->order_type limit $this->limit offset $this->offset";

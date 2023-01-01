@@ -43,10 +43,11 @@
                 <?=$value['date_creation']; ?>
                 </td>
                 <td class="py-3 pl-2">
-                    x
-                </td>
-                <td class="py-3 pl-2">
-                    x
+                <?=$value['nombre_commandes']; ?>
+            </td>
+            <td class="py-3 pl-2">
+                    <?=$value['total_achats']; ?>
+                    
                 </td>
                 <td class="py-3 pl-2">
                     x
