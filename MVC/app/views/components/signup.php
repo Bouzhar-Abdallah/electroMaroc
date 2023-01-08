@@ -33,7 +33,7 @@
             <div class="mt-2 flex flex-col">
                 <label class="capitalize" for="x">ville :
                 </label>
-                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="ville" id="ville" value="<?php if (!empty($data['numero_tel'])) echo $data['numero_tel']; ?>">
+                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="ville" id="ville" value="<?php if (!empty($data['ville'])) echo $data['ville']; ?>">
             </div>
             <!-- <div class="mt-2 flex flex-col">
             <label class="capitalize" for="x">repetez mot de passe :

@@ -25,6 +25,9 @@ class User extends Model
         {
             $this->errors["password"] = "password is required";
         }
+        if (!empty($this->idwhere(array('email'=> $data["email"])))) {
+            $this->errors["email"] = "cette adresse email existe deja dans la base de donnes";
+        }
 
         if (empty($this->errors))
         {

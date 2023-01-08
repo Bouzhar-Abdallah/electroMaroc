@@ -12,12 +12,14 @@ class Signup extends Controller
             $data = $_POST;
             $user = new User;
             if ($user->validate($data)) {
+                unset($data['password_2']);
                 $user->insert($data);
                 redirect('home');
             }
             
             $data['errors'] = $user->errors;
         } 
+
         $this->view('signup',$data);
 
 }
