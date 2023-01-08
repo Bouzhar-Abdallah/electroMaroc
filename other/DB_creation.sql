@@ -4,6 +4,7 @@ use electromaroc3;
 create table user (
 id int not null auto_increment primary key,
 nom varchar(255),
+prenom varchar(255),
 numero_tel int,
 adresse varchar(255),
 ville varchar(255),
@@ -29,7 +30,7 @@ create table produit(
     code_barre varchar(255),
     description varchar(255),
     id_categorie int,
-    foreign key (id_categorie) references categorie(id) ON DELETE CASCADE,
+    foreign key (id_categorie) references categorie(id) ON null CASCADE,
     prix_achat float,
     prix_final float,
     prix_offre float,
