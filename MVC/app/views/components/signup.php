@@ -12,7 +12,7 @@
             <div class="mt-2 flex flex-col">
                 <label class="capitalize" for="x">nom :
                 </label>
-                <input class=" focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="nom" id="nom"  value="<?php if (!empty($data['nom'])) echo $data['nom']; ?>">
+                <input class=" focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="nom" id="nom" value="<?php if (!empty($data['nom'])) echo $data['nom']; ?>">
             </div>
             <div class="mt-2 flex flex-col">
                 <label class="capitalize" for="x">prenom :
@@ -42,7 +42,7 @@
         </div> -->
         </div>
         <div class="flex flex-col  container mx-auto lg:w-1/3 " action="" method="post">
-        <div class="mt-2 flex flex-col">
+            <div class="mt-2 flex flex-col">
                 <label class="capitalize" for="x">e-mail :
                 </label>
                 <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="email" id="email" value="<?php if (!empty($data['email'])) echo $data['email']; ?>">
@@ -50,16 +50,19 @@
             <div class="mt-2 flex flex-col">
                 <label class="capitalize" for="x">mot de passe :
                 </label>
-                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="password" id="password" name="password" >
+                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="password" id="password" name="password">
             </div>
             <div class="mt-2 flex flex-col">
                 <label class="capitalize" for="x">confirmation mot de passe :
                 </label>
-                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="password" id="password_2" name="password_2" >
+                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="password" id="password_2" name="password_2">
             </div>
-            <input type="text" name="role" id="role" value="user" hidden >
+            <div class="mt-2 flex flex-col">
+                <h1 id="password_check" class="py-3 hidden text-center"></h1>
+            </div>
+            <input type="text" name="role" id="role" value="user" hidden>
 
-            
+
         </div>
     </div>
     <div class="lg:w-1/3 mx-auto">
@@ -69,4 +72,4 @@
         <button id="submit" class="capitalize w-full font-bold btn-primary mt-3 mb-6">submit</button>
     </div>
     </div>
-    <script src="<?=ROOT?>assets/js/signup.js"></script>
+    <script src="<?= ROOT ?>assets/js/signup.js"></script>
