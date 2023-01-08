@@ -12,4 +12,5 @@
         <?php  require_once 'components/signup.php';?>
 
 </body>
+
 </html>
