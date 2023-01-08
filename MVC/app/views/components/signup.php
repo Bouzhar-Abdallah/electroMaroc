@@ -17,7 +17,7 @@
             <div class="mt-2 flex flex-col">
                 <label class="capitalize" for="x">prenom :
                 </label>
-                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="prenom" id="prenom" value="<?php if (!empty($data['nom'])) echo $data['nom']; ?>">
+                <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="prenom" id="prenom" value="<?php if (!empty($data['prenom'])) echo $data['prenom']; ?>">
             </div>
             <!-- here -->
             <div class="mt-2 flex flex-col">
