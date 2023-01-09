@@ -15,7 +15,7 @@
 
 
             <?php if (!empty($data)) foreach ($data as $value) { ?>
-                <div class="flex gap-3 bg-cadethh p-3 my-5 hover:shadow-lg transition-all border border-cadethh hover:border-cadet scale-100 hover:scale-101 ">
+                <div class="product_item flex gap-3 bg-cadethh p-3 my-5 hover:shadow-lg transition-all border border-cadethh hover:border-cadet scale-100 hover:scale-101 ">
                     <div class="h-[110px] bg-white">
 
                         <img class="h-auto w-[160px] max-h-[110px] my-auto" src="data:image/jpeg;base64,<?= base64_encode($value["id_photo_principale"]) ?>" alt="" srcset="">
@@ -23,12 +23,12 @@
                     <div class="flex flex-col justify-between w-full">
                         <div class="flex justify-between">
                             <h3><?= $value['libelle']; ?></h3>
-                            <span class="text-xl font-bold">$<?= $value['prix_final']; ?></span>
+                            <span class="product_price text-xl font-bold"><?= $value['prix_final']; ?> MAD</span>
                         </div>
                         <div class="flex justify-between items-end">
                             Quantite
-                            <select class="mr-auto ml-3 py-1  text-black" name="<?= $value['id']; ?>" id="">
-                                <option value="1">1</option>
+                            <select class="mr-auto ml-3 py-1  text-black" name="<?= $value['id']; ?>" id="<?= $value['id']; ?>">
+                                <option selected value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -54,16 +54,18 @@
             <p class="capitalize text-xl font-bold">Sommaire</p>
 
             <p class="capitalize flex justify-between ">Delivery <span class="font-bold">octobre 22 - 30</span></p>
-            <p class="capitalize flex justify-between">nombre de pieces: <span class="font-bold">5</span></p>
+            <p class="capitalize flex justify-between">nombre de pieces: <span id="total_pieces" class="font-bold">5</span></p>
             <div class="flex flex-col border-t border-b py-2">
-                <p class="capitalize flex justify-between">prix total: <span class="font-medium">$ 799.99</span></p>
-                <p class="capitalize flex justify-between">frais livraison: <span class="font-medium">$ 15</span></p>
-                <p class="capitalize flex justify-between">coupon: <span class="font-medium">- $ 35</span></p>
+                <p class="capitalize flex justify-between">prix total: <span id="prix_total" class=" font-medium ml-auto mr-3">799.99</span> MAD</p>
+                <p class="capitalize flex justify-between ">frais livraison: <span id="livraison" class="font-medium ml-auto mr-3">15</span> MAD</p>
+                <p class="capitalize flex justify-between hidden">coupon: <span class="font-medium ml-auto mr-3">- 35</span> MAD</p>
             </div>
-            <p class="capitalize flex justify-between">montant a payer: <span class="font-bold">$ 600.99</span></p>
+            <p class="capitalize flex justify-between">montant a payer: <span id="montant_total" class="font-bold ml-auto mr-3">600.99</span> MAD</p>
 
             <button class="btn-primary ">Checkout</button>
         </div>
         <!-- checkout widget -->
     </div>
 </form>
+
+<script src="<?= ROOT ?>assets/js/cart.js"></script>
