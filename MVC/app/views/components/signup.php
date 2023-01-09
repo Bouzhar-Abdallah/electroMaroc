@@ -7,8 +7,9 @@
             <?= implode("<br>", $errors) ?>
         </div>
     <?php } ?>
-    <div class="flex my-8">
-        <div class="flex flex-col container mx-auto lg:w-1/3 ">
+
+    <div id="form_inputs" class="md:flex my-6 ">
+        <div class="flex flex-col container mx-auto md:w-1/3  ">
             <div class="mt-2 flex flex-col">
                 <label class="capitalize" for="x">nom :
                 </label>
@@ -35,13 +36,8 @@
                 </label>
                 <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="ville" id="ville" value="<?php if (!empty($data['ville'])) echo $data['ville']; ?>">
             </div>
-            <!-- <div class="mt-2 flex flex-col">
-            <label class="capitalize" for="x">repetez mot de passe :
-            </label>
-            <input class="focus:border-cadeth focus:bg-cadethh focus:shadow focus:ring-cadethh" type="text" name="x" id="">
-        </div> -->
         </div>
-        <div class="flex flex-col  container mx-auto lg:w-1/3 " action="" method="post">
+        <div class="flex flex-col  container mx-auto md:w-1/3 ">
             <div class="mt-2 flex flex-col">
                 <label class="capitalize" for="x">e-mail :
                 </label>
@@ -60,16 +56,19 @@
             <div class="mt-2 flex flex-col">
                 <h1 id="password_check" class="py-3 hidden text-center"></h1>
             </div>
-            
-
-
         </div>
     </div>
-    <div class="lg:w-1/3 mx-auto">
 
-        <p class="">By creating an account, you agree to our Conditions of Use and Privacy Notice.</p>
+    <div class="lg:w-1/3 mx-auto">
+        <div id="terms_error" class="hidden ">
+        <h1 class="bg-red-200 py-3 px-2">please accept terms</h1>
+        </div>
+        <div class="flex items-center">
+            <input class="text-cadeth focus:ring-transparent border-cadethh" type="checkbox" name="terms" id="terms">
+            <p class="ml-3">By creating an account, you agree to our Conditions of Use and Privacy Notice.</p>
+        </div>
         <p class="mt-6 pt-4 border-t">vous avez deja un compte? login <a class="text-indigo-400 hover:font-bold">ici</a></p>
         <button id="submit" class="capitalize w-full font-bold btn-primary mt-3 mb-6">submit</button>
     </div>
-    </div>
-    <script src="<?= ROOT ?>assets/js/signup.js"></script>
+</form>
+<script src="<?= ROOT ?>assets/js/signup.js"></script>

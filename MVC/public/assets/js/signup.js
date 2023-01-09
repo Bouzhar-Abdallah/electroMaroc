@@ -40,8 +40,17 @@ submit.addEventListener("click", (e)=>{
     let refuse = true
     
     let errors = []
-    const inputs = document.querySelectorAll("input")
+    const form = document.getElementById('form_inputs')
+    const inputs = form.querySelectorAll("input")
+    const terms = document.getElementById('terms')
+    terms_error= document.getElementById('terms_error')
+    if (!terms.checked) {
+        e.preventDefault()
+        terms_error.classList.remove('hidden')
+    }else{
+        terms_error.classList.add('hidden')
 
+    }
     inputs.forEach((node,index)=>{
         let input = document.getElementById(node.name)
         if(node.value === '' || node.value == 'NULL'){
@@ -64,9 +73,10 @@ submit.addEventListener("click", (e)=>{
     }
     
     if(!(refuse && passcheck)){
+        //console.log('prevent');
         e.preventDefault()
     }
-    console.log(refuse && passcheck);
+   
 })
 
 
