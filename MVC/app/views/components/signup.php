@@ -61,7 +61,7 @@
 
     <div class="lg:w-1/3 mx-auto">
         <div id="terms_error" class="hidden ">
-        <h1 class="bg-red-200 py-3 px-2">please accept terms</h1>
+        <h1 class="transition-all duration-1000 bg-red-200 py-3 text-center">merci d'eccepter les termes d'utilisation</h1>
         </div>
         <div class="flex items-center">
             <input class="text-cadeth focus:ring-transparent border-cadethh" type="checkbox" name="terms" id="terms">
