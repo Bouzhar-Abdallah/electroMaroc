@@ -60,7 +60,7 @@
             <div class="mt-2 flex flex-col">
                 <h1 id="password_check" class="py-3 hidden text-center"></h1>
             </div>
-            <input type="text" name="role" id="role" value="user" hidden>
+            
 
 
         </div>
