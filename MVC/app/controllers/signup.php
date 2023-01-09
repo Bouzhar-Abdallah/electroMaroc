@@ -13,6 +13,7 @@ class Signup extends Controller
             $user = new User;
             if ($user->validate($data)) {
                 unset($data['password_2']);
+                unset($data['terms']);
                 $user->insert($data);
                 redirect('home');
             }
