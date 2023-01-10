@@ -24,11 +24,19 @@ class Checkout extends Controller
            );
            $ligne_commande -> insert($commande_line);
         }
-
-        redirect('home');
+        $cart = new Carte;
+        $cart -> delete($_SESSION['USER']['id'],'id_client');
+        $facture = new Facture;
+        $data = $facture ->where(array('id'=> $id_commande));
+        
     }
     
-
+    public function checkout()
+    {
+        $facture = new Facture;
+        $data = $facture ->where(array('id'=> 7));
+        $this->view('home', $data, 'checkout');
+    }
    
 
    

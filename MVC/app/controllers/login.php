@@ -23,7 +23,7 @@ class Login extends Controller
                 
             }
             
-            $user->errors['email'] = "email ou mot passe erronés";
+            $user->errors['email'] = "email ou mot de passe erronés";
             $data['errors'] = $user->errors;
         } 
         $this->view('login',$data);
