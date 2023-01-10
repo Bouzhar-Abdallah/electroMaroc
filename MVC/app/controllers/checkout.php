@@ -29,6 +29,7 @@ class Checkout extends Controller
         $facture = new Facture;
         $data = $facture ->where(array('id'=> $id_commande));
         
+        //$this->view('home', $data, 'checkout');
     }
     
     public function checkout()
