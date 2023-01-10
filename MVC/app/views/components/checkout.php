@@ -49,7 +49,7 @@
                             </thead>
                             <tbody>
                                 <?php foreach ($data as $value) {?>
-                                <tr class="border-b">
+                                <tr class="item border-b">
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         <?=$value['libelle']?>
                                     </td>
@@ -73,13 +73,13 @@
         </div>
         <!-- total -->
         <div class="my-3 w-1/4 flex-col ml-auto ">
-            <h1 class="flex justify-between">Sous total <span class="sous_total ml-auto mr-3">500</span> MAD</h1>
-            <h1 class="flex justify-between">livraison <span class="livraison ml-auto mr-3">15</span> MAD</h1>
+            <h1 class="flex justify-between">Sous total <span id="sous_total" class="ml-auto mr-3">500</span> MAD</h1>
+            <h1 class="flex justify-between">livraison <span id="livraison" class=" ml-auto mr-3">15</span> MAD</h1>
             <!-- <h1 class="flex justify-between">Coupon <span class=" ml-auto mr-3">30</span> MAD</h1> -->
             <div class="mt-5">
-                <h1 class="flex justify-between font-extrabold text-xl">Total<span class="total ml-auto mr-3">30</span> MAD</h1>
+                <h1 class="flex justify-between font-extrabold text-xl">Total<span id="total" class=" ml-auto mr-3">30</span> MAD</h1>
             </div>
         </div>
     </div>
 </div>
-<?php show($data);
+<script src="<?= ROOT ?>assets/js/checkout.js"></script>
