@@ -6,8 +6,10 @@ class Controller
     {
         if (!empty($data)) extract($data);
         $commande = new Commande;
+        $carte = new Carte;
         $cmd_EC = 0;
         $cmd_EC = $commande->idwhere(array('etat' => 'en cours'), 'count(id)')['0']['count(id)'];
+        $Carte_count = $carte->idwhere(array('id_client' => $_SESSION['USER']['id']), 'count(id)')['0']['count(id)'];
         $componentfile = '../app/views/components/' . $component . '.php';
         $filename = '../app/views/' . $name . '.view.php';
 

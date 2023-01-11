@@ -1,6 +1,7 @@
 
 const buttons = document.querySelectorAll('.buttons')
 const message = document.getElementById('message')
+const cart_count = document.getElementById('cart_count')
 
 message.addEventListener('click',()=>{
     message.innerHTML = ''
@@ -18,7 +19,10 @@ buttons.forEach(button => {
                 <div class="absolute transition-all top-64 flex justify-center items-center p-10 h-fit bg-cadethh">
                     <h1 class="font-bold text-2xl">produit ajouté avec success !</h1>
                 </div>
-            </div>`
+            </div>`;
+            const Count = parseInt(cart_count.innerHTML);
+            cart_count.innerHTML = Count + 1;
+            console.log(cart_count);
             }else if (this.response == 'not') {
                 
                 message.innerHTML = ` <div class="absolute overflow-hidden flex justify-center bg-cadeth/10 top-0 left-0 h-screen w-screen z-40">
