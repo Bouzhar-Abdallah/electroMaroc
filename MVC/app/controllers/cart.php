@@ -58,9 +58,12 @@ class Cart extends Controller
         if ($carte->validate($data)) 
         {
             $carte->insert($data);
+            echo 'added';
+        }else{
+            echo 'not';
         }
 
-        redirect('');
+        //redirect('');
     }
 
     public function delete($a = '', $b = '', $c = '')

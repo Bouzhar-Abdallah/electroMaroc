@@ -32,10 +32,4 @@ class Checkout extends Controller
         $this->view('home', $data, 'checkout');
     }
 
-    public function checkout()
-    {
-        $facture = new Facture;
-        $data = $facture->where(array('id' => 7));
-        $this->view('home', $data, 'filter');
-    }
 }
