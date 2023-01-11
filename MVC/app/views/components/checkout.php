@@ -1,6 +1,9 @@
-<div class="font-mono flex justify-center items-center m-10">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <div class="flex-col w-4/5 h-fit border border-cadethh p-10">
+
+<div id="invoice" class="font-mono flex justify-center items-center ">
+
+    <div  class="flex-col w-4/5 border border-cadethh p-10">
         <!-- header -->
         <div class="my-3 flex justify-between w-full h-fit ">
             <div>
@@ -81,5 +84,8 @@
             </div>
         </div>
     </div>
+</div>
+<div class="flex w-full items-center">
+<button id="download-pdf" class="btn-primary mx-auto mb-10">telecharger le PDF</button>
 </div>
 <script src="<?= ROOT ?>assets/js/checkout.js"></script>

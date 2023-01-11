@@ -17,17 +17,19 @@ window.addEventListener("load", () => {
 
 
 
-console.log(window);
-document.getElementById("download-pdf").addEventListener("click", function() {
+
+document.getElementById("download-pdf").addEventListener("click", ()=> {
     
     const invoice = document.getElementById('invoice')
-    const opt = {
-        margin : 0,
-        filename: 'facture.pdf',
-        html2canvas: {scale:2},
-        jsPDF:{unit:'mm',format:'A4',orientation :'landscape'}
+    let options = {
+        
+        padding: [0, 0, 0, 0],
+        filename: 'download.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
     };
-    html2pdf().from(invoice).set(opt).save()
+    html2pdf().from(invoice).set(options).save()
   });
   
 
