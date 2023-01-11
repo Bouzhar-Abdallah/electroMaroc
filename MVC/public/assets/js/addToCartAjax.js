@@ -6,10 +6,10 @@ const cart_count = document.getElementById('cart_count')
 message.addEventListener('click',()=>{
     message.innerHTML = ''
 })
-console.log('hello');
+
 buttons.forEach(button => {
     button.addEventListener('click', ()=>{
-        console.log(button.value);
+        
         var xhr = new XMLHttpRequest();
         xhr.open('GET','http://localhost:8888/electroMaroc/MVC/public/'+button.value,true);
         xhr.onload = function(){
@@ -22,7 +22,7 @@ buttons.forEach(button => {
             </div>`;
             const Count = parseInt(cart_count.innerHTML);
             cart_count.innerHTML = Count + 1;
-            console.log(cart_count);
+            
             }else if (this.response == 'not') {
                 
                 message.innerHTML = ` <div class="absolute overflow-hidden flex justify-center bg-cadeth/10 top-0 left-0 h-screen w-screen z-40">

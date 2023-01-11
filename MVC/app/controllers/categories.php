@@ -43,44 +43,7 @@ class Categories extends Controller
         }
         redirect('categories');
     }
-    public function switchV($a = '', $b = '', $c = '', $d = '')
-    {
-        
-        $model = new $a();
-        $row = $model->where(array('id'=>$b));
-        if ($row[0]['visibilite'] === '1') {
-            $model->update($b,array('visibilite'=>0));
-        }else {
-            $model->update($b,array('visibilite'=>1));
-        }
-        redirect('categories');
-    }
+    
 
-    /* 
-    public function commands($a = '', $b = '', $c = '')
-    {
-        $data = [];
-        $this->view('admin',$data,'table-commands');
-    }
-    $model = new User;
-        $arr["password"] = "hatikmi";
-        $arr["email"] = "bouzhar.lahcen@gmail.com"; */
-
-        //$result = $model->findAll();
-        
-        /* echo "this is the home controller";
-        show($a);
-        show($b);
-        show($c); */
-        /* if (empty($_SESSION['USER'])) {
-            $username = 'guest';
-            $userrole = 'guest';
-        }else{
-            //show($_SESSION['USER']);
-            $username = $_SESSION['USER']['nom'];
-            $userrole = $_SESSION['USER']['role'];
-        }
-        $data['username'] = $username;
-        $data['userrole'] = $userrole; */
 }
 

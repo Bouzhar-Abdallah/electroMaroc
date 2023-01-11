@@ -31,7 +31,10 @@
                 
             <tr class="bg-white hover:bg-cadethhh border-b h-12 relative ">
                 <td class="py-4 px-3 ">
-                <img src="data:image/jpeg;base64,<?= base64_encode($value["photo"]) ?>" alt="" srcset="">
+                    <div class="w-10 h-10">
+
+                        <img src="data:image/jpeg;base64,<?= base64_encode($value["photo"]) ?>" alt="" srcset="">
+                    </div>
                 </td>
                 <th scope="row" class="py-4 px-3  font-medium text-gray-900 whitespace-nowrap ">
                     <?=$value['id'];?>
