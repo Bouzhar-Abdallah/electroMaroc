@@ -12,6 +12,7 @@ class Database
 
     protected function query($query , $data = [])
     {
+        //show($query);
         $con = $this->connect();
         $stmt = $con->prepare($query);
         $check = $stmt->execute($data);

@@ -96,7 +96,7 @@
     </table>
 
     <div class="absolute right-0 bottom-0">
-        <a href="categories/newcategorie">
+        <a href="<?=ROOT?>newcategorie">
             <button class="btn-primary ">ajouter nouvelle categorie</button>
         </a>
     </div>
