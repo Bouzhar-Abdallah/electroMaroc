@@ -23,6 +23,7 @@ class Commandes extends Controller
         if (!empty($data)) foreach ($data as $key => $comd) 
         {
             $commande_infos = $ligne_commande->where(array('id_commande' => $comd['id']), 'quantite, prix_vente');
+            
             foreach ($commande_infos as $value) 
             {
                 $total_items += $value['quantite'];
