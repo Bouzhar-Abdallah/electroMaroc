@@ -2,9 +2,9 @@
 
     <form class=" p-5 container mx-auto xl:w-2/3 border bg-white border-cadeth" action="" method="post" enctype="multipart/form-data">
 
-        <h1 class="capitalize font-bold text-2xl border-b pb-1">creer un nouveau produit</h1>
+        <h1 class="capitalize font-bold text-2xl border-b pb-1">modifier un produit</h1>
         <?php if (!empty($errors)){?>
-            <div class="bg-red-200 py-3 px-2 ">
+            <div class="bg-red-200 py-3 px-2  ">
                 <?= implode("<br>",$errors) ?>
             </div>
          <?php }?>
