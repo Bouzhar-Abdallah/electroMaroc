@@ -64,7 +64,7 @@
 
 
                 <label class="label-style" for="file_input">choisissez les photos du produit</label>
-                <input class="btn-file  input-style " id="file_input" type="file" name="photos[]" multiple ">
+                <input class="btn-file  input-style " id="file_input" type="file" name="photos[]" multiple >
 
             </div>
             <div class=" flex flex-col">
