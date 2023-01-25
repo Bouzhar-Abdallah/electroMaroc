@@ -17,6 +17,8 @@ class Commandes extends Controller
         $commande = new Commande;
         $ligne_commande = new Ligne_commande;
         $user = new User;
+        $commande->setLimit(20);
+        $commande->setOffset();
         $data = $commande->findAll();
         $total_price = 0;
         $total_items = 0;

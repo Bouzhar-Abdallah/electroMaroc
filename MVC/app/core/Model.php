@@ -19,6 +19,15 @@ class Model extends Database
         }
     }
 
+    public function setLimit($limit = 10)
+    {
+        $this-> limit = $limit;
+    }
+    public function setOffset($offset = 0)
+    {
+        $this-> offset = $offset;
+    }
+
     public function findAll()
     {
 
