@@ -13,12 +13,34 @@ class Commandes extends Controller
     
     public function index($a = '', $b = '', $c = '')
     {
+        
+        $data = [];
+        //$data = $this->getDataForAjax();
+        $this->view('admin',$data,'table-commands');
+    }
+
+    public function update($action = '', $id = '', $c = '')
+    {
+        $commande = new Commande;
+            if ($action === 'en transit') 
+            {
+                $commande -> update($id,array(
+                    'etat'=> $action,
+                    'date_envoi' => date('Y-m-d')
+                ));
+            }else 
+            {
+                $commande -> update($id,array('etat'=> $action));
+            }
+            redirect('commandes');
+    }
+    public function getDataForAjax($limit = 10, $offset = '0'){
         $data = [];
         $commande = new Commande;
         $ligne_commande = new Ligne_commande;
         $user = new User;
-        $commande->setLimit(20);
-        $commande->setOffset();
+        $commande->setLimit($limit);
+        $commande->setOffset($offset);
         $data = $commande->findAll();
         $total_price = 0;
         $total_items = 0;
@@ -39,23 +61,8 @@ class Commandes extends Controller
             $total_price = 0;
             $total_items = 0;
         }
-
-        $this->view('admin',$data,'table-commands');
-    }
-
-    public function update($action = '', $id = '', $c = '')
-    {
-        $commande = new Commande;
-            if ($action === 'en transit') 
-            {
-                $commande -> update($id,array(
-                    'etat'=> $action,
-                    'date_envoi' => date('Y-m-d')
-                ));
-            }else 
-            {
-                $commande -> update($id,array('etat'=> $action));
-            }
-            redirect('commandes');
+        echo json_encode($data);
+        die();
+        return $data;
     }
 }

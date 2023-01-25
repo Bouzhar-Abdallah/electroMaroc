@@ -33,10 +33,10 @@
 
             </tr>
         </thead>
-        <?php if(!empty($data)) foreach ($data as $key => $value) { ?>
-            
-       
-        <tbody>
+        
+        
+        <tbody id="table_body">
+            <?php if(!empty($data)) foreach ($data as $key => $value) { ?>
             <th scope="row" class=" px-1 flex items-center h-10 justify-center font-medium  whitespace-nowrap ">
                 <input class=" text-cadeth focus:ring-transparent border-cadethh" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
             </th>
@@ -116,8 +116,8 @@
                 </div>
             </td>
             </tr>
+            <?php } ?>
         </tbody>
-        <?php } ?>
     </table>
     <div class="absolute  flex justify-between right-0 bottom-0 w-full">
         <a href="" class="btn-table bg-white ml-auto">
@@ -151,3 +151,4 @@
         </a>
     </div>
 </div>
+<script src="<?= ROOT ?>assets/js/commands.js"></script>
