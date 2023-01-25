@@ -16,7 +16,7 @@
 
 
     </div>
-    <div class="w-1/2 ">
+    <div class="w-3/5 ">
         <img class="" src="data:image/jpeg;base64,<?= base64_encode($data['photos'][$picture]['photo'])?>" alt="" srcset="">
     </div>
     <div class="flex gap-3 w-[400px] flex-col w-120 h-fit border border-P_navy p-5 hover:shadow-lg transition-shadow">

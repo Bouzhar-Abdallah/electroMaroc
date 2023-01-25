@@ -1600,6 +1600,18 @@ input:checked + .toggle-bg {
   width: 1rem;
 }
 
+.w-\[00px\] {
+  width: 00px;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-3\/5 {
+  width: 60%;
+}
+
 .min-w-full {
   min-width: 100%;
 }
