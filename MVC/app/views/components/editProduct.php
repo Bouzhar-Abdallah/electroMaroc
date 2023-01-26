@@ -13,60 +13,67 @@
                     <div class=" flex flex-col">
                         <label class="label-style" for="x">libile :
                         </label>
-                        <input class="input-style" type="text" name="libelle" id="">
+                        <input value="<?=$data['produit']['libelle']?>" class="input-style" type="text" name="libelle" id="">
                     </div>
                     
                     <div class=" flex flex-col">
                         <label class="label-style" for="x">code bare :
                         </label>
-                        <input class="input-style" type="text" name="code_barre" id="">
+                        <input value="<?=$data['produit']['code_barre']?>" value="" class="input-style" type="text" name="code_barre" id="">
                     </div>
                     <div class=" flex flex-col">
 
                         <label for="categorie" class="label-style focus:ring-0">categorie</label>
                         <select name="id_categorie" id="">
                             <option value="0"></option>
-                            <?php foreach ($data as $value) { ?>
+                            <?php foreach ($data['categorie'] as $value) { ?>
 
-                                <option value="<?= $value['id']; ?>"><?= $value['nom']; ?></option>
+                                <option 
+                                <?php
+                                if ($value['id'] === $data['produit']['id_categorie']) {
+                                    echo 'selected';
+                                }
+                                ?>
+                                value="<?= $value['id']; ?>"><?= $value['nom']; ?></option>
                             <?php } ?>
 
                         </select>
                     </div>
                     <div class=" flex flex-col">
                         <label for="message" class="label-style">Description produit :</label>
-                        <textarea id="message" name="description" rows="4" class="h-full  w-full input-style  "></textarea>
+                        <textarea id="message" name="description" rows="4" class="h-full  w-full input-style  "><?=$data['produit']['description']?>
+                        </textarea>
                     </div>
                     <div class="md:row-span-1 flex gap-4 flex-col">
                         <div class=" flex flex-col">
                             <label class="label-style" for="x">prix achat :
                             </label>
-                            <input class="input-style" type="text" name="prix_achat" id="">
+                            <input value="<?=$data['produit']['prix_achat']?>" class="input-style" type="text" name="prix_achat" id="">
                         </div>
                         <div class=" flex flex-col">
                             <label class="label-style" for="x">prix offre :
                             </label>
-                            <input class="input-style" type="text" name="prix_offre" id="">
+                            <input value="<?=$data['produit']['prix_offre']?>" class="input-style" type="text" name="prix_offre" id="">
                         </div>
                     </div>
 
                     <div class=" flex flex-col">
                         <label class="label-style" for="x">rèfèrence :
                         </label>
-                        <input class="input-style" type="text" name="ref" id="">
+                        <input value="<?=$data['produit']['ref']?>" class="input-style" type="text" name="ref" id="">
                     </div>
 
                     <div class=" flex flex-col">
                         <label class="label-style" for="x">prix finale :
                         </label>
-                        <input class="input-style" type="text" name="prix_final" id="">
+                        <input value="<?=$data['produit']['prix_final']?>" class="input-style" type="text" name="prix_final" id="">
                     </div>
 
                 </div>
                 <div class="md:w-32 ml-5 mt-10 h-full border  gap-3">
                     <div id="product_images" class="flex flex-row md:flex-col justify-center">
                         <div class="h-20 p-1 relative hover:border hover:border-red-600">
-                            <svg class="hover:bg-red-600 text-slate-700 absolute h-5 w-5 right-1 top-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <svg class="hover:bg-red-600 text-slate-700 hover:text-white transition-all duration-400 absolute h-5 w-5 right-1 top-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
 
