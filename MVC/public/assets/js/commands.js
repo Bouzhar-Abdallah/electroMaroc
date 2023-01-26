@@ -2,7 +2,7 @@ let count
 const table_body = document.getElementById('table_body')
 
 class commandes {
-    constructor(_limit=5 , _offset= 0){
+    constructor(_limit=2 , _offset= 0){
         this.limit = _limit
         this.offset = _offset
         this.count = 0
@@ -47,21 +47,6 @@ xhr.onload = function(){
 }
 xhr.send()
 }
-
-/* function getData(limit = 10, offset = 0) {
-    console.log(limit);
-    var xhr = new XMLHttpRequest
-    
-    xhr.open('GET','http://localhost:8888/electroMaroc/MVC/public/Commandes/getDataForAjax/'+limit+'/'+offset,true)
-    
-    xhr.onload = function(){
-        
-        const data = JSON.parse(this.response)
-        construct_table(data)
-    }
-    xhr.send()
-}
- */
 
 
 function construct_table(data){
@@ -142,7 +127,6 @@ function editState(event){
 xhr.open('GET','http://localhost:8888/electroMaroc/MVC/public/Commandes/update/'+event.value,true)
 
 xhr.onload = function(){
-    
     commandesObj.getData()
 }
 xhr.send()
@@ -155,19 +139,26 @@ const next = document.getElementById('next')
 const pages = document.getElementById('pages')
 
 function constructPaginationButtons(count) {
-    const commandes_per_page = 5
+    const commandes_per_page = commandesObj.limit
     const pages_number = Math.ceil(count/commandes_per_page)
     //console.log(pages_number);
     for (let index = 1; index <= pages_number; index++) {
         
-        pages.innerHTML += `<button value="" class="btn-table bg-white ">
-        ${index}
-    </button>`
+        pages.innerHTML += `<button value="${index}" class="btn-table bg-white ">${index}</button>`
     }
+    const pages_buttons = pages.childNodes
+
+pages_buttons.forEach((button)=>{
+    button.addEventListener("click", (e)=>{
+        commandesObj.setOffset(
+            (e.target.value -1)*commandesObj.limit
+        )
+        commandesObj.getData()
+    })
+})
 }
 
 next.addEventListener("click",()=>{
-    
     if (commandesObj.count>(commandesObj.offset + commandesObj.limit)) {
         commandesObj.setOffset(commandesObj.offset+commandesObj.limit)
         commandesObj.getData()
@@ -180,3 +171,4 @@ previous.addEventListener("click",()=>{
         commandesObj.getData()
     }
 })
+
