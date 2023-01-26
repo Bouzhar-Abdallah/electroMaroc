@@ -2,7 +2,7 @@ let count
 const table_body = document.getElementById('table_body')
 
 class commandes {
-    constructor(_limit=2 , _offset= 0){
+    constructor(_limit=4 , _offset= 0){
         this.limit = _limit
         this.offset = _offset
         this.count = 0
