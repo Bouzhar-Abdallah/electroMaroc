@@ -1,8 +1,10 @@
-let count
+//let count
 const table_body = document.getElementById('table_body')
-
+const previous = document.getElementById('previous')
+const next = document.getElementById('next')
+const pages = document.getElementById('pages')
 class commandes {
-    constructor(_limit=4 , _offset= 0){
+    constructor(_limit=20 , _offset= 0){
         this.limit = _limit
         this.offset = _offset
         this.count = 0
@@ -43,7 +45,6 @@ xhr.onload = function(){
     count = this.response
     commandesObj.setCount(count)
     constructPaginationButtons(count);
-    
 }
 xhr.send()
 }
@@ -52,6 +53,12 @@ xhr.send()
 function construct_table(data){
     table_body.innerHTML = ''
     data.forEach(element => {
+        if (element['date_envoi'] === null) {
+            element['date_envoi'] = 'pas encore'
+        }
+        if (element['date_livraison'] === null) {
+            element['date_livraison'] = 'pas encore'
+        }
         table_body.innerHTML += fillLine(element)
     });
 }
@@ -134,9 +141,7 @@ xhr.send()
 
 /* pagination */
 
-const previous = document.getElementById('previous')
-const next = document.getElementById('next')
-const pages = document.getElementById('pages')
+
 
 function constructPaginationButtons(count) {
     const commandes_per_page = commandesObj.limit
