@@ -1,24 +1,71 @@
-
-
+let count
 const table_body = document.getElementById('table_body')
 
+class commandes {
+    constructor(_limit=5 , _offset= 0){
+        this.limit = _limit
+        this.offset = _offset
+        this.count = 0
+    }
+    setLimit(_limit){
+        this.limit = _limit 
+    }
+    setOffset(_offset){
+        this.offset = _offset 
+    }
+    setCount(_count){
+        this.count = _count
+    }
+    getData() {
+        //console.log(this.limit);
+        var xhr = new XMLHttpRequest
+        
+        xhr.open('GET','http://localhost:8888/electroMaroc/MVC/public/Commandes/getDataForAjax/'+this.limit+'/'+this.offset,true)
+        
+        xhr.onload = function(){
+            
+            const data = JSON.parse(this.response)
+            construct_table(data)
+        }
+        xhr.send()
+    }
+}
 
-var xhr = new XMLHttpRequest
+let commandesObj = new commandes
 
-xhr.open('GET','http://localhost:8888/electroMaroc/MVC/public/Commandes/getDataForAjax/5/5',true)
+window.onload = function(){
+    commandesObj.getData()
+    var xhr = new XMLHttpRequest
+
+xhr.open('GET','http://localhost:8888/electroMaroc/MVC/public/Test',true)
 
 xhr.onload = function(){
+    count = this.response
+    commandesObj.setCount(count)
+    constructPaginationButtons(count);
     
-    const data = JSON.parse(this.response)
-    console.log(data);
-    construct_table(data)
 }
 xhr.send()
+}
 
+/* function getData(limit = 10, offset = 0) {
+    console.log(limit);
+    var xhr = new XMLHttpRequest
+    
+    xhr.open('GET','http://localhost:8888/electroMaroc/MVC/public/Commandes/getDataForAjax/'+limit+'/'+offset,true)
+    
+    xhr.onload = function(){
+        
+        const data = JSON.parse(this.response)
+        construct_table(data)
+    }
+    xhr.send()
+}
+ */
 
 
 function construct_table(data){
-
+    table_body.innerHTML = ''
     data.forEach(element => {
         table_body.innerHTML += fillLine(element)
     });
@@ -89,15 +136,47 @@ return table_line
 
 
 function editState(event){
-    console.log(event.value);
-    var xhrr = new XMLHttpRequest
+    //console.log(event.value);
+    var xhr = new XMLHttpRequest
 
-xhrr.open('GET','http://localhost:8888/electroMaroc/MVC/public/Commandes/update/'+event.value,true)
+xhr.open('GET','http://localhost:8888/electroMaroc/MVC/public/Commandes/update/'+event.value,true)
 
-xhrr.onload = function(){
+xhr.onload = function(){
     
-    //const data = JSON.parse(this.response)
-    console.log(this.response);
+    commandesObj.getData()
 }
-xhrr.send()
+xhr.send()
 }
+
+/* pagination */
+
+const previous = document.getElementById('previous')
+const next = document.getElementById('next')
+const pages = document.getElementById('pages')
+
+function constructPaginationButtons(count) {
+    const commandes_per_page = 5
+    const pages_number = Math.ceil(count/commandes_per_page)
+    //console.log(pages_number);
+    for (let index = 1; index <= pages_number; index++) {
+        
+        pages.innerHTML += `<button value="" class="btn-table bg-white ">
+        ${index}
+    </button>`
+    }
+}
+
+next.addEventListener("click",()=>{
+    
+    if (commandesObj.count>(commandesObj.offset + commandesObj.limit)) {
+        commandesObj.setOffset(commandesObj.offset+commandesObj.limit)
+        commandesObj.getData()
+    }
+})
+
+previous.addEventListener("click",()=>{
+    if (commandesObj.offset>0) {
+        commandesObj.setOffset(commandesObj.offset-commandesObj.limit)
+        commandesObj.getData()
+    }
+})

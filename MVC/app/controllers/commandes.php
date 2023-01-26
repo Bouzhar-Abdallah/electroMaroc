@@ -32,7 +32,7 @@ class Commandes extends Controller
             {
                 $commande -> update($id,array('etat'=> $action));
             }
-            echo 'updated';
+            //echo 'updated';
             //redirect('commandes');
     }
     public function getDataForAjax($limit = 10, $offset = '0'){
