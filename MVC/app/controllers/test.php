@@ -5,10 +5,11 @@ class Test extends Controller
 {
     public function index()
     {
-        
-        $data = [];
-       
-        $this->view('home',$data,'test');
+        $commande = new Commande();
+        $data = $commande->count()[0]['count(id)'];
+        echo $data;
+        die();
+        //$this->view('home',$data,'test');
 
     }
 

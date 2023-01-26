@@ -19,6 +19,15 @@ class Model extends Database
         }
     }
 
+    public function setLimit($limit = 10)
+    {
+        $this-> limit = $limit;
+    }
+    public function setOffset($offset = 0)
+    {
+        $this-> offset = $offset;
+    }
+
     public function findAll()
     {
 
@@ -173,6 +182,13 @@ class Model extends Database
         $query = "select $s from $this->table ORDER BY id DESC LIMIT 1";
 
         return $this->query($query)[0][$s];
+    }
+    public function count($s = 'id')
+    {
+        //'count(id)')['0']['count(id)']
+        $query = "select count($s) from $this->table";
+
+        return $this->query($query);
     }
     /* public function count($column = '*')
     {

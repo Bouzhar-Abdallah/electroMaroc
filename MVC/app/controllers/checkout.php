@@ -8,7 +8,7 @@ class Checkout extends Controller
     {
         $data = $_POST;
         unset($_POST);
-        show($_POST);
+        //show($_POST);
         $commande = new commande;
         $ligne_commande = new Ligne_commande;
         $produit = new Produit;
@@ -31,7 +31,7 @@ class Checkout extends Controller
         $facture = new Facture;
         $data = $facture->where(array('id' => $id_commande));
 
-        //$this->view('home', $data, 'checkout');
+        $this->view('home', $data, 'checkout');
     }
 
 }
