@@ -18,33 +18,24 @@ class Cart extends Controller
         //if(empty($a))
         $data = [];
         $arr = [];
-        $produit = new Produit;
+        $produit = new Produit('product_view');
         $carte = new Carte;
-        $photo = new Photo;
         $produits_id = $carte->where(
-            array('id_client' => $_SESSION['USER']['id'])
+            array('id_client' => $_SESSION['USER']['id']),'id_produit'
         );
+        //show(($value['id_produit']));
 
-        
         if (!empty($produits_id)) 
         {
             foreach ($produits_id as $key => $value) 
             {
-                $arr =$produit->where(array('id' => $value['id_produit']))[0];
-                $arr['id_cart_item']=$value['id'];
-                if($arr['visibilite'])
-                array_push($data, $arr);
+                $cart_item =$produit->where(array('id' => $value['id_produit']))['0'];
+                $cart_item['id_cart_item'] = $carte->where(array('id_client'=>$_SESSION['USER']['id'],'id_produit'=>$value['id_produit']),'id')['0']['id'];
+                array_push($data, $cart_item);
             }
-            foreach ($data as $key => $value) if(!empty($data[$key]['id_photo_principale'])){
-                $data[$key]['id_photo_principale'] = ($photo->first(array('id' => $value['id_photo_principale']))['photo']);
-            }
+            
         }
-
-
-
-
-
-
+        
         $this->view('home', $data, 'cart');
     }
 

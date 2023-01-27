@@ -15,11 +15,11 @@
             <div class="p-3">
                 <a href="#" class="hover:text-gray-600 text-black font-thin">
                     <h3><?= $value['libelle']; ?></h3>
-                    <div class=" flex items-center gap-5 my-1 text-xl font-bold">
+                    <div class=" flex items-center justify-between gap-5 my-1 text-xl font-bold">
                         <p class="text-xl">$ <?php echo $value['prix_offre'] > 0 ?  $value['prix_offre']: $value['prix_final']; ?>.99</p>
                         <?php if ($value['prix_offre'] > 0){ ?>
 
-                            <p class="text-gray-400 line-through text-base bg-red-200 py-1 px-2">$ <?= $value['prix_final']; ?>.99</p>
+                            <p class="text-red-500 font-bold line-through text-base bg-red-200 py-1 px-2">$ <?= $value['prix_final']; ?>.99</p>
                         <?php } ?>
                     </div>
                 </a>

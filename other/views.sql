@@ -13,7 +13,7 @@ create VIEW facture AS
 SELECT 
 l.quantite, l.prix_vente, 
 c.`date_creation`, c.`etat`, c.id,
-p.`libelle`, p.`id_photo_principale`,
+p.`libelle`,
 u.nom, u.prenom, u.adresse, u.ville, u.numero_tel
 from ligne_commande as l inner JOIN commande as c INNER JOIN produit as p INNER JOIN user as u 
 where l.id_commande = c.id && l.id_produit = p.id && u.id = c.id_client;

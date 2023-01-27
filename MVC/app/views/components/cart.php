@@ -1,3 +1,6 @@
+<?php 
+//show($data);
+?>
 <form action="<?= ROOT ?>checkout" id="checkout" method="POST">
     <div class="flex">
         <div class="capitalize container mx-auto lg:w-2/3">
@@ -18,7 +21,7 @@
                 <div class="product_item flex gap-3 bg-cadethh p-3 my-5 hover:shadow-lg transition-all border border-cadethh hover:border-cadet scale-100 hover:scale-101 ">
                     <div class="h-[110px] bg-white">
 
-                        <img class="h-auto w-[160px] max-h-[110px] my-auto" src="data:image/jpeg;base64,<?= base64_encode($value["id_photo_principale"]) ?>" alt="" srcset="">
+                        <img class="h-auto w-[160px] max-h-[110px] my-auto" src="data:image/jpeg;base64,<?= base64_encode($value["photo"]) ?>" alt="" srcset="">
                     </div>
                     <div class="flex flex-col justify-between w-full">
                         <div class="flex justify-between">
