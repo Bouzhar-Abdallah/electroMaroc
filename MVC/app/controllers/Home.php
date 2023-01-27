@@ -17,14 +17,11 @@ class Home extends Controller
         }
         $data['username'] = $username;
         $data['userrole'] = $userrole; */
-        $produit = new Produit;
+        $produit = new Produit('product_view');
         $photo = new Photo;
-        $data = $produit->where(array("visibilite" => 1));
+        $data = $produit->findAll();
 
-        if(!empty($data))
-        foreach ($data as $key => $value) if(!empty($data[$key]['id_photo_principale'])) {
-            $data[$key]['id_photo_principale'] =($photo->first(array('id'=>$value['id_photo_principale']))['photo']) ;
-        }
+        
         $this->view('home',$data,'products-container');
     }
     public function edit($a = '', $b = '', $c = '')

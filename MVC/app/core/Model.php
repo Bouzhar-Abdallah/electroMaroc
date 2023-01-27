@@ -11,12 +11,15 @@ class Model extends Database
     public      $errors       = [];
     public      $feddbacks    = [];
 
-    function __construct()
+    function __construct( $table = '')
     {
-        if (!property_exists($this,'table')) 
-        {
-            $this->table = strtolower($this::class);
-        }
+        if ($table === '') {
+            
+            if (!property_exists($this,'table')) 
+            {
+                $this->table = strtolower($this::class);
+            }
+        }else $this->table = $table;
     }
 
     public function setLimit($limit = 10)

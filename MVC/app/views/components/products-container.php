@@ -7,7 +7,7 @@
 
         <div class="flex flex-col justify-between bg-white overflow-hidden hover:shadow border transition-colors hover:border-P_blue">
             <a href="product/<?= $value['id']; ?>" class="" href="#">
-                <img class="w-auto max-h-[200px] mx-auto scale-100 hover:scale-105 transition-all" src="data:image/jpeg;base64,<?= base64_encode($value["id_photo_principale"]) ?>" alt="" srcset="">
+                <img class="w-auto max-h-[200px] mx-auto scale-100 hover:scale-105 transition-all" src="data:image/jpeg;base64,<?= base64_encode($value["photo"]) ?>" alt="" srcset="">
             </a href="product/<?= $value['id']; ?>">
             <div class="p-3">
                 <a href="#" class="hover:text-gray-600 text-black font-thin">

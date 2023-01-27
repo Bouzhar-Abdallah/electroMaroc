@@ -49,7 +49,6 @@ class Product extends Controller
                     
                         if (isset($_FILES['photos']['tmp_name']))foreach ($_FILES['photos']['tmp_name'] as $value) {
                             if (!empty($value)) {
-                               
                                 $photos['photo'] = file_get_contents($value);
                                 $photos['display_order'] = $key;
                                 $photos['id_produit'] = $a;
