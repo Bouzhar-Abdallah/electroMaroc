@@ -137,7 +137,7 @@ class Model extends Database
 
         $keys = array_keys($data);
         $query = "insert into $this->table (".implode(",",$keys).") values (:".implode(",:",$keys).")";
-        if ($this->query($query, $data))return false;
+        if ($this->query($query, $data))return true;
         return true;
     }
 
@@ -174,8 +174,9 @@ class Model extends Database
     {
         $data[$id_column] = $id;
         $query = "delete from $this->table where $id_column = :$id_column";
-        $this->query($query, $data);
-        return false;
+        return $this->query($query, $data);
+        
+        
     }
     public function lastInsertId($s = 'id')
     {

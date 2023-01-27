@@ -12,10 +12,11 @@ class Database
 
     protected function query($query , $data = [])
     {
-        //show($query);
         $con = $this->connect();
         $stmt = $con->prepare($query);
         $check = $stmt->execute($data);
+        /* show($query);
+        show($check); */
         //show($query);
         if ($check) 
         {
@@ -26,7 +27,7 @@ class Database
             }
         }
 
-        return false;
+        return $check;
     }
     protected function get_row($query , $data = [])
     {

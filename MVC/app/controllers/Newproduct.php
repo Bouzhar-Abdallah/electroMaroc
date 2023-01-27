@@ -49,6 +49,7 @@ class Newproduct extends Controller
             }
         
             $data['errors'] = array_merge($photo->errors, $produit->errors);
+            
         }
         //else {
 

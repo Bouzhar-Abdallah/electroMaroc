@@ -49,24 +49,25 @@ class Product extends Controller
         
             $data['errors'] = $produit->errors;
         }
-        //else {
-            //$data = array_merge($categories,$data['produit']);
-            //show($data['produit']);
+        
             $this->view('admin', $data, 'editProduct');
-        //}
+
+    }
+
+    public function getProductImages($id = '')
+    {
+        $photo = new Photo();
+        $Product_Photos = $photo->where(array('id_produit'=> $id),'id, photo, display_order');
+        foreach ($Product_Photos as $key => $value) {
+            $Product_Photos[$key]['photo'] = base64_encode($value['photo']);
+        }
+        
+        header('Content-Type: application/json');
+        echo json_encode($Product_Photos);
+        
+    }
+    public function deleteProductImage($id_image){
+        $photo = new Photo();
+        echo $photo->delete($id_image);
     }
 }
-
-
-/* if ($_SERVER['REQUEST_METHOD'] == "POST") 
-{
-    $data = [];
-    $data = $_POST;
-    $user = new User;
-    if ($user->validate($data)) {
-        $user->insert($data);
-        redirect('home');
-    }
-    
-    $data['errors'] = $user->errors;
-}  */
