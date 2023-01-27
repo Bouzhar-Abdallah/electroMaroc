@@ -38,7 +38,9 @@ class Utilisateurs extends Controller
          $user_commandes = $commande->idwhere(array('id_client' => $id), );
      
         $total_ventes = 0;
-            if(!empty($user_commandes)) foreach ($user_commandes as $key => $value) {
+        
+            if(!empty($user_commandes) && is_array($user_commandes)) 
+            foreach ($user_commandes as $key => $value) {
                 
                 $lc = $ligne_commande -> idwhere(array('id_commande' => $value['id']),'quantite, prix_vente');
                 

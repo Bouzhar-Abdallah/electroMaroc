@@ -72,19 +72,10 @@
                 </div>
                 <div class="md:w-32 ml-5 mt-10 h-full border  gap-3">
                     <div id="product_images" class="flex flex-row md:flex-col justify-center">
-                        <div class="h-20 p-1 relative hover:border hover:border-red-600">
-                            <button onclick="deletePhoto(3)" value="3" type="button" class="hover:bg-red-600 text-slate-700 hover:text-white transition-all duration-400 absolute h-5 w-5 right-1 top-1"> 
-
-                                <svg  class="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-
-                            <img class="h-full mx-auto" src="<?= ROOT ?>assets/images/b.jpg" alt="" srcset="">
-                        </div>
+                       
                         
                     </div>
-                    <input id="input" multiple type="file" class="md:border-t w-full border-r border-l hover:bg-saffron transition-colors"></input>
+                    <input id="input" name="photos[]" multiple type="file" class="md:border-t w-full border-r border-l hover:bg-saffron transition-colors"></input>
                 </div>
             </div>
 

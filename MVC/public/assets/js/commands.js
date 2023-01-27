@@ -4,7 +4,7 @@ const previous = document.getElementById('previous')
 const next = document.getElementById('next')
 const pages = document.getElementById('pages')
 class commandes {
-    constructor(_limit=20 , _offset= 0){
+    constructor(_limit=10 , _offset= 0){
         this.limit = _limit
         this.offset = _offset
         this.count = 0

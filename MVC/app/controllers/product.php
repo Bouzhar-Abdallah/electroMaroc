@@ -40,9 +40,20 @@ class Product extends Controller
         
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $data = $_POST;
+            /* show($_FILES);
+            die(); */
             $produit = new Produit;
+            $photo = new Photo;
                 if ($produit->validate($data)) {
                     $produit->update($a,$data);
+                    $key = 1;
+                        foreach ($_FILES['photos']['tmp_name'] as $value) {
+                            $photos['photo'] = file_get_contents($value);
+                            $photos['display_order'] = $key;
+                            $photos['id_produit'] = $a;
+                            $photo->insert($photos);
+                            $key++;
+                        }
                     redirect('admin');
                 }
             

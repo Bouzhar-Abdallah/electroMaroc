@@ -1,9 +1,10 @@
 const input = document.getElementById("input");
 const product_images = document.getElementById("product_images");
-const images_buttons = product_images.querySelectorAll('button')
+
 const img = document.getElementById("img");
 
 input.addEventListener("change", ()=> {
+    const images_buttons = product_images.querySelectorAll('button')
     let files = input.files
     files = Array.from(files)
   
