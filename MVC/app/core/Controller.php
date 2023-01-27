@@ -4,7 +4,7 @@ class Controller
 {
     public function view($name, $data = [], $component = '', $picture = 0)
     {
-        if (!empty($data)) extract($data);
+        //if (!empty($data)) extract($data);
         $commande = new Commande;
         $carte = new Carte;
         $cmd_EC = 0;
