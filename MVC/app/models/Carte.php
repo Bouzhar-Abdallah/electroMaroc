@@ -13,16 +13,18 @@ class Carte extends Model
     {
         $this->errors = [];
         $this->feedbacks = [];
-        if (!empty($this->first($data))) 
+        if ($this->count_($data)) 
         {
+            show($this->count_($data));
             $this->feedbacks["item"] = "ce produit exist deja dans votre panier";
+            return false;
         }
-        
+        else return true;
  
-        if (empty($this->feedbacks))
+       /*  if (empty($this->feedbacks))
         {
             return true;
-        }
+        } */
     }
     
 }

@@ -13,13 +13,13 @@ class Product extends Controller
             'id' => $a,
             'visibilite' => '1'
         );
-        
-        $data_produit = $produit->first($arr);
-        
+        show($arr);
+        $data_produit = $produit->where($arr)['0'];
+        //die();
         $photos = ($photo->where(
             array('id_produit' => $data_produit['id'])
         ));
-       
+       show($produit->exceptions);
 
 
         $data=['data_produit' => $data_produit,'photos' => $photos];

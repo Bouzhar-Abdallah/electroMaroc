@@ -13,6 +13,7 @@ buttons.forEach(button => {
         var xhr = new XMLHttpRequest();
         xhr.open('GET','http://localhost:8888/electroMaroc/MVC/public/'+button.value,true);
         xhr.onload = function(){
+            console.log(this.response);
             if(this.response == 'added'){
                 message.innerHTML = ` <div class="absolute overflow-hidden flex justify-center bg-cadeth/10 top-0 left-0 h-screen w-screen z-40">
 

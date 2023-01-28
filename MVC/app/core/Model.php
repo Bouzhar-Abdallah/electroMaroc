@@ -10,6 +10,7 @@ class Model extends Database
     protected   $order_column = "id";
     public      $errors       = [];
     public      $feddbacks    = [];
+    public      $exceptions    = [];
 
     function __construct( $table = '')
     {
@@ -57,7 +58,22 @@ class Model extends Database
 
         $data = array_merge($data,$data_not);
 
+        //show( $this->query($query, $data));
+ 
         return $this->query($query, $data);
+    }
+    public function count_($data, $s= 'count(1)')
+    {
+        $keys = array_keys($data);
+        $query = "select $s from $this->table where ";
+
+        foreach ($keys as $key ) {
+            $query .= $key ." = :" .$key." && ";
+        }
+
+        $query = trim($query," && ");
+ 
+        return $this->query($query, $data)['0'][$s];
     }
     
     public function idwhere($data, $s = '*')
@@ -102,7 +118,7 @@ class Model extends Database
     }
 
 
-    public function first($data, $data_not =[])
+/*     public function first($data, $data_not =[])
     {
         $keys = array_keys($data);
         $keys_not = array_keys($data_not);
@@ -125,7 +141,7 @@ class Model extends Database
 
         if ($result)return $result[0];
         return false;
-    }
+    } */
 
     public function insert($data)
     {
