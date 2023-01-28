@@ -13,13 +13,16 @@ class Product extends Controller
             'id' => $a,
             'visibilite' => '1'
         );
-        show($arr);
+        //show($arr);
         $data_produit = $produit->where($arr)['0'];
         //die();
         $photos = ($photo->where(
             array('id_produit' => $data_produit['id'])
         ));
-       show($produit->exceptions);
+        if (!empty($produit->exceptions)) {
+        
+            show($produit->exceptions);
+        }
 
 
         $data=['data_produit' => $data_produit,'photos' => $photos];
@@ -123,5 +126,29 @@ class Product extends Controller
     public function deleteProductImage($id_image){
         $photo = new Photo();
         echo $photo->delete($id_image);
+    }
+    public function delete( $id = '', $c = '')
+    {
+        $model = new Produit();
+        $model->delete($id,'id');
+
+        
+        if ($model->exceptions) {
+            echo 'problem';
+        }
+
+        redirect('admin');
+    }
+    public function switchV( $id = '')
+    {
+        
+        $model = new Produit();
+        $row = $model->where(array('id'=>$id));
+        if ($row[0]['visibilite'] === '1') {
+            $model->update($id,array('visibilite'=>0));
+        }else {
+            $model->update($id,array('visibilite'=>1));
+        }
+        redirect('admin');
     }
 }

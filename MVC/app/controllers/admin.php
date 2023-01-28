@@ -24,24 +24,7 @@ class Admin extends Controller
         $this->view('admin',$data,'table-products');
     }
     
-    public function delete($a = '', $b = '', $c = '')
-    {
-        $model = new $a();
-        $model->delete($b,'id');
-        redirect('admin');
-    }
-    public function switchV($a = '', $b = '', $c = '', $d = '')
-    {
-        
-        $model = new $a();
-        $row = $model->where(array('id'=>$b));
-        if ($row[0]['visibilite'] === '1') {
-            $model->update($b,array('visibilite'=>0));
-        }else {
-            $model->update($b,array('visibilite'=>1));
-        }
-        redirect('admin');
-    }
+    
 
     /* 
     public function commands($a = '', $b = '', $c = '')
