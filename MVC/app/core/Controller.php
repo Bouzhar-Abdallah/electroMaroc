@@ -14,7 +14,7 @@ class Controller
             }
             if ($_SESSION['USER']['role'] === 'admin') {
                 $cmd_EC = $commande->idwhere(array('etat' => 'en cours'), 'count(id)')['0']['count(id)'];
-                echo 'admin';
+                //echo 'admin';
             }
         }
         $componentfile = '../app/views/components/' . $component . '.php';

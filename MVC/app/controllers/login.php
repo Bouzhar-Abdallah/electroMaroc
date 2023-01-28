@@ -12,7 +12,7 @@ class Login extends Controller
             $user = new User;
             $arr['email'] = $_POST['email'];
 
-            $row = $user->first($arr);
+            $row = $user->where($arr)['0'];
             
             if ($row) 
             {
