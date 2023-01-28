@@ -141,14 +141,28 @@ class Product extends Controller
     }
     public function switchV( $id = '')
     {
-        
+        $this->setFlash('success', 'Item added successfully');
         $model = new Produit();
         $row = $model->where(array('id'=>$id));
         if ($row[0]['visibilite'] === '1') {
-            $model->update($id,array('visibilite'=>0));
+            if ($model->update($id,array('visibilite'=>0))) {
+            }
+            
         }else {
             $model->update($id,array('visibilite'=>1));
         }
         redirect('admin');
     }
 }
+
+
+  
+  
+  
+
+
+  
+  
+  
+  
+  

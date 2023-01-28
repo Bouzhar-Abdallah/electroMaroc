@@ -12,7 +12,7 @@ class Database
         return $con;
     }
 
-    protected function query($query, $data = [])
+    protected function query_read($query, $data = [])
     {
         $con = $this->connect();
         $stmt = $con->prepare($query);
@@ -40,19 +40,33 @@ class Database
 
         return $check;
     }
-    protected function get_row($query, $data = [])
+    protected function query_update($query, $data = [])
     {
         $con = $this->connect();
         $stmt = $con->prepare($query);
-
-        $check = $stmt->execute($data);
+        try {
+            $check = 0;
+            $check = $stmt->execute($data);
+            
+            //record inserted
+        } catch (Exception $e) {
+            show($e->getMessage());
+            array_push($this->exceptions,$e->getMessage());
+        }
+        //show($stmt->rowCount());
+        //$check = $stmt->execute($data);
+        //show($query);
+        //show($check);
+        //echo '<br>';
+        //show($query);
         if ($check) {
             $result = $stmt->fetchAll();
             if (is_array($result) && count($result)) {
-                return $result[0];
+                return $result;
             }
         }
 
-        return false;
+        return $check;
     }
+
 }

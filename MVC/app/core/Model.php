@@ -37,7 +37,7 @@ class Model extends Database
 
         $query = " select * from $this->table order by $this->order_column $this->order_type limit $this->limit offset $this->offset";
 
-        return $this->query($query);
+        return $this->query_read($query);
     }
     public function where($data, $s= '*', $data_not = [])
     {
@@ -60,7 +60,7 @@ class Model extends Database
 
         //show( $this->query($query, $data));
  
-        return $this->query($query, $data);
+        return $this->query_read($query, $data);
     }
     public function count_($data, $s= 'count(1)')
     {
@@ -73,10 +73,10 @@ class Model extends Database
 
         $query = trim($query," && ");
  
-        return $this->query($query, $data)['0'][$s];
+        return $this->query_read($query, $data)['0'][$s];
     }
     
-    public function idwhere($data, $s = '*')
+    /* public function idwhere($data, $s = '*')
     {
         $keys = array_keys($data);
         
@@ -92,8 +92,8 @@ class Model extends Database
 
         
 
-        return $this->query($query, $data);
-    }
+        return $this->query_read($query, $data);
+    } */
     public function last($data, $data_not = [])
     {
         $keys = array_keys($data);
@@ -116,32 +116,6 @@ class Model extends Database
         if ($result)return $result[0];
         return false;
     }
-
-
-/*     public function first($data, $data_not =[])
-    {
-        $keys = array_keys($data);
-        $keys_not = array_keys($data_not);
-        $query = "select * from $this->table where ";
-
-        foreach ($keys as $key ) {
-            $query .= $key ." = :" .$key." && ";
-        }
-        foreach ($keys_not as $key ) {
-            $query .= $key ." != :" .$key." && ";
-        }
-
-        $query = trim($query," && ");
-
-        $query .= " limit $this->limit offset $this->offset";
-
-        $data = array_merge($data,$data_not);
-
-        $result = $this->query($query, $data);
-
-        if ($result)return $result[0];
-        return false;
-    } */
 
     public function insert($data)
     {
@@ -208,7 +182,7 @@ class Model extends Database
         //'count(id)')['0']['count(id)']
         $query = "select count($s) from $this->table";
 
-        return $this->query($query);
+        return $this->query_read($query);
     }
     /* public function count($column = '*')
     {
