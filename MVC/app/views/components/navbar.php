@@ -32,7 +32,7 @@ if (empty($_SESSION['USER'])) {
         <ul class=" items-center font-normal">
             <?php if ($userrole === 'admin') { ?>
             <li class="">
-                <a href="<?= ROOT ?>logout" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
+                <a href="<?=ROOT?>logout" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
                     <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                     </svg>
@@ -134,7 +134,7 @@ if (empty($_SESSION['USER'])) {
             <?php if ($userrole === 'admin') { ?>
 
                 <li class="">
-                    <a href="admin" class=" flex items-center px-navbar-item py-navbar-item bg-saffron text-cadet hover:bg-wsaffron transition-colors">
+                    <a href="<?= ROOT ?>admin" class=" flex items-center px-navbar-item py-navbar-item bg-saffron text-cadet hover:bg-wsaffron transition-colors">
 
                         <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path d="M17.004 10.407c.138.435-.216.842-.672.842h-3.465a.75.75 0 01-.65-.375l-1.732-3c-.229-.396-.053-.907.393-1.004a5.252 5.252 0 016.126 3.537zM8.12 8.464c.307-.338.838-.235 1.066.16l1.732 3a.75.75 0 010 .75l-1.732 3.001c-.229.396-.76.498-1.067.16A5.231 5.231 0 016.75 12c0-1.362.519-2.603 1.37-3.536zM10.878 17.13c-.447-.097-.623-.608-.394-1.003l1.733-3.003a.75.75 0 01.65-.375h3.465c.457 0 .81.408.672.843a5.252 5.252 0 01-6.126 3.538z" />
@@ -262,7 +262,7 @@ if (empty($_SESSION['USER'])) {
             <?php if ($userrole === 'admin') { ?>
 
                 <li class="">
-                    <a href="admin" class=" flex items-center px-navbar-item py-navbar-item bg-saffron text-cadet hover:bg-wsaffron transition-colors">
+                    <a href="<?=ROOT?>admin" class=" flex items-center px-navbar-item py-navbar-item bg-saffron text-cadet hover:bg-wsaffron transition-colors">
 
                         <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                             <path d="M17.004 10.407c.138.435-.216.842-.672.842h-3.465a.75.75 0 01-.65-.375l-1.732-3c-.229-.396-.053-.907.393-1.004a5.252 5.252 0 016.126 3.537zM8.12 8.464c.307-.338.838-.235 1.066.16l1.732 3a.75.75 0 010 .75l-1.732 3.001c-.229.396-.76.498-1.067.16A5.231 5.231 0 016.75 12c0-1.362.519-2.603 1.37-3.536zM10.878 17.13c-.447-.097-.623-.608-.394-1.003l1.733-3.003a.75.75 0 01.65-.375h3.465c.457 0 .81.408.672.843a5.252 5.252 0 01-6.126 3.538z" />

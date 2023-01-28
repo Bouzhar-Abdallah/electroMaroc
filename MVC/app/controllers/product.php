@@ -28,6 +28,47 @@ class Product extends Controller
         $this->view('home',$data,'product',$b);
         
     }
+    public function add($a = '', $b = '', $c = '')
+    {
+        $data = [];
+        $data['errors'] = [];
+        $categorie = new Categorie;
+
+        $categories = $categorie->findAll();
+        
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $data = $_POST;
+            $photos = [];
+            
+            $produit = new Produit;
+            $photo = new Photo;
+            if ($photo->validate($_FILES)) {
+                if ($produit->validate($data)) {
+                    if ($produit->insert($data)) {
+                        $product = $produit->last($data);
+                        $key = 1;
+                        foreach ($_FILES['photos']['tmp_name'] as $value) {
+                            $photos['photo'] = file_get_contents($value);
+                            $photos['display_order'] = $key;
+                            $photos['id_produit'] = $product['id'];
+                            $photo->insert($photos);
+                            $key++;
+                        }
+                        
+                       
+                    }
+                }
+            }
+        
+            $data['errors'] = array_merge($photo->errors, $produit->errors);
+            
+        }
+        //else {
+
+            $data = array_merge($data['errors'],$categories);
+            $this->view('admin', $data, 'newproduct');
+        //}
+    }
     public function editProduct($a = '', $b = '', $c = '')
     {
         $data = [];
