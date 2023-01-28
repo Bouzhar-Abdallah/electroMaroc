@@ -76,7 +76,7 @@ class Model extends Database
         return $this->query_read($query, $data)['0'][$s];
     }
     
-    public function last($data, $data_not = [])
+    /* public function last($data, $data_not = [])
     {
         $keys = array_keys($data);
         $keys_not = array_keys($data_not);
@@ -97,7 +97,7 @@ class Model extends Database
         $result = $this->query($query, $data);
         if ($result)return $result[0];
         return false;
-    }
+    } */
 
     public function insert($data)
     {
@@ -112,7 +112,7 @@ class Model extends Database
 
         $keys = array_keys($data);
         $query = "insert into $this->table (".implode(",",$keys).") values (:".implode(",:",$keys).")";
-        if ($this->query($query, $data))return true;
+        if ($this->query_update($query, $data))return true;
         return true;
     }
 
@@ -141,15 +141,15 @@ class Model extends Database
         
         $data[$id_column] = $id;
 
-        $this->query($query, $data);
-        return false;
+        return $this->query_update($query, $data);
+
     }
 
     public function delete($id, $id_column = 'id')
     {
         $data[$id_column] = $id;
         $query = "delete from $this->table where $id_column = :$id_column";
-        return $this->query($query, $data);
+        return $this->query_update($query, $data);
         
         
     }
@@ -157,7 +157,7 @@ class Model extends Database
     {
         $query = "select $s from $this->table ORDER BY id DESC LIMIT 1";
 
-        return $this->query($query)[0][$s];
+        return $this->query_update($query)[0][$s];
     }
     public function count($s = 'id')
     {
@@ -166,12 +166,5 @@ class Model extends Database
 
         return $this->query_read($query);
     }
-    /* public function count($column = '*')
-    {
-        $query = "select count($column) from $this->table";
-
-        return $this->query($query)[0]['count('.$column.')'];
-    } */
-   
 
 }

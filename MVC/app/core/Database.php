@@ -25,18 +25,12 @@ class Database
             show($e->getMessage());
             array_push($this->exceptions,$e->getMessage());
         }
-        //show($stmt->rowCount());
-        //$check = $stmt->execute($data);
-        //show($query);
-        //show($check);
-        //echo '<br>';
-        //show($query);
-        if ($check) {
+        
             $result = $stmt->fetchAll();
             if (is_array($result) && count($result)) {
                 return $result;
             }
-        }
+        
 
         return $check;
     }
@@ -59,12 +53,12 @@ class Database
         //show($check);
         //echo '<br>';
         //show($query);
-        if ($check) {
+        /* if ($check) {
             $result = $stmt->fetchAll();
             if (is_array($result) && count($result)) {
                 return $result;
             }
-        }
+        } */
 
         return $check;
     }

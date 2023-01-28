@@ -23,4 +23,4 @@ SELECT
 pro.id, pro.`libelle`, pro.description, pro.prix_final, pro.prix_offre,
 ph.photo
 from photo as ph INNER JOIN produit as pro INNER JOIN categorie as cat
-where pro.id = ph.id_produit && ph.display_order = 1 && pro.visibilite = 1 && cat.visibilite = 1 && pro.id_categorie = cat.id;
+where ph.display_order = 1 && pro.id = ph.id_produit && ph.display_order = 1 && pro.visibilite = 1 && cat.visibilite = 1 && pro.id_categorie = cat.id;
