@@ -17,7 +17,7 @@
 
             <div class=" flex flex-col">
                 <label for="message" class="label-style">Description produit :</label>
-                <textarea id="message" name="description" rows="4" class="h-full  w-full input-style  "><?=$data['nom'] ?></textarea>
+                <textarea id="message" name="description" rows="4" class="h-full  w-full input-style  "><?=$data['description'] ?></textarea>
             </div>
 
 

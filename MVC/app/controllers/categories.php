@@ -93,28 +93,28 @@ class Categories extends Controller
         $categorie = new Categorie;
 
         $data = $categorie->where(array('id' => $id))['0'];
-
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $data = $_POST;
-
-            if ($produit->validate($data)) {
-                $produit->update($a, $data);
-                $key = 1;
-
-                if (isset($_FILES['photos']['tmp_name'])) foreach ($_FILES['photos']['tmp_name'] as $value) {
-                    if (!empty($value)) {
-                        $photos['photo'] = file_get_contents($value);
-                        $photos['display_order'] = $key;
-                        $photos['id_produit'] = $a;
-                        $photo->insert($photos);
-                        $key++;
-                    }
-                }
-                redirect('admin');
+            $files = $_FILES;
+ 
+            /*  */
+            if ($categorie->validate($files)) {
+                $data['photo'] = file_get_contents($_FILES['photo']['tmp_name']);
             }
-
-
-            $data['errors'] = $produit->errors;
+            $categorie->update($id,$data);
+            if (isset($categorie->status->exception)) {
+                $this->setFlash('failure', 'something went wrong');
+                redirect('categories');
+            } else if ($categorie->status->success) {
+                if ($categorie->status->affected_rows) {
+                    $this->setFlash('success', 'categorie a ete modifiée');
+                    redirect('categories');
+                } else {
+                    $this->setFlash('failure', 'aucun changement');
+                    redirect('categories');
+                }
+            }
+            /*  */
         }
 
         $this->view('admin', $data, 'editCategory');
