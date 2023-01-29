@@ -33,7 +33,8 @@ class Categories extends Controller
             $files = $_FILES;
             if (!$categorie->validate($files)) {
                 $this->setFlash('failure', $categorie->errors['photo']);
-                redirect('categories/add');
+                $this->view('admin', $data, 'newcategorie');
+                //redirect('categories/add');
             } else {
 
 

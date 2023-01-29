@@ -12,12 +12,12 @@
             <div class=" flex flex-col">
                 <label class="label-style" for="x">nom :
                 </label>
-                <input class="input-style" type="text" name="nom" id="">
+                <input value="<?php if(!empty($data))echo $data['nom']?>" class="input-style" type="text" name="nom" id="">
             </div>
 
             <div class=" flex flex-col">
                 <label for="message" class="label-style">Description produit :</label>
-                <textarea id="message" name="description" rows="4" class="h-full  w-full input-style  "></textarea>
+                <textarea id="message" name="description" rows="4" class="h-full  w-full input-style  "><?php if(!empty($data))echo $data['description']?></textarea>
             </div>
 
 
