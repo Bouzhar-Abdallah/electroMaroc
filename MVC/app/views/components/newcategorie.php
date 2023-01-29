@@ -33,11 +33,11 @@
 
         </div>
         <div class="flex gap-3 justify-end">
-            <a href="admin">
+            <a href="<?=ROOT?>categories">
 
                 <div class="btn-primary block capitalize font-bold  mt-3  ">terminer</div>
             </a>
-            <a href="">
+            <a href="<?=ROOT?>categories/add">
 
                 <button class="btn-primary block capitalize font-bold  mt-3  ">sauvegarder</button>
             </a>
