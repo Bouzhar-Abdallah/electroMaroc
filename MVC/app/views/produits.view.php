@@ -15,9 +15,9 @@
     <div class="h-auto flex ">
         <div class="fixed h-full border pt-3">
             <ul class="flex flex-col items-center ">
-                <li class="flex relative hover:bg-cadethh transition-colors transition-duration duration-500"><img class="w-auto h-10 mx-1 my-2" src="<?=ROOT?>assets/images/categories/dishwasher-icon.png" alt=""></li>
+                <!-- <li class="flex relative hover:bg-cadethh transition-colors transition-duration duration-500"><img class="w-auto h-10 mx-1 my-2" src="<?//ROOT?>assets/images/categories/dishwasher-icon.png" alt=""></li> -->
                 <?php foreach ($data['categories'] as $key => $value) {?>
-                    <li class="flex relative hover:bg-cadethh transition-colors transition-duration duration-500 h-14"><img class="w-9 h-auto mx-1 my-2" src="data:image/jpeg;base64,<?= base64_encode($value["photo"]) ?>" alt=""></li>
+                    <li class="flex relative hover:bg-saffron transition-colors transition-duration duration-500 ease-in"><img class="w-auto h-auto max-w-[25px] max-h-[35px] mx-2 my-3" src="data:image/jpeg;base64,<?= base64_encode($value["photo"]) ?>" alt=""></li>
                     
                 <?php }; ?>
             </ul>

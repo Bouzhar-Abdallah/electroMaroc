@@ -1616,6 +1616,14 @@ input:checked + .toggle-bg {
   max-height: 2.5rem;
 }
 
+.max-h-\[50px\] {
+  max-height: 50px;
+}
+
+.max-h-\[35px\] {
+  max-height: 35px;
+}
+
 .w-screen {
   width: 100vw;
 }
@@ -1747,6 +1755,14 @@ input:checked + .toggle-bg {
 
 .min-w-full {
   min-width: 100%;
+}
+
+.max-w-\[20px\] {
+  max-width: 20px;
+}
+
+.max-w-\[25px\] {
+  max-width: 25px;
 }
 
 .flex-1 {
