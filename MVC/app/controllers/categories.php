@@ -25,7 +25,7 @@ class Categories extends Controller
     public function add($a = '', $b = '', $c = '')
     {
         $data = [];
-        $data['errors'] = [];
+        //$data['errors'] = [];
         $categorie = new Categorie;
 
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -53,6 +53,7 @@ class Categories extends Controller
                 }
             }
         }
+        
         $this->view('admin', $data, 'newcategorie');
     }
 
