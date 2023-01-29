@@ -39,7 +39,7 @@ class Model extends Database
 
         $query = " select * from $this->table order by $this->order_column $this->order_type limit $this->limit offset $this->offset";
 
-        return $this->query_read($query);
+        return $this->query($query);
     }
     public function where($data, $s= '*', $data_not = [])
     {
@@ -62,7 +62,7 @@ class Model extends Database
 
         //show( $this->query($query, $data));
  
-        return $this->query_read($query, $data);
+        return $this->query($query, $data);
     }
     public function count_($data, $s= 'count(1)')
     {
@@ -75,7 +75,7 @@ class Model extends Database
 
         $query = trim($query," && ");
  
-        return $this->query_read($query, $data)['0'][$s];
+        return $this->query($query, $data)['0'][$s];
     }
     
     /* public function last($data, $data_not = [])
@@ -114,7 +114,7 @@ class Model extends Database
 
         $keys = array_keys($data);
         $query = "insert into $this->table (".implode(",",$keys).") values (:".implode(",:",$keys).")";
-        if ($this->query_update($query, $data))return true;
+        if ($this->query($query, $data))return true;
         return true;
     }
 
@@ -143,7 +143,7 @@ class Model extends Database
         
         $data[$id_column] = $id;
 
-        return $this->query_update($query, $data);
+        return $this->query($query, $data);
 
     }
 
@@ -151,7 +151,7 @@ class Model extends Database
     {
         $data[$id_column] = $id;
         $query = "delete from $this->table where $id_column = :$id_column";
-        return $this->query_update($query, $data);
+        return $this->query($query, $data);
         
         
     }
@@ -159,14 +159,14 @@ class Model extends Database
     {
         $query = "select $s from $this->table ORDER BY id DESC LIMIT 1";
 
-        return $this->query_update($query)[0][$s];
+        return $this->query($query)[0][$s];
     }
     public function count($s = 'id')
     {
         //'count(id)')['0']['count(id)']
         $query = "select count($s) from $this->table";
 
-        return $this->query_read($query);
+        return $this->query($query);
     }
 
 }

@@ -144,6 +144,7 @@ class Product extends Controller
         $this->setFlash('success', 'Item added successfully');
         $model = new Produit();
         $row = $model->where(array('id'=>$id));
+        
         if ($row[0]['visibilite'] === '1') {
             if ($model->update($id,array('visibilite'=>0))) {
             }
@@ -151,7 +152,6 @@ class Product extends Controller
         }else {
             $model->update($id,array('visibilite'=>1));
         }
-        
         redirect('admin');
     }
 }

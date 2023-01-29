@@ -17,7 +17,7 @@ class Admin extends Controller
         $categorie = new Categorie;
 
         $data = $produit->findAll();
-        
+        //show($produit->status);
         if(!empty($data))
         foreach ($data as $key => $value) {
             $data[$key]['categoriename'] = $categorie->categoriename($value['id_categorie']);
