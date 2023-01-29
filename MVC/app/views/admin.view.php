@@ -11,8 +11,8 @@
 
 <body>
 
+    <?php require_once 'components/feedbacks.php';?>
     <div class="flex gap-3 h-screen w-screen p-3">
-
         <?php require_once 'components/dashboard_bar.php'; ?>
         <div class="flex flex-col gap-3 w-full">
             <!-- <div class="h-32 w-full bg-cadethh">

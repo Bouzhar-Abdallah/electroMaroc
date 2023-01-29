@@ -19,16 +19,7 @@ if (empty($_SESSION['USER'])) {
 
 
 <header class="relative w-full z-40">
-    <div id="notifs" class="fixed top-12 bg-green-300 w-full">
-        <h1><?php if ($failure) {
-            echo $failure;
-            
-        }
-        if ($success) {
-            echo $success;
-           
-        } ?></h1>
-    </div>
+    <?php require_once 'feedbacks.php';?>
     <div class="flex justify-between w-full capitalize bg-cadet text-white fixed top-0">
         <!-- <img src="" alt="" srcset=""> -->
         <a href="#" class="block px-navbar-item py-navbar-item">logo</a>
