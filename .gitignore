@@ -7,3 +7,7 @@ MVC/public/assets/.DS_Store
 node_modules
 MVC/public/assets/css/style.css
 .DS_Store
+.DS_Store
+.DS_Store
+.gitignore
+MVC/public/assets/.DS_Store

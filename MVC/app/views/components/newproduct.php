@@ -1,6 +1,6 @@
 <div class="p-3 bg-gray-200 h-full ">
 
-    <form class=" p-5 container mx-auto xl:w-2/3 border bg-white border-cadeth" action="" method="post" enctype="multipart/form-data">
+    <form class=" p-5 container mx-auto xl:w-2/3 border bg-white border-cadeth" action="<?=ROOT?>product/add" method="post" enctype="multipart/form-data">
 
         <h1 class="capitalize font-bold text-2xl border-b pb-1">creer un nouveau produit</h1>
         <?php if (!empty($errors)){?>
@@ -75,7 +75,7 @@
 
         </div>
         <div class="flex gap-3 justify-end">
-            <a href="admin">
+            <a href="<?=ROOT?>admin">
 
                 <div class="btn-primary block capitalize font-bold  mt-3  ">terminer</div>
             </a>

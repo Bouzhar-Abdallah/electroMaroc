@@ -13,13 +13,16 @@ class Product extends Controller
             'id' => $a,
             'visibilite' => '1'
         );
-        
-        $data_produit = $produit->first($arr);
-        
+        //show($arr);
+        $data_produit = $produit->where($arr)['0'];
+        //die();
         $photos = ($photo->where(
             array('id_produit' => $data_produit['id'])
         ));
-       
+        if (!empty($produit->exceptions)) {
+        
+            show($produit->exceptions);
+        }
 
 
         $data=['data_produit' => $data_produit,'photos' => $photos];
@@ -28,6 +31,49 @@ class Product extends Controller
         $this->view('home',$data,'product',$b);
         
     }
+    /* old add requires last method */
+    public function add($a = '', $b = '', $c = '')
+    {
+        $data = [];
+        $data['errors'] = [];
+        $categorie = new Categorie;
+
+        $categories = $categorie->findAll();
+        
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $data = $_POST;
+            $photos = [];
+            
+            $produit = new Produit;
+            $photo = new Photo;
+            if ($photo->validate($_FILES)) {
+                if ($produit->validate($data)) {
+                    if ($produit->insert($data)) {
+                        $product = $produit->last($data);
+                        $key = 1;
+                        foreach ($_FILES['photos']['tmp_name'] as $value) {
+                            $photos['photo'] = file_get_contents($value);
+                            $photos['display_order'] = $key;
+                            $photos['id_produit'] = $product['id'];
+                            $photo->insert($photos);
+                            $key++;
+                        }
+                        
+                       
+                    }
+                }
+            }
+            
+            $data['errors'] = array_merge($photo->errors, $produit->errors);
+            
+        }
+        //else {
+
+            $data = array_merge($data['errors'],$categories);
+            $this->view('admin', $data, 'newproduct');
+        //}
+    }
+
     public function editProduct($a = '', $b = '', $c = '')
     {
         $data = [];
@@ -83,4 +129,44 @@ class Product extends Controller
         $photo = new Photo();
         echo $photo->delete($id_image);
     }
+    public function delete( $id = '', $c = '')
+    {
+        $model = new Produit();
+        $model->delete($id,'id');
+
+        
+        if ($model->exceptions) {
+            echo 'problem';
+        }
+
+        redirect('admin');
+    }
+    public function switchV( $id = '')
+    {
+        
+        $model = new Produit();
+        $visibilite = $model->where(array('id'=>$id),'visibilite')[0]['visibilite'];
+        
+        if ($visibilite === 1) {
+            if ($model->update($id,array('visibilite'=>0))) {
+            }
+            
+        }else {
+            $model->update($id,array('visibilite'=>1));
+        }
+        
+        redirect('admin');
+    }
 }
+
+
+  
+  
+  
+
+
+  
+  
+  
+  
+  

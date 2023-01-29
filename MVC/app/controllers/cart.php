@@ -46,14 +46,16 @@ class Cart extends Controller
             'id_produit' => $a,
             'id_client' => $_SESSION['USER']['id']
         );
-        if ($carte->validate($data)) 
+        if (!$carte->count_($data)) 
         {
             $carte->insert($data);
             echo 'added';
         }else{
+            $carte->feedbacks["item"] = "ce produit exist deja dans votre panier";
             echo 'not';
         }
-
+        //show($data);
+        //show($carte->feedbacks);
         //redirect('');
     }
 
