@@ -62,7 +62,7 @@ class Product extends Controller
                     }
                 }
             }
-        
+            
             $data['errors'] = array_merge($photo->errors, $produit->errors);
             
         }
@@ -151,6 +151,7 @@ class Product extends Controller
         }else {
             $model->update($id,array('visibilite'=>1));
         }
+        
         redirect('admin');
     }
 }

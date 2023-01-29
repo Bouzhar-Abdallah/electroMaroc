@@ -1,9 +1,11 @@
 <?php
 
-use function PHPSTORM_META\type;
+//use function PHPSTORM_META\type;
 
 class Database
 {
+    public $status;
+    
     private function connect()
     {
         $string = "mysql:hostname=" . DBHOST . ";dbname=" . DBNAME;
@@ -11,8 +13,23 @@ class Database
         $con->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         return $con;
     }
+    public function query_read($query, $params = []) {
+        $statement = $this->connect()->prepare($query);
+        $success = $statement->execute($params);
+        $this->status->success = $success;
+        if ($success) {
+            $this->status->affected_rows = $statement->rowCount();
+            $this->status->last_insert_id = $this->connect()->lastInsertId();
+            return $statement->fetchAll();
+        } else {
+            $this->status->error_code = $this->connect()->errorCode();
+            $this->status->error_message = $this->connect()->errorInfo();
+            return false;
+        }
+    }
 
-    protected function query_read($query, $data = [])
+   /*  
+   protected function query_read($query, $data = [])
     {
         $con = $this->connect();
         $stmt = $con->prepare($query);
@@ -33,7 +50,8 @@ class Database
         
 
         return $check;
-    }
+    } */
+
     protected function query_update($query, $data = [])
     {
         $con = $this->connect();

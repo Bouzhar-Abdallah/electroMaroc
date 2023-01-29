@@ -14,6 +14,8 @@ class Model extends Database
 
     function __construct( $table = '')
     {
+        
+        $this->status = new stdClass;
         if ($table === '') {
             
             if (!property_exists($this,'table')) 
