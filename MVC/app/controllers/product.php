@@ -143,15 +143,16 @@ class Product extends Controller
     {
         
         $model = new Produit();
-        $row = $model->where(array('id'=>$id));
+        $visibilite = $model->where(array('id'=>$id),'visibilite')[0]['visibilite'];
         
-        if ($row[0]['visibilite'] === '1') {
+        if ($visibilite === 1) {
             if ($model->update($id,array('visibilite'=>0))) {
             }
             
         }else {
             $model->update($id,array('visibilite'=>1));
         }
+        
         redirect('admin');
     }
 }
