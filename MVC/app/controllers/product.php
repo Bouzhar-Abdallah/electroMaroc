@@ -141,7 +141,7 @@ class Product extends Controller
     }
     public function switchV( $id = '')
     {
-        $this->setFlash('success', 'Item added successfully');
+        
         $model = new Produit();
         $row = $model->where(array('id'=>$id));
         

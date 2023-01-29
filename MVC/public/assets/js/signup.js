@@ -55,7 +55,8 @@ submit.addEventListener("click", (e)=>{
         let input = document.getElementById(node.name)
         if(node.value === '' || node.value == 'NULL'){
             errors.push(`${node.name} is required`)
-            input.classList.add('bg-[#FDECF0]')
+   
+            input.style.backgroundColor = '#FDECF0'
             input.placeholder='ce champ est obligatoire'
             refuse = false
         }else{

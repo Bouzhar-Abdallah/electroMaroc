@@ -5,7 +5,7 @@ function show($stuff)
     echo "<pre>";
     print_r($stuff);
     echo "</pre>";
-    //die();
+    die();
 }
 
 function redirect($path){

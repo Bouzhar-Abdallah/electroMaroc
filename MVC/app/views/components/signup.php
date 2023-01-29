@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="<?= ROOT ?>assets/css/style.css">
 
+<script src="https://cdn.tailwindcss.com"></script>
 <form id="form" class="p-5 m-5 h-full flex flex-col   border border-cadethh" method="post">
     <h1 class="capitalize font-bold text-2xl">creer un compte</h1>
     <?php if (!empty($errors)) { ?>

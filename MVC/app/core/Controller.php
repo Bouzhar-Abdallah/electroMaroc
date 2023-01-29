@@ -20,9 +20,8 @@ class Controller
         }
         // In another page or request
         $success = $this->getFlash('success');
-        if ($success) {
-            echo $success;
-        }
+        $failure = $this->getFlash('failure');
+        
         $componentfile = '../app/views/components/' . $component . '.php';
         $filename = '../app/views/' . $name . '.view.php';
 

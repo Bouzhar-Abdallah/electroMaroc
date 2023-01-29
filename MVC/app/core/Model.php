@@ -3,14 +3,11 @@
 class Model extends Database
 {
     
-    
     protected   $limit        = 10;
     protected   $offset       = 0;
     protected   $order_type   = "desc";
     protected   $order_column = "id";
-    public      $errors       = [];
-    public      $feddbacks    = [];
-    public      $exceptions    = [];
+    
 
     function __construct( $table = '')
     {
