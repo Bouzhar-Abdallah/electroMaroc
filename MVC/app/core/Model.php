@@ -7,7 +7,7 @@ class Model extends Database
     protected   $offset       = 0;
     protected   $order_type   = "desc";
     protected   $order_column = "id";
-    
+    public $errors = [];
 
     function __construct( $table = '')
     {

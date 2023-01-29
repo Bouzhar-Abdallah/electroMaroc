@@ -13,19 +13,17 @@ class Categorie extends Model
     {
         
         $photos_uploaded = 0;
-        foreach ($data['photos']['error'] as $value) {
-            
-            if ($value === 0) {
-                $photos_uploaded++;
+        if (isset($data['photo']['error'])) {
+            if ($data['photo']['error']>0) {
+                $this->errors["photo"] = "veuillez telecharger au moin une image";
             }
-        }
-        if ($photos_uploaded === 0) {
-            $this->errors["photo"] = "veuillez telecharger au moin une image";
         }
         
         if (empty($this->errors))
         {
             return true;
+        }else{
+            return false;
         }
     }
     public function categoriename($id)
