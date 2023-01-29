@@ -16,13 +16,13 @@ class Database
     }
     public function query($query, $data = []) {
         $connection = $this->connection();
-        $statement = $connection->prepare($query);
         $this->status->query = $query;
         $this->status->data = $data;
+        
         try {
+            $statement = $connection->prepare($query);
             $success = $statement->execute($data);
             $this->status->success = $success;
-            
             if ($success) {
                 $this->status->affected_rows = $statement->rowCount();
                 $this->status->last_insert_id = $connection->lastInsertId();

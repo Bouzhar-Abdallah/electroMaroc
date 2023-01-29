@@ -18,21 +18,60 @@ class Categories extends Controller
 
         $data = $categorie->findAll();
         
-        if(!empty($data))
-        /* foreach ($data as $key => $value) {
-            $data[$key]['categoriename'] = $categorie->categoriename($value['id_categorie']);
-        } */
+        
         $this->view('admin',$data,'table-categories');
     }
     
-    public function delete($a = '', $b = '', $c = '')
+    public function add($a = '', $b = '', $c = '')
     {
-        $model = new $a();
-        $model->delete($b,'id');
+        $data = [];
+        $data['errors'] = [];
+        $categorie = new Categorie;
+        
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $data = $_POST;
+            $data['photo'] = file_get_contents($_FILES['photo']['tmp_name']);
+            
+            $categorie->insert($data);
+            
+            
+            if (isset($categorie->status->exception)){
+                $this->setFlash('failure', 'something went wrong');
+                redirect('categories');
+            }else if ($categorie->status->success) {
+                if ($categorie->status->affected_rows) {
+                    $this->setFlash('success', 'categorie a ete ajoutèe ');
+                }else{
+                    $this->setFlash('failure', 'something went wrong');
+                }
+            }
+        }
+            $this->view('admin', $data, 'newcategorie');
+        
+    }
+
+
+    public function delete($id)
+    {
+        $categorie = new Categorie();
+        $categorie->delete($id,'id');
+        if (isset($categorie->status->exception)){
+            $this->setFlash('failure', 'something went wrong');
+            redirect('categories');
+        }else if ($categorie->status->success) {
+            if ($categorie->status->affected_rows) {
+                $this->setFlash('success', 'categorie a ete supprimé ');
+            }else{
+                $this->setFlash('failure', 'something went wrong');
+            }
+        }
+        
         redirect('categories');
     }
     public function switchV($a = '', $b = '', $c = '', $d = '')
     {
+        showd($a);
+        showd($b);
         
         $model = new $a();
         $row = $model->where(array('id'=>$b));
@@ -43,25 +82,6 @@ class Categories extends Controller
         }
         redirect('categories');
     }
-    public function add($a = '', $b = '', $c = '')
-    {
-        $data = [];
-        $data['errors'] = [];
-        $categorie = new Categorie;
-        $categories = $categorie->findAll();
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $data = $_POST;
-            $data['photo'] = file_get_contents($_FILES['photo']['tmp_name']);
-            
-            $categorie->insert($data);
-            //$data['errors'] = array_merge($photo->errors, $produit->errors);
-        }
-        //else {
-
-            //$data = array_merge($data['errors'],$categories);
-            $this->view('admin', $data, 'newcategorie');
-        //}
-    }
-
+    
 }
 

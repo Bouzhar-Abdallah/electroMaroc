@@ -1581,6 +1581,10 @@ input:checked + .toggle-bg {
   max-height: 200px;
 }
 
+.max-h-10 {
+  max-height: 2.5rem;
+}
+
 .w-screen {
   width: 100vw;
 }
