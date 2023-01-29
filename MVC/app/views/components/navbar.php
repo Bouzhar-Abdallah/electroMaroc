@@ -18,7 +18,7 @@ if (empty($_SESSION['USER'])) {
 
 
 
-<header class="relative w-full z-40">
+<header class="relative w-full h-12 z-40">
     <?php require_once 'feedbacks.php';?>
     <div class="flex justify-between w-full capitalize bg-cadet text-white fixed top-0">
         <!-- <img src="" alt="" srcset=""> -->

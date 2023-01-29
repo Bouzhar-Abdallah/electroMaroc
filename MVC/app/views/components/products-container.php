@@ -2,7 +2,7 @@
     <div id="message" class="absolute ">
     </div>
     <!-- product item -->
-    <?php if (!empty($data) && is_array($data)) foreach ($data as $value) { ?>
+    <?php if (!empty($data['produits']) && is_array($data['produits'])) foreach ($data['produits'] as $value) { ?>
 
 
         <div class="flex flex-col justify-between bg-white overflow-hidden hover:shadow border transition-colors hover:border-P_blue">

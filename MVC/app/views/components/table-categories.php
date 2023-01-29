@@ -33,7 +33,7 @@
                 <td class="py-4 px-3 ">
                     <div class="w-10 h-10">
 
-                        <img class="max-h-10" src="data:image/jpeg;base64,<?= base64_encode($value["photo"]) ?>" alt="" srcset="">
+                        <img class="max-h-10 mx-auto" src="data:image/jpeg;base64,<?= base64_encode($value["photo"]) ?>" alt="" srcset="">
                     </div>
                 </td>
                 <th scope="row" class="py-4 px-3  font-medium text-gray-900 whitespace-nowrap ">
