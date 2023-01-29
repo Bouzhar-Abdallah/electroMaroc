@@ -55,12 +55,11 @@ submit.addEventListener("click", (e)=>{
         let input = document.getElementById(node.name)
         if(node.value === '' || node.value == 'NULL'){
             errors.push(`${node.name} is required`)
-   
-            input.style.backgroundColor = '#FDECF0'
+            input.classList.add('bg-red-200')
             input.placeholder='ce champ est obligatoire'
             refuse = false
         }else{
-            input.classList.remove('bg-[#FDECF0]')
+            input.classList.remove('bg-bg-red-200')
         }
     })
     if (password.value != password_2.value) {
