@@ -31,6 +31,7 @@ class Product extends Controller
         $this->view('home',$data,'product',$b);
         
     }
+    /* old add requires last method */
     public function add($a = '', $b = '', $c = '')
     {
         $data = [];
@@ -72,6 +73,7 @@ class Product extends Controller
             $this->view('admin', $data, 'newproduct');
         //}
     }
+
     public function editProduct($a = '', $b = '', $c = '')
     {
         $data = [];

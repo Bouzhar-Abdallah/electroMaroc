@@ -74,8 +74,8 @@ class Model extends Database
  
         return $this->query($query, $data)['0'][$s];
     }
-    
-    /* public function last($data, $data_not = [])
+    /* this last method should be replaced */
+    public function last($data, $data_not = [])
     {
         $keys = array_keys($data);
         $keys_not = array_keys($data_not);
@@ -96,7 +96,7 @@ class Model extends Database
         $result = $this->query($query, $data);
         if ($result)return $result[0];
         return false;
-    } */
+    }
 
     public function insert($data)
     {
