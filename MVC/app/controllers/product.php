@@ -125,6 +125,7 @@ class Product extends Controller
         echo json_encode($Product_Photos);
         
     }
+    
     public function deleteProductImage($id_image){
         $photo = new Photo();
         echo $photo->delete($id_image);

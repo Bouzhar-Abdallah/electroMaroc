@@ -46,5 +46,5 @@
     </div>
 </body>
 <script src="<?= ROOT ?>assets/js/categoryhover.js"></script>
-
+<script src="<?= ROOT ?>assets/js/categoriesAjax.js"></script>
 </html>

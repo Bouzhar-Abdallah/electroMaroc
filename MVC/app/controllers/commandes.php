@@ -42,6 +42,7 @@ class Commandes extends Controller
         $user = new User;
         $commande->setLimit($limit);
         $commande->setOffset($offset);
+        
         $data = $commande->findAll();
         $total_price = 0;
         $total_items = 0;
