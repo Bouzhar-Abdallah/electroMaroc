@@ -30,7 +30,7 @@ class Produits extends Controller
             array('id_categorie'=>$id_category)
         );
         //showd($produit->status);
-        $this->view('produits',$data,'products-container');
+        $this->view('produits_ajax',$data,'products-container_ajax');
     }
 }
 

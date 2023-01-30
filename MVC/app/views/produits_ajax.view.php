@@ -17,7 +17,7 @@
             <ul class="flex flex-col items-center bg-white relative z-20 ">
                 <!-- <li class="flex relative hover:bg-cadethh transition-colors transition-duration duration-500"><img class="w-auto h-10 mx-1 my-2" src="<? //ROOT
                                                                                                                                                             ?>assets/images/categories/dishwasher-icon.png" alt=""></li> -->
-                    <a href="<?=ROOT?>produits/all">
+                    <a href="<?=ROOT?>produits/getproductsByCategory/all">
                         <li class="category_list flex cursor-pointer hover:bg-saffron bg-white transition-colors transition-duration duration-500 ease-in h-[45px]">
                             <img class=" w-auto h-auto max-w-[25px] max-h-[35px] mx-2 my-3 relative z-20 " src="<?=ROOT?>assets/images/categories/all.png" alt="">
 
@@ -27,7 +27,7 @@
                         </li>
                     </a>
                 <?php foreach ($data['categories'] as $key => $value) { ?>
-                    <a href="<?=ROOT?>produits/<?=$value['id']?>">
+                    <a href="<?=ROOT?>produits/getproductsByCategory/<?=$value['id']?>">
                         <li class="category_list flex cursor-pointer hover:bg-saffron bg-white transition-colors transition-duration duration-500 ease-in h-[45px]">
                             <img class=" w-auto h-auto max-w-[25px] max-h-[35px] mx-2 my-3 relative z-20 " src="data:image/jpeg;base64,<?= base64_encode($value["photo"]) ?>" alt="">
                             <div class="px-3 bg-cadet text-white text-xs capitalize fixed h-[45px] transi duration-300 ease-in flex items-center -left-[150px] -z-10 w-[150px]">
