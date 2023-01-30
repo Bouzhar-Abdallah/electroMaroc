@@ -25,3 +25,13 @@ ph.photo,
 cat.nom as 'categorie', cat.visibilite as 'categorie_vis'
 from photo as ph INNER JOIN produit as pro INNER JOIN categorie as cat
 where ph.display_order = 1 && pro.id = ph.id_produit && ph.display_order = 1 && pro.id_categorie = cat.id;
+
+
+create VIEW products_view_user AS
+SELECT 
+pro.id, pro.`libelle`, pro.description, pro.prix_final, pro.prix_offre, pro.visibilite as 'product_vis',
+ph.photo,
+pro.id_categorie,
+cat.nom as 'categorie', cat.visibilite as 'categorie_vis'
+from photo as ph INNER JOIN produit as pro INNER JOIN categorie as cat
+where ph.display_order = 1 && pro.id = ph.id_produit && pro.id_categorie = cat.id;
