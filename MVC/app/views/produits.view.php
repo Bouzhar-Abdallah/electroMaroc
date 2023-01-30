@@ -13,11 +13,14 @@
     <?php require_once 'components/navbar.php'; ?>
     <div class="h-12 hidden"></div>
     <div class="h-auto flex ">
-        <div class="fixed h-full border pt-3">
-            <ul class="flex flex-col items-center ">
+        <div class="fixed h-full border pt-3 z-20">
+            <ul class="flex flex-col items-center bg-white relative z-20 ">
                 <!-- <li class="flex relative hover:bg-cadethh transition-colors transition-duration duration-500"><img class="w-auto h-10 mx-1 my-2" src="<?//ROOT?>assets/images/categories/dishwasher-icon.png" alt=""></li> -->
                 <?php foreach ($data['categories'] as $key => $value) {?>
-                    <li class="flex relative hover:bg-saffron transition-colors transition-duration duration-500 ease-in"><img class="w-auto h-auto max-w-[25px] max-h-[35px] mx-2 my-3" src="data:image/jpeg;base64,<?= base64_encode($value["photo"]) ?>" alt=""></li>
+                    <li class="flex cursor-pointer hover:bg-saffron bg-white transition-colors transition-duration duration-500 ease-in h-[45px]">
+                        <img class="category_image w-auto h-auto max-w-[25px] max-h-[35px] mx-2 my-3 relative z-20 " src="data:image/jpeg;base64,<?= base64_encode($value["photo"]) ?>" alt="">
+                        <div class="px-3 bg-cadet text-white text-xs capitalize fixed h-[45px] transi duration-300 ease-in flex items-center -left-[150px] -z-10 w-[150px]"><h1 class=""><?=$value["nom"]?></h1></div>
+                    </li>
                     
                 <?php }; ?>
             </ul>
@@ -28,5 +31,5 @@
         </div>
     </div>
 </body>
-
+<script src="<?=ROOT?>assets/js/categoryhover.js"></script>
 </html>

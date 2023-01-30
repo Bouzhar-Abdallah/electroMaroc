@@ -1,5 +1,5 @@
 <div class="relative grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-5">
-    <div id="message" class="absolute ">
+    <div id="message" class="absolute z-10">
     </div>
     <!-- product item -->
     <?php if (!empty($data['produits']) && is_array($data['produits'])) foreach ($data['produits'] as $value) { ?>
