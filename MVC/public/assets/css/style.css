@@ -2542,6 +2542,11 @@ input:checked + .toggle-bg {
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
 
+.text-saffron {
+  --tw-text-opacity: 1;
+  color: rgb(254 234 0 / var(--tw-text-opacity));
+}
+
 .line-through {
   text-decoration-line: line-through;
 }
