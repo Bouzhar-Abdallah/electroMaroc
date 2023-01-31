@@ -25,6 +25,7 @@ class Products {
       showCategoriesButtons(data.categories);
       showProducts(data.produits);
       categoriesHover();
+      addToCartScript();
     };
     xhr.send();
   }
@@ -123,12 +124,12 @@ function selectCategory(category) {
   let prdocutsManager = new Products();
   prdocutsManager.setCategory(category);
   prdocutsManager.getData();
-  console.log(category);
+  //console.log(category);
 }
 
 function categoriesHover() {
   const categoriy_images = document.querySelectorAll(".category_list");
-  console.log(categoriy_images);
+  //console.log(categoriy_images);
 
   categoriy_images.forEach((list) => {
     const image = list.querySelector("img");
@@ -138,6 +139,51 @@ function categoriesHover() {
     });
     image.addEventListener("mouseleave", () => {
       category_name.style.left = -150 + "px";
+    });
+  });
+}
+
+/* add to cart script */
+
+function addToCartScript() {
+  const buttons = document.querySelectorAll(".buttons");
+  console.log(buttons);
+  const message = document.getElementById("message");
+  const cart_count = document.getElementById("cart_count");
+
+  message.addEventListener("click", () => {
+    message.innerHTML = "";
+  });
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      var xhr = new XMLHttpRequest();
+      xhr.open(
+        "GET",
+        "http://localhost:8888/electroMaroc/MVC/public/" + button.value,
+        true
+      );
+      xhr.onload = function () {
+        console.log(this.response);
+        if (this.response == "added") {
+          message.innerHTML = ` <div class="absolute overflow-hidden flex justify-center bg-cadeth/10 top-0 left-0 h-screen w-screen z-40">
+
+                <div class="absolute transition-all top-64 flex justify-center items-center p-10 h-fit bg-cadethh">
+                    <h1 class="font-bold text-2xl">produit ajouté avec success !</h1>
+                </div>
+            </div>`;
+          const Count = parseInt(cart_count.innerHTML);
+          cart_count.innerHTML = Count + 1;
+        } else if (this.response == "not") {
+          message.innerHTML = ` <div class="absolute overflow-hidden flex justify-center bg-cadeth/10 top-0 left-0 h-screen w-screen z-40">
+
+                <div class="absolute transition-all top-64 flex justify-center items-center p-10 h-fit bg-cadethh">
+                    <h1 class="font-bold text-2xl">ce produit existe deja dans votre carte !</h1>
+                </div>
+            </div>`;
+        }
+      };
+      xhr.send();
     });
   });
 }

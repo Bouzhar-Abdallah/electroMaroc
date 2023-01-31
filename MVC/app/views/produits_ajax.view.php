@@ -12,6 +12,8 @@
 <body class="h-screen">
     <?php require_once 'components/navbar.php'; ?>
     <div class="h-12 hidden"></div>
+    <div id="message" class="absolute z-10">
+    </div>
     <div class="h-auto flex ">
         <div class="fixed h-full border pt-3 z-20">
             <ul id="categories_container" class="category_list flex flex-col items-center  relative z-40 ">
