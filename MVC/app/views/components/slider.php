@@ -19,7 +19,7 @@
         <!-- slider card -->
         <?php foreach ($data as $value) { ?>
 
-          <div class="mx-0.5 relative bg-white">
+          <a href="<?=ROOT?>product/<?=$value['id']?>" class="mx-0.5 relative bg-white">
             <div class="test relative">
               <?php foreach ($value['photo'] as $key => $photo) { ?>
 
@@ -30,17 +30,16 @@
                   <img class="seocnd_image absolute z-10 hidden" src="data:image/jpeg;base64,<?= base64_encode($photo['photo']) ?>" alt="" srcset="">
                 <?php }; ?>
 
-              <?php }
-              ?>
-              <!-- <img class="absolute " src="./src/images/first.webp" alt="" srcset=""> -->
+              <?php }?>
             </div>
+              <!-- <img class="absolute " src="./src/images/first.webp" alt="" srcset=""> -->
 
             <div class="flex flex-col items-center capitalize my-2 gap-0.5 relative py-2">
               <div class="font-thin mb-2 text-sm text-center text-gray-600 flex justify-between w-full px-10">
                 <h1 class="text-cadet font-extrabold text-xl py-1 px-2">$ 
                   <?=$value['prix_offre'];?>
                 </h1>
-                <h1 class="text-red-500 font-bold line-through text-xl bg-red-200 py-1 px-2">
+                <h1 class="text-red-500 font-bold line-through text-xl bg-red-200 py-1 px-3">
                 $  <?=$value['prix_final'];?>
                 </h1>
               </div>
@@ -49,7 +48,7 @@
                 <?= $value['prix_vente'] ?> MAD
               </div>
             </div>
-          </div>
+          </a>
         <?php }; ?>
         <!-- slider card -->
 
