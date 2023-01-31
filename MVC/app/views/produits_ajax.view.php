@@ -15,8 +15,7 @@
     <div class="h-auto flex ">
         <div class="fixed h-full border pt-3 z-20">
             <ul id="categories_container" class="flex flex-col items-center bg-white relative z-20 ">
-                <!-- <li class="flex relative hover:bg-cadethh transition-colors transition-duration duration-500"><img class="w-auto h-10 mx-1 my-2" src="<? //ROOT
-                                                                                                                                                            ?>assets/images/categories/dishwasher-icon.png" alt=""></li> -->
+                
                 
             </ul>
         </div>
