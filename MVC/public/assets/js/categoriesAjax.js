@@ -2,12 +2,12 @@ const products_container = document.querySelector("#products_container");
 const categories_container = document.querySelector("#categories_container");
 //categories_container.innerHTML=''
 class Products {
-  constructor(_categorie = "all", _limit = 10, _offset = 0) {
+  constructor(_limit = 4, _offset = 0) {
     this.categories= [];
     this.produits = [];
-    this.limit = _limit;
-    this.offset = _offset;
-    this.categorie = _categorie;
+    this.limit = 10;
+    this.offset = 0;
+    this.categorie = 'all';
     this.count = 10;
     this.endPoint = `http://localhost:8888/electroMaroc/MVC/public/produits/getproductsByCategory/${this.categorie}/${this.limit}/${this.offset}`;
   }
@@ -16,9 +16,9 @@ class Products {
       const xhr = new XMLHttpRequest();
     xhr.open("GET", this.endPoint, true);
     console.log(this.endPoint);
+    console.log('loaded');
     xhr.onload = function () {
       let data = JSON.parse(this.response);
-      console.log("loaded");
       this.produits=data.produits
       this.categories=data.categories
       showCategoriesButtons(this.categories)
