@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 
 class Produits extends Controller
 {
-    public function index($id_category ='all', $limit = 10, $offset = '0')
+    public function old($id_category ='all', $limit = 10, $offset = '0')
     {
         
         $data = [];
@@ -15,10 +15,17 @@ class Produits extends Controller
         $produit->setLimit($limit);
         $produit->setOffset($offset);
         if ($id_category == 'all') {
-            $data['produits'] = $produit->findAll();
+            $data['produits'] = $produit->where(
+                array('product_vis'=> 1,
+                'categorie_vis' =>1
+                )
+            );
         }else{
             $data['produits'] = $produit->where(
-                array('id_categorie'=>$id_category)
+                array('id_categorie'=>$id_category,
+                'product_vis'=> 1,
+                'categorie_vis' =>1
+                )
             );
         }
         //showd($produit->status);
@@ -34,10 +41,17 @@ class Produits extends Controller
         $produit->setLimit($limit);
         $produit->setOffset($offset);
         if ($id_category == 'all') {
-            $data['produits'] = $produit->findAll();
+            $data['produits'] = $produit->where(
+                array('product_vis'=> 1,
+                'categorie_vis' =>1
+                )
+            );
         }else{
             $data['produits'] = $produit->where(
-                array('id_categorie'=>$id_category)
+                array('id_categorie'=>$id_category,
+                    'prodcut_vis' => 1,
+                    'categorie_vis' => 1
+                )
             );
         }
 
@@ -55,7 +69,7 @@ class Produits extends Controller
         return $data;
     }
     
-    public function test($id_category ='all', $limit = 10, $offset = '0'){
+    public function index($id_category ='all', $limit = 10, $offset = '0'){
        
         $data = [];
         
