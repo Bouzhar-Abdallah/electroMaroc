@@ -5,7 +5,7 @@ class Products {
   constructor(_category= 'all',_limit = 4, _offset = 0) {
     this.categories= [];
     this.produits = [];
-    this.limit = 10;
+    this.limit = 50;
     this.offset = 0;
     this.categorie = _category;
     this.count = 50;
