@@ -25,7 +25,7 @@ if (empty($_SESSION['USER'])) {
         <a href="#" class="block px-navbar-item py-navbar-item">logo</a>
 
         <!-- mobile menu -->
-        <div class="block md:hidden z-50 fixed top-0 left-0 h-full w-[220px] bg-cadet shadow-xl">
+        <div id="mobile_menu" class="transition-all duration-300 ease-out block md:hidden z-50 fixed top-0 -left-[220px] h-full w-[220px] bg-cadet shadow-xl">
             <ul class="font-semibold">
                 <li><a href="<?= ROOT ?>" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">acceuil</a></li>
                 <li><a href="<?= ROOT ?>produits" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">produits</a></li>
@@ -278,7 +278,7 @@ if (empty($_SESSION['USER'])) {
 
             </ul>
         </nav>
-        <button class="block md:hidden px-navbar-item py-navbar-item">
+        <button id="menu_button" class="block md:hidden px-navbar-item py-navbar-item">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
@@ -287,3 +287,4 @@ if (empty($_SESSION['USER'])) {
     </div>
 </header>
 <script src="<?= ROOT ?>assets/js/notifs_nav.js"></script>
+<script src="<?= ROOT ?>assets/js/nav_respons.js"></script>
