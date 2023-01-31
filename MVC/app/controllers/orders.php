@@ -41,15 +41,18 @@ class Orders extends Controller
         }
         $this->view('home', $data, 'orders');
     }
-    /* public function index($a = '', $b = '', $c = '')
+    public function confirmRecipt($commande_id = '')
     {
-        $user_id = $_SESSION['USER']['id'];
-        $data = [];
-        $commandes = new Commande();
-        $data = $commandes-> where(array(''))
         
-        $this->view('home', $data, 'orders');
-    } */
+        $user_id = $_SESSION['USER']['id'];
+        $commande = new Commande();
+        $commande->update($commande_id,array(
+            'etat'=>'livré',
+            'date_livraison' => date('Y-m-d')
+        ));
+        
+        redirect('orders');
+    }
 
    
 }
