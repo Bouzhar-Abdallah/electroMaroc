@@ -1328,6 +1328,10 @@ input:checked + .toggle-bg {
   left: -220px;
 }
 
+.-top-\[220px\] {
+  top: -220px;
+}
+
 .z-10 {
   z-index: 10;
 }

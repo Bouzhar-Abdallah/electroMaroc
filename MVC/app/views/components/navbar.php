@@ -19,7 +19,7 @@ if (empty($_SESSION['USER'])) {
 
 
 <header class="relative w-full h-12 z-40">
-    <?php require_once 'feedbacks.php';?>
+    <?php require_once 'feedbacks.php'; ?>
     <div class="flex justify-between w-full capitalize bg-cadet text-white fixed top-0">
         <!-- <img src="" alt="" srcset=""> -->
         <a href="#" class="block px-navbar-item py-navbar-item">logo</a>
@@ -47,9 +47,9 @@ if (empty($_SESSION['USER'])) {
                         <a href="<?= ROOT ?>cart" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
                             <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                                <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-cadet bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"><?= $Carte_count ?></span>
+
                             </svg>
-                            cart
+                            cart<span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-cadet bg-blue-200 rounded-full "><?= $Carte_count ?></span>
 
                         </a>
                     </li>
@@ -183,15 +183,15 @@ if (empty($_SESSION['USER'])) {
                     </li>
                     <li class="relative mr-4">
 
-                        <a href="" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
+                        <burron id="menu_list_button" class="flex items-center px-navbar-item py-navbar-item transition-all hover:bg-cadeth">
 
                             mon compte
                             <svg class="h-5 w-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                                 <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" />
                             </svg>
 
-                        </a>
-                        <ul class="absolute opacity-5 z-50  right-0 w-full bg-cadet py-2">
+                        </burron>
+                        <ul id="menu_list" class="absolute transition-all ease-out duration-500 z-50 -top-[220px] right-0 w-full bg-cadet py-2">
                             <li>
                                 <a href="" class="flex items-center text-sm py-2 px-4 transition-all hover:bg-cadeth">
 
