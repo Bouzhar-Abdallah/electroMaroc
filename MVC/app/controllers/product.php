@@ -5,6 +5,7 @@ class Product extends Controller
 {
     public function index($a = '', $b = 0, $c = '')
     {
+        
         $produit = new Produit;
         $photo = new Photo;
         $data = [];
@@ -19,10 +20,10 @@ class Product extends Controller
         $photos = ($photo->where(
             array('id_produit' => $data_produit['id'])
         ));
-        if (!empty($produit->exceptions)) {
+        /* if (!empty($produit->exceptions)) {
         
             show($produit->exceptions);
-        }
+        } */
 
 
         $data=['data_produit' => $data_produit,'photos' => $photos];

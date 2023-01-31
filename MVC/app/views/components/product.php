@@ -4,7 +4,7 @@
 
 
 
-<div class="flex m-5 justify-between">
+<div class="flex gap-2 m-5 justify-between max-md:flex-wrap">
     <div class="  h-full w-32">
         
         <?php foreach ($data['photos'] as $key => $value){?>
@@ -19,7 +19,7 @@
     <div class="w-3/5 ">
         <img class="" src="data:image/jpeg;base64,<?= base64_encode($data['photos'][$picture]['photo'])?>" alt="" srcset="">
     </div>
-    <div class="flex gap-3 w-[400px] flex-col w-120 h-fit border border-P_navy p-5 hover:shadow-lg transition-shadow">
+    <div class="mx-auto max-md:mt-5 flex gap-3 w-[400px] flex-col w-120 h-fit border border-P_navy p-5 hover:shadow-lg transition-shadow">
         <div class=" flex items-center gap-5 my-1 text-xl font-bold">
             <p class="text-xl">$ <?= $data['data_produit']['prix_final']?></p>
             <p class="text-gray-400 line-through text-base">$ 300</p>

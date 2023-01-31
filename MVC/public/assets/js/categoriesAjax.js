@@ -2,92 +2,83 @@ const products_container = document.querySelector("#products_container");
 const categories_container = document.querySelector("#categories_container");
 //categories_container.innerHTML=''
 class Products {
-  constructor(_category= 'all',_limit = 4, _offset = 0) {
-    this.categories= [];
+  constructor(_category = "all", _limit = 4, _offset = 0) {
+    this.categories = [];
     this.produits = [];
     this.limit = 50;
     this.offset = 0;
     this.categorie = _category;
     this.count = 50;
-    this.endPoint = `http://localhost:8888/electroMaroc/MVC/public/produits/getproductsByCategory/${this.categorie}/${this.limit}/${this.offset}`
+    this.endPoint = `http://localhost:8888/electroMaroc/MVC/public/produits/getproductsByCategory/${this.categorie}/${this.limit}/${this.offset}`;
   }
-  setCategory(category){
-    this.categorie=category
-    this.endPoint = `http://localhost:8888/electroMaroc/MVC/public/produits/getproductsByCategory/${this.categorie}/${this.limit}/${this.offset}`
+  setCategory(category) {
+    this.categorie = category;
+    this.endPoint = `http://localhost:8888/electroMaroc/MVC/public/produits/getproductsByCategory/${this.categorie}/${this.limit}/${this.offset}`;
   }
   getData() {
-      const xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     xhr.open("GET", this.endPoint, true);
     console.log(this.endPoint);
-    console.log('loaded');
+    console.log("loaded");
     xhr.onload = function () {
       let data = JSON.parse(this.response);
-      showCategoriesButtons(data.categories)
-      showProducts(data.produits)
-      categoriesHover()
+      showCategoriesButtons(data.categories);
+      showProducts(data.produits);
+      categoriesHover();
     };
     xhr.send();
   }
-
-  
-  
 }
-
-
 
 let prdocutsManager = new Products();
 
-
 prdocutsManager.getData();
 
-
-
-
-
- function showCategoriesButtons(categories){
-    categories_container.innerHTML= `<button onclick="selectCategory('all')" class="category_button" value="all">
-    <li class="category_list flex cursor-pointer hover:bg-saffron bg-white transition-colors transition-duration duration-500 ease-in h-[45px]">
-        <img class=" w-auto h-auto max-w-[25px] max-h-[35px] mx-2 my-3 relative z-20 " src="http://localhost:8888/electroMaroc/MVC/public/assets/images/categories/all.png" alt="">
-
-        <div class="px-3 bg-cadet text-white text-xs capitalize fixed h-[45px] transi duration-300 ease-in flex items-center -left-[150px] -z-10 w-[150px]">
+function showCategoriesButtons(categories) {
+  categories_container.innerHTML = `<button onclick="selectCategory('all')" class="category_button " value="all">
+    <div class="category_list flex cursor-pointer hover:bg-saffron bg-white transition-colors transition-duration duration-500 ease-in h-[45px]">
+    <div class="">
+    <img class="cat_img w-auto h-auto max-w-[25px] max-h-[35px] mx-2 my-3 relative z-20 " src="http://localhost:8888/electroMaroc/MVC/public/assets/images/categories/all.png" alt="">
+    </div>
+    
+        <div class="category_name px-3 bg-cadet text-white text-xs capitalize fixed h-[45px] transi duration-300 ease-in flex items-center -left-[150px] -z-10 w-[150px]">
             <h1 class="">all</h1>
         </div>
-    </li>
-    </button >`
-    categories.forEach(categorie => {
-        categories_container.innerHTML+= 
-        `
+    </div>
+    </button >`;
+  categories.forEach((categorie) => {
+    categories_container.innerHTML += `
                     
                 
                     <button onclick="selectCategory(${categorie.id})" class="category_button" value="${categorie.id}">
                         <li class="category_list flex cursor-pointer hover:bg-saffron bg-white transition-colors transition-duration duration-500 ease-in h-[45px]">
-                            <img class=" w-auto h-auto max-w-[25px] max-h-[35px] mx-2 my-3 relative z-20 " src="data:image/png;base64,${categorie.photo}" alt="">
-                            <div class="px-3 bg-cadet text-white text-xs capitalize fixed h-[45px] transi duration-300 ease-in flex items-center -left-[150px] -z-10 w-[150px]">
+                        <div class="flex items-center justify-center w-full">
+                        <img class=" w-auto h-auto max-w-[25px] max-h-[35px] mx-2 my-3 relative z-20 " src="data:image/png;base64,${categorie.photo}" alt="">
+                        </div>
+                            <div class="category_name px-3 bg-cadet text-white text-xs capitalize fixed h-[45px] transi duration-300 ease-in flex items-center -left-[150px] -z-10 w-[150px]">
                                 <h1 class="">${categorie.nom}</h1>
                             </div>
                         </li>
-                    </button>`
-
-                
-    });
-} 
+                    </button>`;
+  });
+}
 
 function showProducts(produits) {
-    products_container.innerHTML = ''
-    
-    produits.forEach((produit)=>{
-        let x = ''
-        if (produit.prix_offre) {
-            x = `<p class="text-red-500 font-bold line-through text-base bg-red-200 py-1 px-2">$ ${produit.prix_final}.99</p>`
-            produit.prix_final = produit.prix_offre
-        }
-        const div_price = `<div class="flex items-center justify-between gap-5 my-1 text-xl font-bold">
+  products_container.innerHTML = "";
+
+  produits.forEach((produit) => {
+    let x = "";
+    if (produit.prix_offre) {
+      x = `<p class="text-gray-400 font-bold line-through text-base py-1 px-2">$ ${produit.prix_final}.99</p>`;
+      produit.prix_final = produit.prix_offre;
+    }
+    const div_price = `<div class="flex items-center justify-between gap-5 my-1 text-xl font-bold">
         <p class="text-xl">$ ${produit.prix_final}.99</p>
         
             ${x}
         
-    </div>`
-        products_container.innerHTML += `
+    </div>`;
+    products_container.innerHTML += `
         <?php if (!empty($data['produits']) && is_array($data['produits'])) foreach ($data['produits'] as $value) { ?>
 
 
@@ -123,32 +114,30 @@ function showProducts(produits) {
             
             <?php } ?>
             
-        `
-
-    })
+        `;
+  });
 }
 
 function selectCategory(category) {
-    products_container.innerHTML = ''
-    let prdocutsManager = new Products();
-    prdocutsManager.setCategory(category)
-    prdocutsManager.getData()
-    console.log(category);
+  products_container.innerHTML = "";
+  let prdocutsManager = new Products();
+  prdocutsManager.setCategory(category);
+  prdocutsManager.getData();
+  console.log(category);
 }
 
 function categoriesHover() {
-    
-    const categoriy_images = document.querySelectorAll('.category_list')
-    console.log(categoriy_images);
-    
-    categoriy_images.forEach((list)=>{
-        const image = list.querySelector('img')
-        const category_name = list.querySelector('div')
-        image.addEventListener('mouseover', ()=>{
-            category_name.style.left = 43 +'px'
-        })
-        image.addEventListener('mouseleave', ()=>{
-            category_name.style.left = -150 +'px'
-        })
-    })
+  const categoriy_images = document.querySelectorAll(".category_list");
+  console.log(categoriy_images);
+
+  categoriy_images.forEach((list) => {
+    const image = list.querySelector("img");
+    const category_name = list.querySelector(".category_name");
+    image.addEventListener("mouseover", () => {
+      category_name.style.left = 43 + "px";
+    });
+    image.addEventListener("mouseleave", () => {
+      category_name.style.left = -150 + "px";
+    });
+  });
 }
