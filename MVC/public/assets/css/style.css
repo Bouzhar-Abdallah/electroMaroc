@@ -2595,6 +2595,10 @@ input:checked + .toggle-bg {
   transition-duration: 200ms;
 }
 
+.duration-700 {
+  transition-duration: 700ms;
+}
+
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
@@ -2865,6 +2869,11 @@ input:checked + .toggle-bg {
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
 
+.hover\:text-cadet:hover {
+  --tw-text-opacity: 1;
+  color: rgb(43 45 66 / var(--tw-text-opacity));
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -2967,6 +2976,16 @@ input:checked + .toggle-bg {
 .group:hover .group-hover\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-red-400 {
+  --tw-text-opacity: 1;
+  color: rgb(249 128 128 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-cadet {
+  --tw-text-opacity: 1;
+  color: rgb(43 45 66 / var(--tw-text-opacity));
 }
 
 .dark .dark\:border-gray-600 {

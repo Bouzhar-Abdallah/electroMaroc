@@ -90,10 +90,4 @@
 
         </tbody>
     </table>
-
-    <div class="absolute right-0 bottom-0">
-        <a href="<?=ROOT?>product/add">
-            <button class="btn-primary ">ajouter nouveau produit</button>
-        </a>
-    </div>
 </div>
