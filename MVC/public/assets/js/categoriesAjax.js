@@ -84,7 +84,7 @@ function showProducts(produits) {
 
 
             <div class="flex flex-col justify-between bg-white overflow-hidden hover:shadow border transition-colors hover:border-P_blue">
-                <a href="product/${produit.id}" class="relative" >
+                <a href="${produit.id}" class="relative" >
                     <h1 class="hidden absolute w-40 h-10 bg-red-500 text-blue-400 z-30 rotate-45 top-3 -right-12">
                         Solde
                     </h1>

@@ -3,34 +3,12 @@
 
 class Product extends Controller
 {
-    public function index($a = '', $b = 0, $c = '')
+    function __construct()
     {
         
-        $produit = new Produit;
-        $photo = new Photo;
-        $data = [];
-        /* get product id */
-        $arr = array(
-            'id' => $a,
-            'visibilite' => '1'
-        );
-        //show($arr);
-        $data_produit = $produit->where($arr)['0'];
-        //die();
-        $photos = ($photo->where(
-            array('id_produit' => $data_produit['id'])
-        ));
-        /* if (!empty($produit->exceptions)) {
-        
-            show($produit->exceptions);
-        } */
-
-
-        $data=['data_produit' => $data_produit,'photos' => $photos];
-
-
-        $this->view('home',$data,'product',$b);
-        
+        if ($_SESSION['USER']['role'] != 'admin') {
+            redirect('home');
+        }
     }
     /* old add requires last method */
     public function add($a = '', $b = '', $c = '')

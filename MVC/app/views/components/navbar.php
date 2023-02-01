@@ -28,7 +28,7 @@ if (empty($_SESSION['USER'])) {
         <div id="mobile_menu" class="transition-all duration-300 ease-out block md:hidden z-50 fixed top-0 -left-[220px] h-full w-[220px] bg-cadet shadow-xl">
             <ul class="font-semibold">
                 <li><a href="<?= ROOT ?>" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">acceuil</a></li>
-                <li><a href="<?= ROOT ?>produits" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">produits</a></li>
+                <li><a href="<?= ROOT ?>produits/categories" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">produits</a></li>
                 <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">contact</a></li>
             </ul>
             <ul class=" items-center font-normal">
@@ -155,7 +155,7 @@ if (empty($_SESSION['USER'])) {
         <nav class="hidden md:block">
             <ul class="grid grid-flow-col font-semibold">
                 <li><a href="<?= ROOT ?>" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">acceuil</a></li>
-                <li><a href="<?= ROOT ?>produits" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">produits</a></li>
+                <li><a href="<?= ROOT ?>produits/categories" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">produits</a></li>
                 <li><a href="" class="block px-navbar-item py-navbar-item transition-all hover:bg-cadeth">contact</a></li>
             </ul>
         </nav>
