@@ -6,14 +6,21 @@ if (empty($_SESSION['USER'])) {
     //show($_SESSION['USER']);
     $username = $_SESSION['USER']['nom'];
     $userrole = $_SESSION['USER']['role'];
-}
+} ?>
 
-//show($username);
-//show($userrole);
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
 
 
+    .font-Raleway {
+        font-family: 'Aboreto';
+    }
 
-?>
+    .font-cursive {
+        font-family: 'cursive';
+    }
+</style>
+
 <link rel="stylesheet" href="<?= ROOT ?>assets/css/style.css">
 
 
@@ -22,7 +29,7 @@ if (empty($_SESSION['USER'])) {
     <?php require_once 'feedbacks.php'; ?>
     <div class="flex justify-between w-full capitalize bg-cadet text-white fixed top-0">
         <!-- <img src="" alt="" srcset=""> -->
-        <a href="#" class="block px-navbar-item py-navbar-item">logo</a>
+        <a href="#" class="block px-navbar-item py-navbar-item font-Raleway font-bold ">electro maroc</a>
 
         <!-- mobile menu -->
         <div id="mobile_menu" class="transition-all duration-300 ease-out block md:hidden z-50 fixed top-0 -left-[220px] h-full w-[220px] bg-cadet shadow-xl">
