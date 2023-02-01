@@ -41,7 +41,7 @@
             </a>
          </li>
       </ul>
-      <ul class="space-y-2 pt-3 h-full text-white">
+      <ul class="space-y-2 pt-3  text-white">
 
          <li class="hover:bg-saffron hover:text-cadet transition-all duration-400 ease-out ">
             <a href="#" class="flex items-center p-2 text-base font-normal   ">
