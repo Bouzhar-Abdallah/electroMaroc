@@ -29,7 +29,7 @@ if (empty($_SESSION['USER'])) {
     <?php require_once 'feedbacks.php'; ?>
     <div class="flex justify-between w-full capitalize bg-cadet text-white fixed top-0">
         <!-- <img src="" alt="" srcset=""> -->
-        <a href="#" class="block px-navbar-item py-navbar-item font-Raleway font-bold ">electro maroc</a>
+        <a href="#" class="block px-navbar-item py-navbar-item font-Raleway font-bold "><span class=" text-saffron" >e</span>lectro <span class=" text-saffron" >m</span>aroc</a>
 
         <!-- mobile menu -->
         <div id="mobile_menu" class="transition-all duration-300 ease-out block md:hidden z-50 fixed top-0 -left-[220px] h-full w-[220px] bg-cadet shadow-xl">

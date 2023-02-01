@@ -15,7 +15,7 @@ class Signup extends Controller
                 $user->insert($data);
                 if (isset($user->status->exception)) {
                     if ($user->status->exception->errorInfo['1'] == '1062') {
-                        $this->setFlash('failure', 'email already exists');
+                        $this->setFlash('failure', "l'email que vous avez introduit existe deja !");
                     } else {
                         $this->setFlash('failure', 'something went wrong');
                     }
@@ -32,6 +32,8 @@ class Signup extends Controller
                         $this->setFlash('failure', 'something went wrong');
                     }
                 }
+            }else{
+                $this->setFlash('failure', "l'email que vous avez introduit n'est pas valide !");
             }
 
 

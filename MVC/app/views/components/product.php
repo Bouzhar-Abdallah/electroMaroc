@@ -8,7 +8,7 @@
     <div class="  h-full w-32">
         
         <?php foreach ($data['photos'] as $key => $value){?>
-            <a href="<?=ROOT.'product/'. $data['data_produit']['id'].'/'.$key; ?>">
+            <a href="<?=ROOT.'produits/'. $data['data_produit']['id'].'/'.$key; ?>">
                 <img class="p-1 border border-gray-200 hover:border-cadeth transition-colors " src="data:image/jpeg;base64,<?= base64_encode($value['photo'])?>" alt="" srcset="">
             </a>
         
