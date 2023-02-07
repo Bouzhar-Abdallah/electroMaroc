@@ -12,7 +12,10 @@
 }
 
 .btn-primary{
-    @apply  hover:bg-wsaffron hover:text-cadeth text-white py-2 px-5  shadow-md transition-colors bg-cadet ease-in-out duration-300
+    @apply  hover:bg-wsaffron hover:text-cadeth text-white block px-12 py-3 text-sm font-medium  shadow-md transition-colors bg-cadet ease-in-out duration-300
+}
+.btn-secondary{
+    @apply  hover:bg-cadethh  text-cadet block px-12 py-3 text-sm font-medium  shadow-md transition-colors bg-white ease-in-out duration-300
 }
 .btn-icon{
     @apply  flex p-1 items-center justify-center hover:text-cadeth hover:bg-wsaffron text-white  shadow-md transition-colors bg-cadet w-10 h-10 ease-in-out duration-300

@@ -1,4 +1,4 @@
-<div class="bg-cadethhh hover:bg-cadethh transition-all duration-700 ease-in pb-8 my-8">
+<div id="promotions" class="bg-cadethhh hover:bg-cadethh transition-all duration-700 ease-in pb-8 my-8">
   <div class="grid place-items-center my-8 pt-10">
     <h1 class="text-cadet text-3xl font-bold">Proffitez de nos superbes promotions !</h1>
     <h1 class="text-gray-600 text-center text-lg font-light px-4 mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa sapiente incidunt natus similique facere veniam nesciunt, mollitia non quasi saepe necessitatibus. Nemo sit itaque nobis id dolorum et veniam ducimus!</h1>
