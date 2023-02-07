@@ -1,3 +1,33 @@
+<section class="relative bg-[url(https://economie-entreprises.com/wp-content/uploads/2020/11/Electromenager-Les-promotions-comme-alternative.jpg)] bg-cover bg-center bg-no-repeat">
+  <div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"></div>
+
+  <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+    <div class="max-w-xl text-center sm:text-left">
+      <h1 class="text-3xl font-extrabold sm:text-5xl text-black">
+        Let us find your
+
+        <strong class="block font-extrabold text-cadeth">
+          Forever Home.
+        </strong>
+      </h1>
+
+      <p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-cadeth">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
+        tenetur fuga ducimus numquam ea!
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4 text-center">
+        <a href="<?= ROOT ?>produits/categories" class="btn-primary sm:w-auto">
+          See Products !
+        </a>
+
+        <a href="#promotions" class=" btn-secondary sm:w-auto">
+          Promotions
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 <div id="promotions" class="bg-cadethhh hover:bg-cadethh transition-all duration-700 ease-in pb-8 my-8">
   <div class="grid place-items-center my-8 pt-10">
     <h1 class="text-cadet text-3xl font-bold">Proffitez de nos superbes promotions !</h1>

@@ -2629,16 +2629,12 @@ input:checked + .toggle-bg {
 }
 
 .btn-primary {
-  display: block;
   --tw-bg-opacity: 1;
   background-color: rgb(43 45 66 / var(--tw-bg-opacity));
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -2657,16 +2653,12 @@ input:checked + .toggle-bg {
 }
 
 .btn-secondary {
-  display: block;
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
+  background-color: rgb(218 219 231 / var(--tw-bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(43 45 66 / var(--tw-text-opacity));
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -2679,7 +2671,9 @@ input:checked + .toggle-bg {
 
 .btn-secondary:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(218 219 231 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(64 67 99 / var(--tw-text-opacity));
 }
 
 .btn-icon {
@@ -2767,6 +2761,23 @@ input:checked + .toggle-bg {
   text-transform: capitalize;
   --tw-text-opacity: 1;
   color: rgb(64 67 99 / var(--tw-text-opacity));
+}
+
+.input-style {
+  --tw-border-opacity: 1;
+  border-color: rgb(218 219 231 / var(--tw-border-opacity));
+}
+
+.input-style:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(64 67 99 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 243 247 / var(--tw-bg-opacity));
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(218 219 231 / var(--tw-ring-opacity));
 }
 
 .input-style {
