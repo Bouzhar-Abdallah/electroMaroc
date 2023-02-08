@@ -33,5 +33,4 @@ class Checkout extends Controller
 
         $this->view('home', $data, 'checkout');
     }
-
 }

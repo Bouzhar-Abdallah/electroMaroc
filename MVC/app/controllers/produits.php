@@ -7,27 +7,26 @@ class Produits extends Controller
 {
     public function index($a = '', $b = 0, $c = '')
     {
-        
+
         $produit = new Produit;
         $photo = new Photo;
         $data = [];
-        
+
         $arr = array(
             'id' => $a,
             'visibilite' => '1'
         );
-        
+
         $data_produit = $produit->where($arr)['0'];
-        
+
         $photos = ($photo->where(
             array('id_produit' => $data_produit['id'])
         ));
 
-        $data=['data_produit' => $data_produit,'photos' => $photos];
+        $data = ['data_produit' => $data_produit, 'photos' => $photos];
 
 
-        $this->view('home',$data,'product',$b);
-        
+        $this->view('home', $data, 'product', $b);
     }
     public function old($id_category = 'all', $limit = 10, $offset = '0')
     {

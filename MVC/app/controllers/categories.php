@@ -53,7 +53,7 @@ class Categories extends Controller
                 }
             }
         }
-        
+
         $this->view('admin', $data, 'newcategorie');
     }
 
@@ -98,12 +98,12 @@ class Categories extends Controller
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $data = $_POST;
             $files = $_FILES;
- 
+
             /*  */
             if ($categorie->validate($files)) {
                 $data['photo'] = file_get_contents($_FILES['photo']['tmp_name']);
             }
-            $categorie->update($id,$data);
+            $categorie->update($id, $data);
             if (isset($categorie->status->exception)) {
                 $this->setFlash('failure', 'something went wrong');
                 redirect('categories');

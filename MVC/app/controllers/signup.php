@@ -22,17 +22,16 @@ class Signup extends Controller
                 } else {
                     if ($user->status->success) {
                         $this->setFlash('success', 'compte crèe avec succes');
-                        $row = $user->where(array('id'=> $user->status->last_insert_id))['0'];
+                        $row = $user->where(array('id' => $user->status->last_insert_id))['0'];
                         if ($row) {
-                                $_SESSION['USER'] = $row;
-                                redirect('home');
+                            $_SESSION['USER'] = $row;
+                            redirect('home');
                         }
-                    
                     } else {
                         $this->setFlash('failure', 'something went wrong');
                     }
                 }
-            }else{
+            } else {
                 $this->setFlash('failure', "l'email que vous avez introduit n'est pas valide !");
             }
 

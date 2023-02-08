@@ -5,7 +5,7 @@ class Admin extends Controller
 {
     function __construct()
     {
-        
+
         if ($_SESSION['USER']['role'] != 'admin') {
             redirect('home');
         }
@@ -16,8 +16,6 @@ class Admin extends Controller
         $produit = new Produit('product_view');
         $categorie = new Categorie;
         $data = $produit->findAll();
-        $this->view('admin',$data,'table-products');
+        $this->view('admin', $data, 'table-products');
     }
-    
 }
-

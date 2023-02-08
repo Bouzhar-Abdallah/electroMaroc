@@ -12,7 +12,6 @@ class Test extends Controller
         //$this->view('home',$data,'test');
 
     }
-
 }
 /* if (empty($_SESSION['USER'])) {
     $username = 'guest';
@@ -24,4 +23,3 @@ class Test extends Controller
 }
 $data['username'] = $username;
 $data['userrole'] = $userrole; */
-

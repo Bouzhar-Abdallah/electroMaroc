@@ -11,7 +11,6 @@ class Database
         $string = "mysql:hostname=" . DBHOST . ";dbname=" . DBNAME;
         $con = new PDO($string, DBUSER, DBPASS);
         $con->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        $con->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         return $con;
     }
     public function query($query, $data = []) {
