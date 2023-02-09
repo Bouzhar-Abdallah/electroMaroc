@@ -13,7 +13,8 @@ class Database
         $con->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         return $con;
     }
-    public function query($query, $data = []) {
+    public function query($query, $data = []) 
+    {
         $connection = $this->connection();
         $this->status->query = $query;
         $this->status->data = $data;
@@ -22,17 +23,20 @@ class Database
             $statement = $connection->prepare($query);
             $success = $statement->execute($data);
             $this->status->success = $success;
-            if ($success) {
+            if ($success) 
+            {
                 $this->status->affected_rows = $statement->rowCount();
                 $this->status->last_insert_id = $connection->lastInsertId();
                 $this->status->result = $statement->fetchAll();
                 return $this->status->result;
-            } else {
+            } else 
+            {
                 $this->status->error_code = $connection->errorCode();
                 $this->status->error_info = $connection->errorInfo();
                 return false;
             }
-        } catch (PDOException $e) {
+        } catch (PDOException $e) 
+        {
             $this->status->exception = $e;
             return false;
         }

@@ -79,7 +79,7 @@ class Categories extends Controller
     {
         $categorie = new Categorie();
         $row = $categorie->where(array('id' => $id));
-        if ($row[0]['visibilite'] === 1) {
+        if ($row[0]['visibilite'] == 1) {
             $new_vis = 0;
         } else {
             $new_vis = 1;
